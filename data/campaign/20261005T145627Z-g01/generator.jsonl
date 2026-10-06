@@ -1,0 +1,2 @@
+{"error_type": "PubSubPlusCoreClientError", "event": "error", "message": "SESSION CREATION UNSUCCESSFUL. Failed to load trust store."}
+{"event": "stopped", "timestamp": "2026-10-05T14:56:32.369410+00:00"}

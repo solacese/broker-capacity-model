@@ -1,0 +1,38 @@
+{
+  "capacity_label_allowed": false,
+  "forced_stop": false,
+  "generator_placement": "local_wan",
+  "metrics": {
+    "accepted_unique_messages": 6000,
+    "actual_accepted_rate": 98.69511406383498,
+    "attempted_publishes": 6000,
+    "broker_delta_discardedRxMsgCount": 0,
+    "broker_delta_discardedTxMsgCount": 0,
+    "broker_delta_rxByteCount": 6339776,
+    "broker_delta_rxMsgCount": 6012,
+    "broker_delta_txByteCount": 6339936,
+    "broker_delta_txMsgCount": 6012,
+    "delivery_ratio_bcm-20261005-g01": 1.0,
+    "delivery_reconciliation_ratio": 1.0,
+    "expected_deliveries": 6000,
+    "logical_cpu_count": 10,
+    "max_generator_host_normalized_cpu_percent": 11.440000000000001,
+    "max_generator_raw_process_cpu_percent": 114.4,
+    "measurement_seconds": 60.793283,
+    "nacks": null,
+    "requested_expected": 6079.3283,
+    "requested_publishes": 6000,
+    "retransmitted_receipts": 0,
+    "scheduled_publishes": 6000,
+    "successful_publishes": 6000,
+    "unique_receipts": 5986
+  },
+  "outcome": "SUSTAINABLE",
+  "processes_stopped": true,
+  "queue_empty": true,
+  "reasons": [
+    "all_required_evidence_passed"
+  ],
+  "run_id": "20261005T151047Z-g01",
+  "stage_id": "G01"
+}

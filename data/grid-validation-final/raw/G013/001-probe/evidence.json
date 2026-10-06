@@ -1,0 +1,809 @@
+{
+  "seconds": 30,
+  "rate": 100.0,
+  "mode": "direct",
+  "publishers": 4,
+  "fanout": 2,
+  "payload_bytes": 256,
+  "workers": {
+    "publisher-0": {
+      "event": "stopped",
+      "id": "publisher-0",
+      "role": "publisher",
+      "t": 221891.121617791,
+      "warmup": {
+        "attempted": 24,
+        "submitted": 24,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 749,
+        "submitted": 749,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 2.2,
+      "cpu": 2.9,
+      "network_tx_bytes": 4219904,
+      "network_rx_bytes": 6903808,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "publisher-2": {
+      "event": "stopped",
+      "id": "publisher-2",
+      "role": "publisher",
+      "t": 221891.121435125,
+      "warmup": {
+        "attempted": 24,
+        "submitted": 24,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 749,
+        "submitted": 749,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 2.2,
+      "cpu": 2.9,
+      "network_tx_bytes": 4176896,
+      "network_rx_bytes": 6891520,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "publisher-3": {
+      "event": "stopped",
+      "id": "publisher-3",
+      "role": "publisher",
+      "t": 221891.121010916,
+      "warmup": {
+        "attempted": 24,
+        "submitted": 24,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 749,
+        "submitted": 749,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 2.2,
+      "cpu": 3.2,
+      "network_tx_bytes": 4176896,
+      "network_rx_bytes": 6891520,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "publisher-1": {
+      "event": "stopped",
+      "id": "publisher-1",
+      "role": "publisher",
+      "t": 221891.120832,
+      "warmup": {
+        "attempted": 24,
+        "submitted": 24,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 749,
+        "submitted": 749,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 2.3,
+      "cpu": 3.0,
+      "network_tx_bytes": 4176896,
+      "network_rx_bytes": 6891520,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "receiver-1": {
+      "event": "stopped",
+      "id": "receiver-1",
+      "role": "receiver",
+      "t": 221891.370217833,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 96,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 96,
+        "latency_sum_ns": 17225066789,
+        "latency_max_ns": 249956666
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 2996,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 2996,
+        "latency_sum_ns": 650127356973,
+        "latency_max_ns": 690032250
+      },
+      "max_cpu": 4.4,
+      "cpu": 1.4,
+      "network_tx_bytes": 4292608,
+      "network_rx_bytes": 6910976,
+      "measurement_done": false,
+      "clean_shutdown": true
+    },
+    "receiver-0": {
+      "event": "stopped",
+      "id": "receiver-0",
+      "role": "receiver",
+      "t": 221891.351633833,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 96,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 96,
+        "latency_sum_ns": 17579957210,
+        "latency_max_ns": 254420208
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 2996,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 2996,
+        "latency_sum_ns": 650207982205,
+        "latency_max_ns": 690166541
+      },
+      "max_cpu": 4.2,
+      "cpu": 4.3,
+      "network_tx_bytes": 4290560,
+      "network_rx_bytes": 6917120,
+      "measurement_done": false,
+      "clean_shutdown": true
+    }
+  },
+  "errors": [],
+  "telemetry": [
+    {
+      "t": 221857.642075541,
+      "vpn": {
+        "rxMsgCount": 189042,
+        "txMsgCount": 189136,
+        "rxByteCount": 199945545,
+        "txByteCount": 200018652,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221860.899684625,
+      "vpn": {
+        "rxMsgCount": 189260,
+        "txMsgCount": 189566,
+        "rxByteCount": 200010913,
+        "txByteCount": 200149364,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221863.547358166,
+      "vpn": {
+        "rxMsgCount": 189558,
+        "txMsgCount": 190156,
+        "rxByteCount": 200100921,
+        "txByteCount": 200329356,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221866.427895291,
+      "vpn": {
+        "rxMsgCount": 189864,
+        "txMsgCount": 190762,
+        "rxByteCount": 200193393,
+        "txByteCount": 200514276,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221869.111186875,
+      "vpn": {
+        "rxMsgCount": 190186,
+        "txMsgCount": 191400,
+        "rxByteCount": 200290793,
+        "txByteCount": 200709052,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221871.889208416,
+      "vpn": {
+        "rxMsgCount": 190383,
+        "txMsgCount": 191789,
+        "rxByteCount": 200349989,
+        "txByteCount": 200827424,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221874.587790458,
+      "vpn": {
+        "rxMsgCount": 190696,
+        "txMsgCount": 192410,
+        "rxByteCount": 200444913,
+        "txByteCount": 201017252,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221877.321569291,
+      "vpn": {
+        "rxMsgCount": 191002,
+        "txMsgCount": 193016,
+        "rxByteCount": 200537385,
+        "txByteCount": 201202172,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221879.958712458,
+      "vpn": {
+        "rxMsgCount": 191204,
+        "txMsgCount": 193418,
+        "rxByteCount": 200599009,
+        "txByteCount": 201325412,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221882.589183708,
+      "vpn": {
+        "rxMsgCount": 191510,
+        "txMsgCount": 194024,
+        "rxByteCount": 200691481,
+        "txByteCount": 201510332,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221885.253959333,
+      "vpn": {
+        "rxMsgCount": 191816,
+        "txMsgCount": 194630,
+        "rxByteCount": 200783953,
+        "txByteCount": 201695252,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221887.971063708,
+      "vpn": {
+        "rxMsgCount": 192014,
+        "txMsgCount": 195020,
+        "rxByteCount": 200843161,
+        "txByteCount": 201813644,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221888.669666333,
+      "vpn": {
+        "rxMsgCount": 192098,
+        "txMsgCount": 195188,
+        "rxByteCount": 200869033,
+        "txByteCount": 201865388,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    }
+  ],
+  "receiver_lag_series": {
+    "receiver-1": [
+      [
+        221858.260515166,
+        54.81176433276312
+      ],
+      [
+        221859.305519458,
+        39.4284302807109
+      ],
+      [
+        221860.355226041,
+        48.76061284675637
+      ],
+      [
+        221861.393348583,
+        24.961640504385457
+      ],
+      [
+        221862.451556125,
+        24.799916580432523
+      ],
+      [
+        221863.500747666,
+        23.272208344947217
+      ],
+      [
+        221864.549604583,
+        31.797572308418694
+      ],
+      [
+        221865.597856333,
+        38.944728891835666
+      ],
+      [
+        221866.647315333,
+        23.992792461976364
+      ],
+      [
+        221867.692161125,
+        25.38289810849983
+      ],
+      [
+        221868.741650791,
+        22.45048380529147
+      ],
+      [
+        221869.791168875,
+        37.14231439625519
+      ],
+      [
+        221870.828092875,
+        23.63783779249752
+      ],
+      [
+        221871.8875475,
+        24.744107051332776
+      ],
+      [
+        221872.923408958,
+        39.21401965668497
+      ],
+      [
+        221873.987101,
+        22.279828815709834
+      ],
+      [
+        221875.032698625,
+        24.036487803262844
+      ],
+      [
+        221876.072360416,
+        23.60022582525562
+      ],
+      [
+        221877.113173833,
+        24.89229342512681
+      ],
+      [
+        221878.182032916,
+        21.942322440494536
+      ],
+      [
+        221879.227156375,
+        22.403791936770176
+      ],
+      [
+        221880.229945166,
+        23.7693394910616
+      ],
+      [
+        221881.232479041,
+        14.545259494547281
+      ],
+      [
+        221882.233875583,
+        14.16997556545084
+      ],
+      [
+        221883.290377541,
+        41.34498549301179
+      ],
+      [
+        221884.293303416,
+        13.916320797452045
+      ],
+      [
+        221885.325317,
+        16.864968217009846
+      ],
+      [
+        221886.421592416,
+        21.632649796631995
+      ],
+      [
+        221887.43787275,
+        0.7989268179107967
+      ]
+    ],
+    "receiver-0": [
+      [
+        221858.260515541,
+        54.811801500138586
+      ],
+      [
+        221859.3059685,
+        39.472992420972105
+      ],
+      [
+        221860.355226333,
+        48.7606419435395
+      ],
+      [
+        221861.393790625,
+        25.00544227045492
+      ],
+      [
+        221862.451580625,
+        24.802444841585384
+      ],
+      [
+        221863.500530166,
+        23.25051006031765
+      ],
+      [
+        221864.549604583,
+        31.797572308418694
+      ],
+      [
+        221865.597752583,
+        38.93443650309371
+      ],
+      [
+        221866.647264583,
+        23.987762730416648
+      ],
+      [
+        221867.692162083,
+        25.38299422311036
+      ],
+      [
+        221868.734846833,
+        21.770061502256794
+      ],
+      [
+        221869.79104425,
+        37.129735071179766
+      ],
+      [
+        221870.82349,
+        23.179884013300125
+      ],
+      [
+        221871.881659333,
+        24.160338082771887
+      ],
+      [
+        221872.923170166,
+        39.18986124796834
+      ],
+      [
+        221873.987103375,
+        22.280065131423726
+      ],
+      [
+        221875.032698291,
+        24.036454328391073
+      ],
+      [
+        221876.072403333,
+        23.60446672306125
+      ],
+      [
+        221877.111414583,
+        24.717867766244353
+      ],
+      [
+        221878.181445416,
+        21.883616033655017
+      ],
+      [
+        221879.221118375,
+        22.799638098315427
+      ],
+      [
+        221880.236825791,
+        24.46181344350407
+      ],
+      [
+        221881.326303833,
+        20.86458809441092
+      ],
+      [
+        221882.339353041,
+        22.796239912102465
+      ],
+      [
+        221883.42219325,
+        23.399164057303096
+      ],
+      [
+        221884.47193325,
+        22.95702986541164
+      ],
+      [
+        221885.518510875,
+        30.019956726708187
+      ],
+      [
+        221886.580867333,
+        26.46742293097941
+      ],
+      [
+        221887.620668416,
+        0.0
+      ]
+    ]
+  },
+  "queue_names": [],
+  "queues_empty": true,
+  "clean_shutdown": true,
+  "interrupted": false,
+  "guardrail": false
+}

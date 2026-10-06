@@ -1,0 +1,1422 @@
+{
+  "seconds": 30,
+  "rate": 550.0,
+  "mode": "direct",
+  "publishers": 4,
+  "fanout": 5,
+  "payload_bytes": 1024,
+  "workers": {
+    "publisher-1": {
+      "event": "stopped",
+      "id": "publisher-1",
+      "role": "publisher",
+      "t": 236484.509464583,
+      "warmup": {
+        "attempted": 1374,
+        "submitted": 1374,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 1627,
+        "submitted": 1626,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 834,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 4.5,
+      "cpu": 2.2,
+      "network_tx_bytes": 20918272,
+      "network_rx_bytes": 56109056,
+      "measurement_done": false,
+      "clean_shutdown": false
+    },
+    "publisher-0": {
+      "event": "stopped",
+      "id": "publisher-0",
+      "role": "publisher",
+      "t": 236509.410037541,
+      "warmup": {
+        "attempted": 1374,
+        "submitted": 1374,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 1634,
+        "submitted": 1634,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 4.6,
+      "cpu": 22.6,
+      "network_tx_bytes": 28712960,
+      "network_rx_bytes": 72748032,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "publisher-2": {
+      "event": "stopped",
+      "id": "publisher-2",
+      "role": "publisher",
+      "t": 236509.410575291,
+      "warmup": {
+        "attempted": 1374,
+        "submitted": 1374,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 1635,
+        "submitted": 1635,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 4.7,
+      "cpu": 81.6,
+      "network_tx_bytes": 28677120,
+      "network_rx_bytes": 72742912,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "publisher-3": {
+      "event": "stopped",
+      "id": "publisher-3",
+      "role": "publisher",
+      "t": 236509.40793275,
+      "warmup": {
+        "attempted": 1374,
+        "submitted": 1374,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 1635,
+        "submitted": 1635,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 4.7,
+      "cpu": 2.8,
+      "network_tx_bytes": 28669952,
+      "network_rx_bytes": 72741888,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "receiver-2": {
+      "event": "stopped",
+      "id": "receiver-2",
+      "role": "receiver",
+      "t": 236509.789183416,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5496,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5496,
+        "latency_sum_ns": 20669765803131,
+        "latency_max_ns": 8158022750
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5696,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5696,
+        "latency_sum_ns": 50091126641820,
+        "latency_max_ns": 22981515333
+      },
+      "max_cpu": 3.7,
+      "cpu": 1.8,
+      "network_tx_bytes": 28901376,
+      "network_rx_bytes": 72766464,
+      "measurement_done": false,
+      "clean_shutdown": true
+    },
+    "receiver-0": {
+      "event": "stopped",
+      "id": "receiver-0",
+      "role": "receiver",
+      "t": 236509.782942416,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5496,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5496,
+        "latency_sum_ns": 20678349270869,
+        "latency_max_ns": 8157869916
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5696,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5696,
+        "latency_sum_ns": 50006538069395,
+        "latency_max_ns": 22721717417
+      },
+      "max_cpu": 3.5,
+      "cpu": 4.0,
+      "network_tx_bytes": 28901376,
+      "network_rx_bytes": 72766464,
+      "measurement_done": false,
+      "clean_shutdown": true
+    },
+    "receiver-1": {
+      "event": "stopped",
+      "id": "receiver-1",
+      "role": "receiver",
+      "t": 236509.75888325,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5496,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5496,
+        "latency_sum_ns": 20646475711740,
+        "latency_max_ns": 8154797375
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5696,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5696,
+        "latency_sum_ns": 50066779038452,
+        "latency_max_ns": 22942639208
+      },
+      "max_cpu": 3.4,
+      "cpu": 2.6,
+      "network_tx_bytes": 28850176,
+      "network_rx_bytes": 72764416,
+      "measurement_done": false,
+      "clean_shutdown": true
+    },
+    "receiver-3": {
+      "event": "stopped",
+      "id": "receiver-3",
+      "role": "receiver",
+      "t": 236509.778585125,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5496,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5496,
+        "latency_sum_ns": 20635657251910,
+        "latency_max_ns": 8150611750
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5696,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5696,
+        "latency_sum_ns": 49996357325614,
+        "latency_max_ns": 22883024542
+      },
+      "max_cpu": 3.5,
+      "cpu": 1.9,
+      "network_tx_bytes": 28798976,
+      "network_rx_bytes": 72756224,
+      "measurement_done": false,
+      "clean_shutdown": true
+    },
+    "receiver-4": {
+      "event": "stopped",
+      "id": "receiver-4",
+      "role": "receiver",
+      "t": 236509.779485875,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5496,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5496,
+        "latency_sum_ns": 20691184165893,
+        "latency_max_ns": 8158194875
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5696,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5696,
+        "latency_sum_ns": 50018426800888,
+        "latency_max_ns": 22721575459
+      },
+      "max_cpu": 3.4,
+      "cpu": 3.4,
+      "network_tx_bytes": 28816384,
+      "network_rx_bytes": 72758272,
+      "measurement_done": false,
+      "clean_shutdown": true
+    }
+  },
+  "errors": [
+    "PublisherOverflowError",
+    "RuntimeError:stage_failed"
+  ],
+  "telemetry": [
+    {
+      "t": 236469.718203083,
+      "vpn": {
+        "dataRxMsgCount": 462327,
+        "dataTxMsgCount": 1464028,
+        "dataRxByteCount": 844279259,
+        "dataTxByteCount": 6049005236,
+        "discardedRxMsgCount": 4851,
+        "discardedTxMsgCount": 3809,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-339358a232-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q02": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q03": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q04": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q05": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q06": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q07": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q08": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q09": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q10": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q11": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q12": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q13": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q14": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q15": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q16": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q17": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q18": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q19": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 236476.637093291,
+      "vpn": {
+        "dataRxMsgCount": 463467,
+        "dataTxMsgCount": 1469728,
+        "dataRxByteCount": 845505899,
+        "dataTxByteCount": 6055138436,
+        "discardedRxMsgCount": 4851,
+        "discardedTxMsgCount": 3809,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-339358a232-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q02": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q03": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q04": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q05": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q06": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q07": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q08": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q09": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q10": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q11": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q12": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q13": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q14": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q15": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q16": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q17": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q18": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q19": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 236481.475389291,
+      "vpn": {
+        "dataRxMsgCount": 464477,
+        "dataTxMsgCount": 1474778,
+        "dataRxByteCount": 846592659,
+        "dataTxByteCount": 6060572236,
+        "discardedRxMsgCount": 4851,
+        "discardedTxMsgCount": 3809,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-339358a232-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q02": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q03": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q04": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q05": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q06": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q07": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q08": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q09": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q10": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q11": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q12": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q13": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q14": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q15": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q16": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q17": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q18": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q19": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 236484.674404833,
+      "vpn": {
+        "dataRxMsgCount": 465404,
+        "dataTxMsgCount": 1479413,
+        "dataRxByteCount": 847590111,
+        "dataTxByteCount": 6065559496,
+        "discardedRxMsgCount": 4851,
+        "discardedTxMsgCount": 3809,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-339358a232-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q02": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q03": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q04": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q05": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q06": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q07": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q08": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q09": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q10": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q11": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q12": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q13": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q14": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q15": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q16": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q17": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q18": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q19": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    }
+  ],
+  "receiver_lag_series": {
+    "receiver-2": [
+      [
+        236470.338238041,
+        303.36555394947595
+      ],
+      [
+        236471.344461208,
+        271.47272268766426
+      ],
+      [
+        236472.347617166,
+        534.2870015024341
+      ],
+      [
+        236473.359454416,
+        911.6579509014807
+      ],
+      [
+        236474.387663458,
+        1423.0775329264306
+      ],
+      [
+        236475.418062625,
+        1989.7971063874384
+      ],
+      [
+        236476.505642041,
+        2410.0557157811727
+      ],
+      [
+        236477.541873166,
+        2819.748789666465
+      ],
+      [
+        236478.58775225,
+        3110.060204888633
+      ],
+      [
+        236479.604287,
+        3433.1567638123934
+      ],
+      [
+        236480.630022875,
+        3792.2707902347793
+      ]
+    ],
+    "receiver-0": [
+      [
+        236470.35312325,
+        311.5456938857832
+      ],
+      [
+        236471.355704958,
+        292.65821210374077
+      ],
+      [
+        236472.378835666,
+        548.4530051422257
+      ],
+      [
+        236473.429090916,
+        948.9532683760324
+      ],
+      [
+        236474.490158375,
+        1479.434286820784
+      ],
+      [
+        236475.519047833,
+        2045.3722930504046
+      ],
+      [
+        236476.571938166,
+        2445.4941341295043
+      ],
+      [
+        236477.589261916,
+        2844.81145781123
+      ],
+      [
+        236478.695974,
+        3153.6034156885553
+      ],
+      [
+        236479.709937041,
+        3452.2396761760565
+      ],
+      [
+        236480.748284833,
+        3827.340191005146
+      ]
+    ],
+    "receiver-1": [
+      [
+        236470.43692425,
+        307.5983832723125
+      ],
+      [
+        236471.437848208,
+        310.84742423435375
+      ],
+      [
+        236472.449171458,
+        582.1282926076169
+      ],
+      [
+        236473.469078791,
+        944.9438676779819
+      ],
+      [
+        236474.491263708,
+        1480.0420533538754
+      ],
+      [
+        236475.539297833,
+        2056.5164749782784
+      ],
+      [
+        236476.610003833,
+        2467.41621214583
+      ],
+      [
+        236477.634731708,
+        2855.8187453928394
+      ],
+      [
+        236478.699007,
+        3156.2721611812876
+      ],
+      [
+        236479.722954125,
+        3459.3960401582117
+      ],
+      [
+        236480.751930083,
+        3829.3458590713135
+      ]
+    ],
+    "receiver-3": [
+      [
+        236470.316762833,
+        291.56389187916636
+      ],
+      [
+        236471.3202105,
+        264.13175568360975
+      ],
+      [
+        236472.331320833,
+        530.3261958411306
+      ],
+      [
+        236473.359503958,
+        911.6851956142657
+      ],
+      [
+        236474.447741083,
+        1456.1111703465308
+      ],
+      [
+        236475.481787541,
+        2024.8668376183564
+      ],
+      [
+        236476.50486125,
+        2409.6265686830257
+      ],
+      [
+        236477.589663958,
+        2845.0325712036374
+      ],
+      [
+        236478.594357833,
+        3112.694572486702
+      ],
+      [
+        236479.599318416,
+        3430.425200002741
+      ],
+      [
+        236480.629856375,
+        3792.1791795725285
+      ]
+    ],
+    "receiver-4": [
+      [
+        236470.340033666,
+        304.35233644731636
+      ],
+      [
+        236471.342082291,
+        273.1640164298535
+      ],
+      [
+        236472.345714208,
+        535.2406288721324
+      ],
+      [
+        236473.359288208,
+        911.5665478630369
+      ],
+      [
+        236474.387259291,
+        1422.8553019920496
+      ],
+      [
+        236475.425529,
+        1993.9060763370453
+      ],
+      [
+        236476.4995925,
+        2406.730699336469
+      ],
+      [
+        236477.589515583,
+        2844.9509685395406
+      ],
+      [
+        236478.695594791,
+        3154.3947762849584
+      ],
+      [
+        236479.714192583,
+        3454.5792329752767
+      ],
+      [
+        236480.752343083,
+        3829.573097509383
+      ]
+    ]
+  },
+  "counter_bracket": [
+    {
+      "t": 236469.718203083,
+      "vpn": {
+        "dataRxMsgCount": 462327,
+        "dataTxMsgCount": 1464028,
+        "dataRxByteCount": 844279259,
+        "dataTxByteCount": 6049005236,
+        "discardedRxMsgCount": 4851,
+        "discardedTxMsgCount": 3809,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-339358a232-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q02": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q03": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q04": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q05": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q06": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q07": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q08": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q09": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q10": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q11": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q12": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q13": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q14": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q15": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q16": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q17": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q18": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q19": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    }
+  ],
+  "queue_names": [],
+  "queues_empty": true,
+  "clean_shutdown": false,
+  "interrupted": false,
+  "guardrail": false
+}

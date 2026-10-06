@@ -1,0 +1,402 @@
+{
+  "seconds": 30,
+  "rate": 100.0,
+  "mode": "direct",
+  "publishers": 1,
+  "fanout": 1,
+  "payload_bytes": 1024,
+  "workers": {
+    "publisher-0": {
+      "event": "stopped",
+      "id": "publisher-0",
+      "role": "publisher",
+      "t": 221598.767389,
+      "warmup": {
+        "attempted": 99,
+        "submitted": 99,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 2999,
+        "submitted": 2999,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 7.2,
+      "cpu": 8.0,
+      "network_tx_bytes": 5704704,
+      "network_rx_bytes": 8012800,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "receiver-0": {
+      "event": "stopped",
+      "id": "receiver-0",
+      "role": "receiver",
+      "t": 221598.956173,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 99,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 99,
+        "latency_sum_ns": 17890814375,
+        "latency_max_ns": 283213208
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 2999,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 2999,
+        "latency_sum_ns": 523282162081,
+        "latency_max_ns": 289014750
+      },
+      "max_cpu": 4.3,
+      "cpu": 5.4,
+      "network_tx_bytes": 5703680,
+      "network_rx_bytes": 8012800,
+      "measurement_done": false,
+      "clean_shutdown": true
+    }
+  },
+  "errors": [],
+  "telemetry": [
+    {
+      "t": 221565.535858708,
+      "vpn": {
+        "rxMsgCount": 181484,
+        "txMsgCount": 181476,
+        "rxByteCount": 191866800,
+        "txByteCount": 191867533,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221568.291293125,
+      "vpn": {
+        "rxMsgCount": 181719,
+        "txMsgCount": 181711,
+        "rxByteCount": 192117532,
+        "txByteCount": 192118281,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221570.948364291,
+      "vpn": {
+        "rxMsgCount": 181912,
+        "txMsgCount": 181904,
+        "rxByteCount": 192325200,
+        "txByteCount": 192325949,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221573.653179041,
+      "vpn": {
+        "rxMsgCount": 182221,
+        "txMsgCount": 182213,
+        "rxByteCount": 192655556,
+        "txByteCount": 192656321,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221576.354791708,
+      "vpn": {
+        "rxMsgCount": 182520,
+        "txMsgCount": 182512,
+        "rxByteCount": 192975152,
+        "txByteCount": 192975933,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221579.006780625,
+      "vpn": {
+        "rxMsgCount": 182725,
+        "txMsgCount": 182717,
+        "rxByteCount": 193193604,
+        "txByteCount": 193194401,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221581.771239833,
+      "vpn": {
+        "rxMsgCount": 183026,
+        "txMsgCount": 183019,
+        "rxByteCount": 193515352,
+        "txByteCount": 193517241,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221584.427329625,
+      "vpn": {
+        "rxMsgCount": 183329,
+        "txMsgCount": 183321,
+        "rxByteCount": 193839252,
+        "txByteCount": 193840081,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221587.222985458,
+      "vpn": {
+        "rxMsgCount": 183630,
+        "txMsgCount": 183622,
+        "rxByteCount": 194161000,
+        "txByteCount": 194161845,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221590.011340541,
+      "vpn": {
+        "rxMsgCount": 183831,
+        "txMsgCount": 183823,
+        "rxByteCount": 194376212,
+        "txByteCount": 194377065,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221592.672396291,
+      "vpn": {
+        "rxMsgCount": 184129,
+        "txMsgCount": 184121,
+        "rxByteCount": 194694732,
+        "txByteCount": 194695601,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221595.412322041,
+      "vpn": {
+        "rxMsgCount": 184436,
+        "txMsgCount": 184428,
+        "rxByteCount": 195022936,
+        "txByteCount": 195023821,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221596.269226958,
+      "vpn": {
+        "rxMsgCount": 184503,
+        "txMsgCount": 184495,
+        "rxByteCount": 195093964,
+        "txByteCount": 195094857,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    }
+  ],
+  "receiver_lag_series": {
+    "receiver-0": [
+      [
+        221568.29135875,
+        0
+      ],
+      [
+        221570.948651791,
+        84
+      ],
+      [
+        221573.653444666,
+        0
+      ],
+      [
+        221576.355117583,
+        0
+      ],
+      [
+        221579.006934208,
+        84
+      ],
+      [
+        221581.771357625,
+        0
+      ],
+      [
+        221584.427497958,
+        0
+      ],
+      [
+        221587.223133416,
+        80
+      ],
+      [
+        221590.011658875,
+        0
+      ],
+      [
+        221592.672577958,
+        60
+      ],
+      [
+        221595.412736875,
+        46
+      ]
+    ]
+  },
+  "queue_names": [],
+  "queues_empty": true,
+  "clean_shutdown": true,
+  "interrupted": false,
+  "guardrail": false
+}

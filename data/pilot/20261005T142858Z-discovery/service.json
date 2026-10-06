@@ -1,0 +1,103 @@
+{
+  "eventBrokerVersion": "10.26",
+  "managementProtocols": [
+    {
+      "endpointSchemes": [
+        "https"
+      ],
+      "name": "SolAdmin Read-Only"
+    },
+    {
+      "endpointSchemes": [
+        "https"
+      ],
+      "name": "Web UI"
+    },
+    {
+      "endpointSchemes": [
+        "https"
+      ],
+      "name": "SEMP"
+    },
+    {
+      "endpointSchemes": [
+        "https"
+      ],
+      "name": "SEMP Read-Only"
+    },
+    {
+      "endpointSchemes": [
+        "https"
+      ],
+      "name": "SolAdmin Manager"
+    },
+    {
+      "endpointSchemes": [
+        "https"
+      ],
+      "name": "Web UI Manager"
+    },
+    {
+      "endpointSchemes": [
+        "https"
+      ],
+      "name": "SolAdmin"
+    },
+    {
+      "endpointSchemes": [
+        "https"
+      ],
+      "name": "Web UI Read-Only"
+    },
+    {
+      "endpointSchemes": [
+        "https"
+      ],
+      "name": "SEMP Manager"
+    }
+  ],
+  "messagingProtocols": [
+    {
+      "endpointSchemes": [
+        "ssl",
+        "wss"
+      ],
+      "name": "MQTT"
+    },
+    {
+      "endpointSchemes": [
+        "smfs"
+      ],
+      "name": "JMS"
+    },
+    {
+      "endpointSchemes": [
+        "https"
+      ],
+      "name": "REST"
+    },
+    {
+      "endpointSchemes": [
+        "amqps"
+      ],
+      "name": "AMQP"
+    },
+    {
+      "endpointSchemes": [
+        "tcps"
+      ],
+      "name": "SMF"
+    },
+    {
+      "endpointSchemes": [
+        "wss"
+      ],
+      "name": "Web Messaging"
+    }
+  ],
+  "msgVpnName": "msgvpn-avfk5i15jtm",
+  "name": "swlb-20260928-121042-c-data-1k",
+  "serviceClassId": "enterprise-1k-standalone",
+  "serviceId": "avfk5i15jtm",
+  "userId": "usfos7cfqge"
+}

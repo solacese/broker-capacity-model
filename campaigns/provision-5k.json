@@ -1,0 +1,7 @@
+{
+  "name": "bcm-20261005-5k",
+  "serviceClassId": "ENTERPRISE_5K_STANDALONE",
+  "datacenterId": "eks-us-east-1a",
+  "eventBrokerVersion": "10.26",
+  "environmentId": "ccucmdicy0i"
+}

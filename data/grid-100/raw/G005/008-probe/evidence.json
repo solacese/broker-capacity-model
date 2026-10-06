@@ -1,0 +1,1610 @@
+{
+  "seconds": 30,
+  "rate": 550.0,
+  "mode": "direct",
+  "publishers": 4,
+  "fanout": 5,
+  "payload_bytes": 1024,
+  "workers": {
+    "publisher-1": {
+      "event": "stopped",
+      "id": "publisher-1",
+      "role": "publisher",
+      "t": 235865.125148666,
+      "warmup": {
+        "attempted": 1374,
+        "submitted": 1374,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 1412,
+        "submitted": 1412,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 6.7,
+      "cpu": 4.8,
+      "network_tx_bytes": 16616448,
+      "network_rx_bytes": 73349120,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "publisher-3": {
+      "event": "stopped",
+      "id": "publisher-3",
+      "role": "publisher",
+      "t": 235865.127852833,
+      "warmup": {
+        "attempted": 1374,
+        "submitted": 1374,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 1412,
+        "submitted": 1412,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 5.9,
+      "cpu": 4.4,
+      "network_tx_bytes": 16615424,
+      "network_rx_bytes": 73349120,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "publisher-0": {
+      "event": "stopped",
+      "id": "publisher-0",
+      "role": "publisher",
+      "t": 235865.126445333,
+      "warmup": {
+        "attempted": 1374,
+        "submitted": 1374,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 1412,
+        "submitted": 1412,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 5.6,
+      "cpu": 5.6,
+      "network_tx_bytes": 16616448,
+      "network_rx_bytes": 73349120,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "publisher-2": {
+      "event": "stopped",
+      "id": "publisher-2",
+      "role": "publisher",
+      "t": 235865.127939041,
+      "warmup": {
+        "attempted": 1374,
+        "submitted": 1374,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 1412,
+        "submitted": 1412,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 5.3,
+      "cpu": 5.5,
+      "network_tx_bytes": 16616448,
+      "network_rx_bytes": 73349120,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "receiver-0": {
+      "event": "stopped",
+      "id": "receiver-0",
+      "role": "receiver",
+      "t": 235865.277642708,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5496,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5496,
+        "latency_sum_ns": 7672515303510,
+        "latency_max_ns": 3185829416
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5648,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5648,
+        "latency_sum_ns": 23177043177174,
+        "latency_max_ns": 9779789167
+      },
+      "max_cpu": 6.2,
+      "cpu": 7.3,
+      "network_tx_bytes": 16618496,
+      "network_rx_bytes": 73353216,
+      "measurement_done": false,
+      "clean_shutdown": true
+    },
+    "receiver-3": {
+      "event": "stopped",
+      "id": "receiver-3",
+      "role": "receiver",
+      "t": 235865.273398583,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5496,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5496,
+        "latency_sum_ns": 6477182507781,
+        "latency_max_ns": 2911880792
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5648,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5648,
+        "latency_sum_ns": 23228075276286,
+        "latency_max_ns": 9785523583
+      },
+      "max_cpu": 6.2,
+      "cpu": 11.1,
+      "network_tx_bytes": 16618496,
+      "network_rx_bytes": 73353216,
+      "measurement_done": false,
+      "clean_shutdown": true
+    },
+    "receiver-4": {
+      "event": "stopped",
+      "id": "receiver-4",
+      "role": "receiver",
+      "t": 235865.281085958,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5496,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5496,
+        "latency_sum_ns": 6766422177980,
+        "latency_max_ns": 2906692542
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5648,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5648,
+        "latency_sum_ns": 23245850631303,
+        "latency_max_ns": 9784621542
+      },
+      "max_cpu": 6.3,
+      "cpu": 10.2,
+      "network_tx_bytes": 16618496,
+      "network_rx_bytes": 73353216,
+      "measurement_done": false,
+      "clean_shutdown": true
+    },
+    "receiver-2": {
+      "event": "stopped",
+      "id": "receiver-2",
+      "role": "receiver",
+      "t": 235865.271582125,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5496,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5496,
+        "latency_sum_ns": 7553453946312,
+        "latency_max_ns": 2929579625
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5648,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5648,
+        "latency_sum_ns": 23426993714137,
+        "latency_max_ns": 9785824500
+      },
+      "max_cpu": 6.3,
+      "cpu": 10.9,
+      "network_tx_bytes": 16618496,
+      "network_rx_bytes": 73353216,
+      "measurement_done": false,
+      "clean_shutdown": true
+    },
+    "receiver-1": {
+      "event": "stopped",
+      "id": "receiver-1",
+      "role": "receiver",
+      "t": 235865.271672791,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5496,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5496,
+        "latency_sum_ns": 6891984366272,
+        "latency_max_ns": 2906421542
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 5648,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 5648,
+        "latency_sum_ns": 23324377900804,
+        "latency_max_ns": 9785614417
+      },
+      "max_cpu": 6.7,
+      "cpu": 2.7,
+      "network_tx_bytes": 16618496,
+      "network_rx_bytes": 73353216,
+      "measurement_done": false,
+      "clean_shutdown": true
+    }
+  },
+  "errors": [],
+  "telemetry": [
+    {
+      "t": 235843.322507833,
+      "vpn": {
+        "dataRxMsgCount": 434473,
+        "dataTxMsgCount": 1398278,
+        "dataRxByteCount": 753797126,
+        "dataTxByteCount": 5928570124,
+        "discardedRxMsgCount": 1101,
+        "discardedTxMsgCount": 815,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q02": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q03": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q04": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q05": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q06": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q07": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q08": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q09": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q10": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q11": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q12": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q13": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q14": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q15": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q16": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q17": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q18": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q19": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 235848.640818916,
+      "vpn": {
+        "dataRxMsgCount": 435691,
+        "dataTxMsgCount": 1404368,
+        "dataRxByteCount": 755107694,
+        "dataTxByteCount": 5935122964,
+        "discardedRxMsgCount": 1101,
+        "discardedTxMsgCount": 815,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q02": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q03": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q04": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q05": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q06": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q07": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q08": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q09": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q10": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q11": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q12": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q13": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q14": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q15": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q16": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q17": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q18": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q19": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 235853.397748833,
+      "vpn": {
+        "dataRxMsgCount": 437504,
+        "dataTxMsgCount": 1413433,
+        "dataRxByteCount": 757058482,
+        "dataTxByteCount": 5944876904,
+        "discardedRxMsgCount": 1101,
+        "discardedTxMsgCount": 815,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q02": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q03": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q04": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q05": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q06": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q07": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q08": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q09": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q10": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q11": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q12": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q13": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q14": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q15": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q16": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q17": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q18": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q19": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 235857.834905083,
+      "vpn": {
+        "dataRxMsgCount": 438159,
+        "dataTxMsgCount": 1416708,
+        "dataRxByteCount": 757763262,
+        "dataTxByteCount": 5948400804,
+        "discardedRxMsgCount": 1101,
+        "discardedTxMsgCount": 815,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q02": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q03": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q04": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q05": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q06": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q07": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q08": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q09": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q10": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q11": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q12": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q13": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q14": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q15": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q16": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q17": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q18": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q19": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    }
+  ],
+  "receiver_lag_series": {
+    "receiver-0": [
+      [
+        235843.361215583,
+        86.06234610517869
+      ],
+      [
+        235844.445427875,
+        327.14992033313956
+      ],
+      [
+        235845.44656525,
+        430.7687473634121
+      ],
+      [
+        235846.450034958,
+        688.1705846794111
+      ],
+      [
+        235847.489328458,
+        1045.4934694477465
+      ],
+      [
+        235848.490323833,
+        1291.0561793057223
+      ],
+      [
+        235849.491765625,
+        1512.9301131503025
+      ],
+      [
+        235850.531643875,
+        1691.5700748799168
+      ],
+      [
+        235851.548460208,
+        1817.6918238964554
+      ],
+      [
+        235852.554694416,
+        2000.2891755568198
+      ],
+      [
+        235853.559400458,
+        2215.7591738617593
+      ],
+      [
+        235854.5655615,
+        2052.0
+      ],
+      [
+        235855.656711958,
+        1962.0
+      ],
+      [
+        235856.743723666,
+        1947.0
+      ],
+      [
+        235857.766890041,
+        1363.0
+      ],
+      [
+        235858.803917791,
+        994.0
+      ],
+      [
+        235859.807835916,
+        659.0
+      ],
+      [
+        235860.858911458,
+        366.0
+      ],
+      [
+        235861.882296291,
+        148.0
+      ],
+      [
+        235862.934817625,
+        0.0
+      ],
+      [
+        235863.968423875,
+        0.0
+      ],
+      [
+        235865.002974666,
+        0.0
+      ]
+    ],
+    "receiver-3": [
+      [
+        235843.479403625,
+        102.34001453174129
+      ],
+      [
+        235844.548006375,
+        383.5572574701562
+      ],
+      [
+        235845.601090125,
+        479.8031048030798
+      ],
+      [
+        235846.654929375,
+        796.8450483608854
+      ],
+      [
+        235847.66174725,
+        1107.3265167101345
+      ],
+      [
+        235848.665300208,
+        1320.3111497028221
+      ],
+      [
+        235849.716957583,
+        1557.7279917808419
+      ],
+      [
+        235850.723953375,
+        1720.3163764959868
+      ],
+      [
+        235851.740999625,
+        1834.5997296535716
+      ],
+      [
+        235852.782356791,
+        2021.5598358168554
+      ],
+      [
+        235853.799176083,
+        2190.3890720008703
+      ],
+      [
+        235854.820327208,
+        2013.0
+      ],
+      [
+        235855.867470833,
+        1962.0
+      ],
+      [
+        235856.886984625,
+        1892.0
+      ],
+      [
+        235857.887872916,
+        1315.0
+      ],
+      [
+        235858.924980208,
+        984.0
+      ],
+      [
+        235859.945963708,
+        629.0
+      ],
+      [
+        235860.995277833,
+        366.0
+      ],
+      [
+        235862.017506583,
+        124.0
+      ],
+      [
+        235863.030185041,
+        0.0
+      ],
+      [
+        235864.067546125,
+        0.0
+      ],
+      [
+        235865.102679625,
+        0.0
+      ]
+    ],
+    "receiver-4": [
+      [
+        235843.47357075,
+        100.7854692216751
+      ],
+      [
+        235844.546913958,
+        382.9565063118075
+      ],
+      [
+        235845.601075333,
+        479.7949613882238
+      ],
+      [
+        235846.654931208,
+        796.8460559061411
+      ],
+      [
+        235847.6595655,
+        1106.1265235735773
+      ],
+      [
+        235848.665347083,
+        1320.3369345246742
+      ],
+      [
+        235849.716940541,
+        1557.7186236248922
+      ],
+      [
+        235850.727607041,
+        1707.325432760776
+      ],
+      [
+        235851.741249625,
+        1834.7372776939428
+      ],
+      [
+        235852.782335083,
+        2021.5480216910637
+      ],
+      [
+        235853.799644625,
+        2190.4021130549927
+      ],
+      [
+        235854.818225958,
+        2013.0
+      ],
+      [
+        235855.86664175,
+        1962.0
+      ],
+      [
+        235856.886347916,
+        1907.0
+      ],
+      [
+        235857.887876458,
+        1315.0
+      ],
+      [
+        235858.9223885,
+        984.0
+      ],
+      [
+        235859.945622041,
+        629.0
+      ],
+      [
+        235860.995025458,
+        366.0
+      ],
+      [
+        235862.017641,
+        124.0
+      ],
+      [
+        235863.038415125,
+        0.0
+      ],
+      [
+        235864.072713375,
+        0.0
+      ],
+      [
+        235865.105989125,
+        0.0
+      ]
+    ],
+    "receiver-2": [
+      [
+        235843.471530583,
+        100.32428069677619
+      ],
+      [
+        235844.565431583,
+        397.1398747111282
+      ],
+      [
+        235845.628189333,
+        494.72196412810035
+      ],
+      [
+        235846.655821166,
+        797.335242300499
+      ],
+      [
+        235847.663593041,
+        1108.3417276841164
+      ],
+      [
+        235848.665040458,
+        1320.1682674340746
+      ],
+      [
+        235849.716969,
+        1557.7342678129016
+      ],
+      [
+        235850.72782825,
+        1722.4470698692076
+      ],
+      [
+        235851.777390666,
+        1854.6217965289015
+      ],
+      [
+        235852.784197333,
+        2022.5615126504817
+      ],
+      [
+        235853.801499083,
+        2190.4537286797695
+      ],
+      [
+        235854.825840958,
+        2013.0
+      ],
+      [
+        235855.866617,
+        1962.0
+      ],
+      [
+        235856.868861875,
+        1947.0
+      ],
+      [
+        235857.895799791,
+        1377.0
+      ],
+      [
+        235858.90524175,
+        1024.0
+      ],
+      [
+        235859.9477695,
+        629.0
+      ],
+      [
+        235860.997206916,
+        366.0
+      ],
+      [
+        235862.000060458,
+        133.0
+      ],
+      [
+        235863.030532166,
+        0.0
+      ],
+      [
+        235864.057799666,
+        0.0
+      ],
+      [
+        235865.090959291,
+        0.0
+      ]
+    ],
+    "receiver-1": [
+      [
+        235843.638749916,
+        158.55709131615885
+      ],
+      [
+        235844.705440291,
+        337.14494035929147
+      ],
+      [
+        235845.722655375,
+        480.72811844030366
+      ],
+      [
+        235846.723080166,
+        797.3057372463841
+      ],
+      [
+        235847.726353083,
+        1141.8606321563661
+      ],
+      [
+        235848.771402166,
+        1362.6753019511361
+      ],
+      [
+        235849.822518916,
+        1583.7560669803884
+      ],
+      [
+        235850.867498166,
+        1763.2479382549773
+      ],
+      [
+        235851.920046166,
+        1873.1097398354132
+      ],
+      [
+        235852.939324125,
+        2076.986053235886
+      ],
+      [
+        235853.99533375,
+        2180.8487807073307
+      ],
+      [
+        235855.058831,
+        1977.0
+      ],
+      [
+        235856.076289666,
+        1962.0
+      ],
+      [
+        235857.105042625,
+        1848.0
+      ],
+      [
+        235858.194355625,
+        1260.0
+      ],
+      [
+        235859.215369583,
+        855.0
+      ],
+      [
+        235860.269957791,
+        505.0
+      ],
+      [
+        235861.332154375,
+        235.0
+      ],
+      [
+        235862.395744791,
+        40.0
+      ],
+      [
+        235863.438464333,
+        0.0
+      ],
+      [
+        235864.475863541,
+        0.0
+      ]
+    ]
+  },
+  "counter_bracket": [
+    {
+      "t": 235843.322507833,
+      "vpn": {
+        "dataRxMsgCount": 434473,
+        "dataTxMsgCount": 1398278,
+        "dataRxByteCount": 753797126,
+        "dataTxByteCount": 5928570124,
+        "discardedRxMsgCount": 1101,
+        "discardedTxMsgCount": 815,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q02": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q03": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q04": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q05": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q06": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q07": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q08": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q09": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q10": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q11": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q12": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q13": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q14": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q15": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q16": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q17": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q18": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-8876e806ac-f20-q19": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    }
+  ],
+  "queue_names": [],
+  "queues_empty": true,
+  "clean_shutdown": true,
+  "interrupted": true,
+  "guardrail": false
+}

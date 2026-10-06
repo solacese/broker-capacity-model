@@ -1,0 +1,631 @@
+{
+  "schema_version": 1,
+  "created_on": "2026-10-05",
+  "seed": 20261005,
+  "purpose": "Design manifest, not an executable load command or evidence of measured capacity",
+  "organization": "seall",
+  "owner_id": "usfos7cfqge",
+  "target": {
+    "name": "bcm-20261005-5k",
+    "service_class": "ENTERPRISE_5K_STANDALONE",
+    "provisioning_authorized": true,
+    "id": "4qn20a1u6ny",
+    "status": "cloud_creation_completed_semp_readiness_pending"
+  },
+  "entry_gates": [
+    "verified isolation and exclusive lease",
+    "reviewed calibrated telemetry",
+    "qualified same-region generators",
+    "fresh matching schema and config snapshot"
+  ],
+  "protocol": {
+    "warmup_seconds": 60,
+    "measure_seconds": 300,
+    "max_search_stages": 12,
+    "target_relative_bracket_width": 0.1,
+    "boundary_repetitions": 3,
+    "soak_seconds": 900,
+    "queue_and_vpn_spool_stop_fraction": 0.7,
+    "invalid_stage_updates_bracket": false
+  },
+  "baseline": [
+    {
+      "id": "B01",
+      "family": "size",
+      "delivery": "direct",
+      "payload_bytes": 64,
+      "fanout": 1,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "none",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B02",
+      "family": "size",
+      "delivery": "direct",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "none",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B03",
+      "family": "size",
+      "delivery": "direct",
+      "payload_bytes": 10240,
+      "fanout": 1,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "none",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B04",
+      "family": "size",
+      "delivery": "direct",
+      "payload_bytes": 102400,
+      "fanout": 1,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "none",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B05",
+      "family": "size",
+      "delivery": "persistent",
+      "payload_bytes": 64,
+      "fanout": 1,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "exclusive",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B06",
+      "family": "size",
+      "delivery": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "exclusive",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B07",
+      "family": "size",
+      "delivery": "persistent",
+      "payload_bytes": 10240,
+      "fanout": 1,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "exclusive",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B08",
+      "family": "size",
+      "delivery": "persistent",
+      "payload_bytes": 102400,
+      "fanout": 1,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "exclusive",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B09",
+      "family": "fanout",
+      "delivery": "direct",
+      "payload_bytes": 1024,
+      "fanout": 5,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "none",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B10",
+      "family": "fanout",
+      "delivery": "direct",
+      "payload_bytes": 1024,
+      "fanout": 20,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "none",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B11",
+      "family": "fanout",
+      "delivery": "direct",
+      "payload_bytes": 1024,
+      "fanout": 100,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "none",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B12",
+      "family": "fanout",
+      "delivery": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 5,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "exclusive",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B13",
+      "family": "fanout",
+      "delivery": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 20,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "exclusive",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B14",
+      "family": "fanout",
+      "delivery": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 100,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "exclusive",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B15",
+      "family": "size_fanout",
+      "delivery": "direct",
+      "payload_bytes": 10240,
+      "fanout": 20,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "none",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B16",
+      "family": "size_fanout",
+      "delivery": "persistent",
+      "payload_bytes": 10240,
+      "fanout": 20,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "exclusive",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B17",
+      "family": "publisher_concurrency",
+      "delivery": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 10,
+      "consumers_per_destination": 1,
+      "queue_type": "exclusive",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B18",
+      "family": "publisher_concurrency",
+      "delivery": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 50,
+      "consumers_per_destination": 1,
+      "queue_type": "exclusive",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B19",
+      "family": "consumer_concurrency",
+      "delivery": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 1,
+      "consumers_per_destination": 10,
+      "queue_type": "nonexclusive",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B20",
+      "family": "consumer_concurrency",
+      "delivery": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 1,
+      "consumers_per_destination": 50,
+      "queue_type": "nonexclusive",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B21",
+      "family": "partition_skew",
+      "delivery": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 1,
+      "consumers_per_destination": 12,
+      "queue_type": "partitioned",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned",
+      "partitions": 12,
+      "key_cardinality": 10000,
+      "hot_key_fraction": 0
+    },
+    {
+      "id": "B22",
+      "family": "partition_skew",
+      "delivery": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 1,
+      "consumers_per_destination": 12,
+      "queue_type": "partitioned",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned",
+      "partitions": 12,
+      "key_cardinality": 10000,
+      "hot_key_fraction": 0.9
+    },
+    {
+      "id": "B23",
+      "family": "protocol",
+      "delivery": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "exclusive",
+      "ingress_protocol": "AMQP",
+      "egress_protocol": "SMF",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    },
+    {
+      "id": "B24",
+      "family": "protocol",
+      "delivery": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 1,
+      "consumers_per_destination": 1,
+      "queue_type": "exclusive",
+      "ingress_protocol": "SMF",
+      "egress_protocol": "AMQP",
+      "tls": true,
+      "ack": "immediate",
+      "status": "planned"
+    }
+  ],
+  "followup_families": [
+    {
+      "ids": "I01-I08",
+      "family": "partition_skew_and_matched_queue_controls",
+      "max_configurations": 8
+    },
+    {
+      "ids": "I09-I12",
+      "family": "subscription_count_and_wildcards",
+      "max_configurations": 4
+    },
+    {
+      "ids": "I13-I16",
+      "family": "ack_delay_and_window",
+      "max_configurations": 4
+    },
+    {
+      "ids": "I17-I20",
+      "family": "mqtt_direction_qos",
+      "max_configurations": 4
+    },
+    {
+      "ids": "I21-I24",
+      "family": "tracing_selector_depth_burst",
+      "max_configurations": 4
+    }
+  ],
+  "mixtures": [
+    {
+      "id": "M01",
+      "components": [
+        "B01",
+        "B04"
+      ],
+      "capacity_normalized_weights": [
+        0.25,
+        0.75
+      ],
+      "scale": "common_lambda",
+      "status": "planned",
+      "requires": "independently measured axis capacities in same block"
+    },
+    {
+      "id": "M02",
+      "components": [
+        "B01",
+        "B04"
+      ],
+      "capacity_normalized_weights": [
+        0.5,
+        0.5
+      ],
+      "scale": "common_lambda",
+      "status": "planned",
+      "requires": "independently measured axis capacities in same block"
+    },
+    {
+      "id": "M03",
+      "components": [
+        "B01",
+        "B04"
+      ],
+      "capacity_normalized_weights": [
+        0.75,
+        0.25
+      ],
+      "scale": "common_lambda",
+      "status": "planned",
+      "requires": "independently measured axis capacities in same block"
+    },
+    {
+      "id": "M04",
+      "components": [
+        "B02",
+        "B06"
+      ],
+      "capacity_normalized_weights": [
+        0.25,
+        0.75
+      ],
+      "scale": "common_lambda",
+      "status": "planned",
+      "requires": "independently measured axis capacities in same block"
+    },
+    {
+      "id": "M05",
+      "components": [
+        "B02",
+        "B06"
+      ],
+      "capacity_normalized_weights": [
+        0.5,
+        0.5
+      ],
+      "scale": "common_lambda",
+      "status": "planned",
+      "requires": "independently measured axis capacities in same block"
+    },
+    {
+      "id": "M06",
+      "components": [
+        "B02",
+        "B06"
+      ],
+      "capacity_normalized_weights": [
+        0.75,
+        0.25
+      ],
+      "scale": "common_lambda",
+      "status": "planned",
+      "requires": "independently measured axis capacities in same block"
+    },
+    {
+      "id": "M07",
+      "components": [
+        "B06",
+        "B13"
+      ],
+      "capacity_normalized_weights": [
+        0.25,
+        0.75
+      ],
+      "scale": "common_lambda",
+      "status": "planned",
+      "requires": "independently measured axis capacities in same block"
+    },
+    {
+      "id": "M08",
+      "components": [
+        "B06",
+        "B13"
+      ],
+      "capacity_normalized_weights": [
+        0.5,
+        0.5
+      ],
+      "scale": "common_lambda",
+      "status": "planned",
+      "requires": "independently measured axis capacities in same block"
+    },
+    {
+      "id": "M09",
+      "components": [
+        "B06",
+        "B13"
+      ],
+      "capacity_normalized_weights": [
+        0.75,
+        0.25
+      ],
+      "scale": "common_lambda",
+      "status": "planned",
+      "requires": "independently measured axis capacities in same block"
+    },
+    {
+      "id": "M10",
+      "components": [
+        "B10",
+        "B13"
+      ],
+      "capacity_normalized_weights": [
+        0.25,
+        0.75
+      ],
+      "scale": "common_lambda",
+      "status": "planned",
+      "requires": "independently measured axis capacities in same block"
+    },
+    {
+      "id": "M11",
+      "components": [
+        "B10",
+        "B13"
+      ],
+      "capacity_normalized_weights": [
+        0.5,
+        0.5
+      ],
+      "scale": "common_lambda",
+      "status": "planned",
+      "requires": "independently measured axis capacities in same block"
+    },
+    {
+      "id": "M12",
+      "components": [
+        "B10",
+        "B13"
+      ],
+      "capacity_normalized_weights": [
+        0.75,
+        0.25
+      ],
+      "scale": "common_lambda",
+      "status": "planned",
+      "requires": "independently measured axis capacities in same block"
+    }
+  ],
+  "transfer_anchor_ids": [
+    "B01",
+    "B04",
+    "B05",
+    "B08",
+    "B10",
+    "B13",
+    "B21",
+    "B23"
+  ],
+  "later_provisioning_authorized": false,
+  "through_5k_plan": "docs/experiments-through-5k.md",
+  "additional_candidate_ids": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E08",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16"
+  ],
+  "autonomous_first_block": {
+    "max_baseline_configurations": 24,
+    "max_selected_followups": 8,
+    "handoff": "docs/claude-autonomous-campaign.md"
+  }
+}

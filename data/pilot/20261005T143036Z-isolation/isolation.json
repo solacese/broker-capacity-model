@@ -1,0 +1,58 @@
+{
+  "bridges": [],
+  "client_subscriptions": {
+    "#amqp/client/a130b7a998c7e5ff/events-b-subscriber-1.broker-c": [],
+    "#amqp/client/a130b7a99ac7e5e3/events-a-subscriber-1.broker-c": [],
+    "#amqp/client/a130b7a99ec7e5e0/events-a-publisher-1.broker-c": [],
+    "#client": [
+      {
+        "subscriptionTopic": "#MCAST/>"
+      },
+      {
+        "subscriptionTopic": "#SEMP/avfk5i15jtmprimary/>"
+      },
+      {
+        "subscriptionTopic": "#P2P/avfk5i15jtmprimary/#client/>"
+      },
+      {
+        "subscriptionTopic": "#P2P/v:avfk5i15jtmprimary/#client/>"
+      },
+      {
+        "subscriptionTopic": "#SEMP/v:avfk5i15jtmprimary/>"
+      },
+      {
+        "subscriptionTopic": "#P2P/avfk5i15jtmprimary/WnAHbdbR/#client/>"
+      }
+    ]
+  },
+  "dmr_bridges": [],
+  "dmr_clusters": [
+    {
+      "dmrClusterName": "cluster-eks-us-east-1a-jmmqldwprid",
+      "enabled": true
+    }
+  ],
+  "mqtt_sessions": [],
+  "queue_subscriptions": {
+    "swlb-live-20260928-121042.data.baggage-tracking.broker-c.tracking.e1": [
+      {
+        "subscriptionTopic": "swlb-live-20260928-121042/data/baggage-tracking/epoch/1/>"
+      }
+    ],
+    "swlb-live-20260928-121042.data.flight-operations.broker-c.operations.e1": [
+      {
+        "subscriptionTopic": "swlb-live-20260928-121042/data/flight-operations/epoch/1/>"
+      }
+    ],
+    "swlb-neutral-20260928.data.events-a.broker-c.set-a.e1": [
+      {
+        "subscriptionTopic": "swlb-neutral-20260928/data/events-a/epoch/1/>"
+      }
+    ],
+    "swlb-neutral-20260928.data.events-b.broker-c.set-b.e1": [
+      {
+        "subscriptionTopic": "swlb-neutral-20260928/data/events-b/epoch/1/>"
+      }
+    ]
+  }
+}

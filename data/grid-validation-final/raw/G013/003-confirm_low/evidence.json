@@ -1,0 +1,784 @@
+{
+  "seconds": 30,
+  "rate": 100.0,
+  "mode": "direct",
+  "publishers": 4,
+  "fanout": 2,
+  "payload_bytes": 256,
+  "workers": {
+    "publisher-3": {
+      "event": "stopped",
+      "id": "publisher-3",
+      "role": "publisher",
+      "t": 221984.337536541,
+      "warmup": {
+        "attempted": 24,
+        "submitted": 24,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 749,
+        "submitted": 749,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 2.3,
+      "cpu": 8.0,
+      "network_tx_bytes": 4003840,
+      "network_rx_bytes": 8014848,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "publisher-2": {
+      "event": "stopped",
+      "id": "publisher-2",
+      "role": "publisher",
+      "t": 221984.338939166,
+      "warmup": {
+        "attempted": 24,
+        "submitted": 24,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 749,
+        "submitted": 749,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 2.3,
+      "cpu": 8.7,
+      "network_tx_bytes": 4008960,
+      "network_rx_bytes": 8014848,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "publisher-0": {
+      "event": "stopped",
+      "id": "publisher-0",
+      "role": "publisher",
+      "t": 221984.327098875,
+      "warmup": {
+        "attempted": 24,
+        "submitted": 24,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 749,
+        "submitted": 749,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 2.4,
+      "cpu": 16.2,
+      "network_tx_bytes": 4019200,
+      "network_rx_bytes": 8014848,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "publisher-1": {
+      "event": "stopped",
+      "id": "publisher-1",
+      "role": "publisher",
+      "t": 221984.338963125,
+      "warmup": {
+        "attempted": 24,
+        "submitted": 24,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 749,
+        "submitted": 749,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 2.3,
+      "cpu": 11.2,
+      "network_tx_bytes": 4019200,
+      "network_rx_bytes": 8015872,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "receiver-0": {
+      "event": "stopped",
+      "id": "receiver-0",
+      "role": "receiver",
+      "t": 221984.474803583,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 96,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 96,
+        "latency_sum_ns": 16690537047,
+        "latency_max_ns": 243474375
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 2996,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 2996,
+        "latency_sum_ns": 766840779318,
+        "latency_max_ns": 664138666
+      },
+      "max_cpu": 4.4,
+      "cpu": 2.7,
+      "network_tx_bytes": 4030464,
+      "network_rx_bytes": 8016896,
+      "measurement_done": false,
+      "clean_shutdown": true
+    },
+    "receiver-1": {
+      "event": "stopped",
+      "id": "receiver-1",
+      "role": "receiver",
+      "t": 221984.485392458,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 96,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 96,
+        "latency_sum_ns": 17010690461,
+        "latency_max_ns": 238116167
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 2996,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 2996,
+        "latency_sum_ns": 777961758143,
+        "latency_max_ns": 664139750
+      },
+      "max_cpu": 3.8,
+      "cpu": 2.0,
+      "network_tx_bytes": 4015104,
+      "network_rx_bytes": 8015872,
+      "measurement_done": false,
+      "clean_shutdown": true
+    }
+  },
+  "errors": [],
+  "telemetry": [
+    {
+      "t": 221951.324164708,
+      "vpn": {
+        "rxMsgCount": 195412,
+        "txMsgCount": 201690,
+        "rxByteCount": 201859757,
+        "txByteCount": 203837956,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221954.536344708,
+      "vpn": {
+        "rxMsgCount": 195637,
+        "txMsgCount": 202134,
+        "rxByteCount": 201927281,
+        "txByteCount": 203972980,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221957.401766208,
+      "vpn": {
+        "rxMsgCount": 195960,
+        "txMsgCount": 202774,
+        "rxByteCount": 202024989,
+        "txByteCount": 204168372,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221960.410050916,
+      "vpn": {
+        "rxMsgCount": 196266,
+        "txMsgCount": 203380,
+        "rxByteCount": 202117461,
+        "txByteCount": 204353292,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221963.267546333,
+      "vpn": {
+        "rxMsgCount": 196566,
+        "txMsgCount": 203976,
+        "rxByteCount": 202208677,
+        "txByteCount": 204535708,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221965.926549791,
+      "vpn": {
+        "rxMsgCount": 196788,
+        "txMsgCount": 204418,
+        "rxByteCount": 202276461,
+        "txByteCount": 204671268,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221969.151150333,
+      "vpn": {
+        "rxMsgCount": 197170,
+        "txMsgCount": 205172,
+        "rxByteCount": 202391157,
+        "txByteCount": 204900620,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221972.196274916,
+      "vpn": {
+        "rxMsgCount": 197493,
+        "txMsgCount": 205812,
+        "rxByteCount": 202488865,
+        "txByteCount": 205096012,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221975.132392875,
+      "vpn": {
+        "rxMsgCount": 197809,
+        "txMsgCount": 206440,
+        "rxByteCount": 202584417,
+        "txByteCount": 205287708,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221977.954498416,
+      "vpn": {
+        "rxMsgCount": 198008,
+        "txMsgCount": 206834,
+        "rxByteCount": 202645117,
+        "txByteCount": 205408484,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221980.704149625,
+      "vpn": {
+        "rxMsgCount": 198278,
+        "txMsgCount": 207368,
+        "rxByteCount": 202726501,
+        "txByteCount": 205571228,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 221981.991358166,
+      "vpn": {
+        "rxMsgCount": 198418,
+        "txMsgCount": 207644,
+        "rxByteCount": 202768437,
+        "txByteCount": 205655084,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    }
+  ],
+  "receiver_lag_series": {
+    "receiver-0": [
+      [
+        221952.257075375,
+        17.308591757851943
+      ],
+      [
+        221953.258702458,
+        14.840476314416094
+      ],
+      [
+        221954.263778,
+        57.57448794141294
+      ],
+      [
+        221955.355790541,
+        25.027875464461374
+      ],
+      [
+        221956.362598208,
+        16.486986208536166
+      ],
+      [
+        221957.43003375,
+        27.980427110249593
+      ],
+      [
+        221958.444793041,
+        15.879328339246058
+      ],
+      [
+        221959.457355708,
+        15.950979948042232
+      ],
+      [
+        221960.472610875,
+        26.59844861458305
+      ],
+      [
+        221961.483646333,
+        14.650936512959788
+      ],
+      [
+        221962.502931041,
+        41.78472552617404
+      ],
+      [
+        221963.519238208,
+        15.73628294216769
+      ],
+      [
+        221964.521196083,
+        12.692765903383588
+      ],
+      [
+        221965.563199,
+        15.705348708940392
+      ],
+      [
+        221966.599210625,
+        14.963349452584225
+      ],
+      [
+        221967.608591833,
+        29.445055449318716
+      ],
+      [
+        221968.637099291,
+        47.73968885445652
+      ],
+      [
+        221969.643950208,
+        25.77882461611057
+      ],
+      [
+        221970.646648083,
+        15.887353164797105
+      ],
+      [
+        221971.662555916,
+        49.74229000195896
+      ],
+      [
+        221972.6676215,
+        29.9987327620006
+      ],
+      [
+        221973.673513416,
+        21.891712443909
+      ],
+      [
+        221974.67675825,
+        31.231928694860017
+      ],
+      [
+        221975.696847833,
+        25.210367963327826
+      ],
+      [
+        221976.7485135,
+        22.070350271093048
+      ],
+      [
+        221977.793449083,
+        23.1235932605382
+      ],
+      [
+        221978.83641225,
+        24.747192245972656
+      ],
+      [
+        221979.882963291,
+        48.562068503079445
+      ],
+      [
+        221980.941832125,
+        21.26581123054075
+      ]
+    ],
+    "receiver-1": [
+      [
+        221952.209289,
+        16.56068988550092
+      ],
+      [
+        221953.211603166,
+        22.15960708895443
+      ],
+      [
+        221954.265516916,
+        57.751949564772985
+      ],
+      [
+        221955.3573165,
+        25.179857855130876
+      ],
+      [
+        221956.366626166,
+        16.88988244953191
+      ],
+      [
+        221957.431773333,
+        28.1534417237217
+      ],
+      [
+        221958.448697625,
+        16.26743484725239
+      ],
+      [
+        221959.457355458,
+        16.95095489468838
+      ],
+      [
+        221960.475940666,
+        26.93183023305096
+      ],
+      [
+        221961.487216791,
+        15.006973833344432
+      ],
+      [
+        221962.510257958,
+        42.52232371615605
+      ],
+      [
+        221963.520874791,
+        15.89981124772703
+      ],
+      [
+        221964.522727958,
+        13.84554078896008
+      ],
+      [
+        221965.567090125,
+        16.093718717411548
+      ],
+      [
+        221966.602752958,
+        15.31609729507818
+      ],
+      [
+        221967.608602708,
+        29.446156511294248
+      ],
+      [
+        221968.640991666,
+        48.1283364413905
+      ],
+      [
+        221969.646259166,
+        26.007446625187413
+      ],
+      [
+        221970.650427708,
+        13.266851292821684
+      ],
+      [
+        221971.665794166,
+        50.06671716239521
+      ],
+      [
+        221972.667675875,
+        30.004139764668707
+      ],
+      [
+        221973.669787916,
+        23.51599180653784
+      ],
+      [
+        221974.671476625,
+        32.70654218467416
+      ],
+      [
+        221975.672892541,
+        23.807604284250374
+      ],
+      [
+        221976.748456833,
+        22.06472124350603
+      ],
+      [
+        221977.793350416,
+        23.113610544134644
+      ],
+      [
+        221978.838660458,
+        24.97184386280196
+      ],
+      [
+        221979.881319291,
+        48.39946901117128
+      ],
+      [
+        221980.941969791,
+        21.279597583765735
+      ]
+    ]
+  },
+  "queue_names": [],
+  "queues_empty": true,
+  "clean_shutdown": true,
+  "interrupted": false,
+  "guardrail": false
+}

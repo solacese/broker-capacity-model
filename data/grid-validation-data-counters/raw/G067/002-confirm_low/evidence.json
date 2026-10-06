@@ -1,0 +1,1259 @@
+{
+  "seconds": 30,
+  "rate": 100.0,
+  "mode": "persistent",
+  "publishers": 4,
+  "fanout": 2,
+  "payload_bytes": 256,
+  "workers": {
+    "publisher-2": {
+      "event": "stopped",
+      "id": "publisher-2",
+      "role": "publisher",
+      "t": 222572.20591975,
+      "warmup": {
+        "attempted": 24,
+        "submitted": 24,
+        "acked": 24,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 749,
+        "submitted": 749,
+        "acked": 749,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 2.6,
+      "cpu": 4.2,
+      "network_tx_bytes": 4291584,
+      "network_rx_bytes": 7654400,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "publisher-1": {
+      "event": "stopped",
+      "id": "publisher-1",
+      "role": "publisher",
+      "t": 222572.206090833,
+      "warmup": {
+        "attempted": 24,
+        "submitted": 24,
+        "acked": 24,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 749,
+        "submitted": 749,
+        "acked": 749,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 2.7,
+      "cpu": 4.6,
+      "network_tx_bytes": 4291584,
+      "network_rx_bytes": 7655424,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "publisher-3": {
+      "event": "stopped",
+      "id": "publisher-3",
+      "role": "publisher",
+      "t": 222572.208197291,
+      "warmup": {
+        "attempted": 24,
+        "submitted": 24,
+        "acked": 24,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 749,
+        "submitted": 749,
+        "acked": 749,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 2.6,
+      "cpu": 3.9,
+      "network_tx_bytes": 4281344,
+      "network_rx_bytes": 7654400,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "publisher-0": {
+      "event": "stopped",
+      "id": "publisher-0",
+      "role": "publisher",
+      "t": 222572.210324166,
+      "warmup": {
+        "attempted": 24,
+        "submitted": 24,
+        "acked": 24,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 749,
+        "submitted": 749,
+        "acked": 749,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 2.8,
+      "cpu": 3.8,
+      "network_tx_bytes": 4281344,
+      "network_rx_bytes": 7654400,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "receiver-1": {
+      "event": "stopped",
+      "id": "receiver-1",
+      "role": "receiver",
+      "t": 222572.379943833,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 96,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 96,
+        "latency_sum_ns": 18624626340,
+        "latency_max_ns": 313852125
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 2996,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 2996,
+        "latency_sum_ns": 884088546790,
+        "latency_max_ns": 868372500
+      },
+      "max_cpu": 5.1,
+      "cpu": 2.8,
+      "network_tx_bytes": 4299776,
+      "network_rx_bytes": 7657472,
+      "measurement_done": false,
+      "clean_shutdown": true
+    },
+    "receiver-0": {
+      "event": "stopped",
+      "id": "receiver-0",
+      "role": "receiver",
+      "t": 222572.380594166,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 96,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 96,
+        "latency_sum_ns": 18139450130,
+        "latency_max_ns": 276014542
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 2996,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 2996,
+        "latency_sum_ns": 889893752552,
+        "latency_max_ns": 866319875
+      },
+      "max_cpu": 5.1,
+      "cpu": 2.7,
+      "network_tx_bytes": 4299776,
+      "network_rx_bytes": 7657472,
+      "measurement_done": false,
+      "clean_shutdown": true
+    }
+  },
+  "errors": [],
+  "telemetry": [
+    {
+      "t": 222531.481101833,
+      "vpn": {
+        "dataRxMsgCount": 216531,
+        "dataTxMsgCount": 244647,
+        "dataRxByteCount": 208906686,
+        "dataTxByteCount": 218158758,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 222534.762916083,
+      "vpn": {
+        "dataRxMsgCount": 216695,
+        "dataTxMsgCount": 244975,
+        "dataRxByteCount": 208963430,
+        "dataTxByteCount": 218275526,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 30720,
+        "msgSpoolMsgCount": 120
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 30464,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 30720,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 222537.591404291,
+      "vpn": {
+        "dataRxMsgCount": 217059,
+        "dataTxMsgCount": 245703,
+        "dataRxByteCount": 209089374,
+        "dataTxByteCount": 218534694,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 26880,
+        "msgSpoolMsgCount": 105
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 26880,
+          "txUnackedMsgCount": 1,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 25856,
+          "txUnackedMsgCount": 2,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 222540.590209416,
+      "vpn": {
+        "dataRxMsgCount": 217355,
+        "dataTxMsgCount": 246295,
+        "dataRxByteCount": 209191790,
+        "dataTxByteCount": 218745446,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 33792,
+        "msgSpoolMsgCount": 132
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 33792,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 9216,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 222543.833350458,
+      "vpn": {
+        "dataRxMsgCount": 217651,
+        "dataTxMsgCount": 246887,
+        "dataRxByteCount": 209294206,
+        "dataTxByteCount": 218956198,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 15104,
+        "msgSpoolMsgCount": 59
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 15104,
+          "txUnackedMsgCount": 2,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 12032,
+          "txUnackedMsgCount": 1,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 222546.614942958,
+      "vpn": {
+        "dataRxMsgCount": 217959,
+        "dataTxMsgCount": 247503,
+        "dataRxByteCount": 209400774,
+        "dataTxByteCount": 219175494,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 10496,
+        "msgSpoolMsgCount": 41
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 10496,
+          "txUnackedMsgCount": 1,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 8704,
+          "txUnackedMsgCount": 2,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 222550.142875583,
+      "vpn": {
+        "dataRxMsgCount": 218227,
+        "dataTxMsgCount": 248039,
+        "dataRxByteCount": 209493502,
+        "dataTxByteCount": 219366310,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 23808,
+        "msgSpoolMsgCount": 93
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 22784,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 22784,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 222553.161422458,
+      "vpn": {
+        "dataRxMsgCount": 218559,
+        "dataTxMsgCount": 248703,
+        "dataRxByteCount": 209608374,
+        "dataTxByteCount": 219602694,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 20992,
+        "msgSpoolMsgCount": 82
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 20736,
+          "txUnackedMsgCount": 1,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 20992,
+          "txUnackedMsgCount": 1,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 222556.066107375,
+      "vpn": {
+        "dataRxMsgCount": 218844,
+        "dataTxMsgCount": 249269,
+        "dataRxByteCount": 209706984,
+        "dataTxByteCount": 219804190,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 9984,
+        "msgSpoolMsgCount": 39
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 9984,
+          "txUnackedMsgCount": 1,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 9984,
+          "txUnackedMsgCount": 1,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 222558.902092208,
+      "vpn": {
+        "dataRxMsgCount": 219159,
+        "dataTxMsgCount": 249903,
+        "dataRxByteCount": 209815974,
+        "dataTxByteCount": 220029894,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 9728,
+        "msgSpoolMsgCount": 38
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 7680,
+          "txUnackedMsgCount": 1,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 9728,
+          "txUnackedMsgCount": 2,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 222561.714601916,
+      "vpn": {
+        "dataRxMsgCount": 219451,
+        "dataTxMsgCount": 250487,
+        "dataRxByteCount": 209917006,
+        "dataTxByteCount": 220237798,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 19968,
+        "msgSpoolMsgCount": 78
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 19456,
+          "txUnackedMsgCount": 2,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 19200,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 222563.119348625,
+      "vpn": {
+        "dataRxMsgCount": 219527,
+        "dataTxMsgCount": 250639,
+        "dataRxByteCount": 209943302,
+        "dataTxByteCount": 220291910,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    }
+  ],
+  "receiver_lag_series": {
+    "receiver-1": [
+      [
+        222531.700983833,
+        33.957326399249034
+      ],
+      [
+        222532.725845958,
+        48.221049012490056
+      ],
+      [
+        222533.782455166,
+        70.26930543602793
+      ],
+      [
+        222534.783884208,
+        24.51738389897116
+      ],
+      [
+        222535.796116791,
+        24.38137056285558
+      ],
+      [
+        222536.79981975,
+        23.24089996846203
+      ],
+      [
+        222537.879212791,
+        23.904679944518534
+      ],
+      [
+        222538.891305583,
+        42.41940199256635
+      ],
+      [
+        222539.981934083,
+        22.29591140761238
+      ],
+      [
+        222540.986240541,
+        39.0937410365334
+      ],
+      [
+        222541.998258958,
+        43.04188571308009
+      ],
+      [
+        222543.009897125,
+        26.528251127768726
+      ],
+      [
+        222544.013062875,
+        58.673449293941985
+      ],
+      [
+        222545.075025458,
+        41.92307040137439
+      ],
+      [
+        222546.117976875,
+        24.322006075309673
+      ],
+      [
+        222547.175490125,
+        24.619193366640957
+      ],
+      [
+        222548.218161416,
+        25.08783059294319
+      ],
+      [
+        222549.270211666,
+        77.002810313503
+      ],
+      [
+        222550.319867416,
+        24.83400618391215
+      ],
+      [
+        222551.366115708,
+        24.969587874737954
+      ],
+      [
+        222552.404959958,
+        34.23678896317142
+      ],
+      [
+        222553.451429958,
+        45.31653033615703
+      ],
+      [
+        222554.512052125,
+        75.70680884769763
+      ],
+      [
+        222555.564463125,
+        27.11690773301143
+      ],
+      [
+        222556.589602166,
+        24.059551171281782
+      ],
+      [
+        222557.657873875,
+        22.43382358139843
+      ],
+      [
+        222558.707407833,
+        25.23992934313992
+      ],
+      [
+        222559.757155666,
+        39.9858765307481
+      ],
+      [
+        222560.7963525,
+        24.723955431737068
+      ]
+    ],
+    "receiver-0": [
+      [
+        222531.670387708,
+        33.006739104861424
+      ],
+      [
+        222532.681599166,
+        44.77309340579271
+      ],
+      [
+        222533.782460125,
+        70.26980246950731
+      ],
+      [
+        222534.787241708,
+        25.85321177747562
+      ],
+      [
+        222535.79983675,
+        24.75111605617417
+      ],
+      [
+        222536.805518833,
+        23.808298044606886
+      ],
+      [
+        222537.881801416,
+        24.163185711907545
+      ],
+      [
+        222538.894740583,
+        42.769436665380795
+      ],
+      [
+        222539.985389208,
+        22.63797781071503
+      ],
+      [
+        222541.002402125,
+        39.70136219288054
+      ],
+      [
+        222542.015624416,
+        42.77608975140902
+      ],
+      [
+        222543.017956791,
+        25.348038250997888
+      ],
+      [
+        222544.026449791,
+        59.00221296823315
+      ],
+      [
+        222545.074990208,
+        42.91957837465816
+      ],
+      [
+        222546.111845333,
+        23.706702893311558
+      ],
+      [
+        222547.17536325,
+        24.606581039849516
+      ],
+      [
+        222548.20414125,
+        24.681877559555232
+      ],
+      [
+        222549.270212291,
+        77.00287345983975
+      ],
+      [
+        222550.319731166,
+        24.82042408237112
+      ],
+      [
+        222551.366112166,
+        24.96923572420428
+      ],
+      [
+        222552.41273225,
+        35.008476222392346
+      ],
+      [
+        222553.453882541,
+        45.56277203947275
+      ],
+      [
+        222554.512055083,
+        75.70710461346334
+      ],
+      [
+        222555.564401666,
+        27.110709557026894
+      ],
+      [
+        222556.593125375,
+        24.408173866848756
+      ],
+      [
+        222557.657814375,
+        22.427806923778007
+      ],
+      [
+        222558.707339958,
+        25.233128225106157
+      ],
+      [
+        222559.757760625,
+        40.045798424439
+      ],
+      [
+        222560.793105291,
+        24.39572592144441
+      ]
+    ]
+  },
+  "counter_bracket": [
+    {
+      "t": 222531.481101833,
+      "vpn": {
+        "dataRxMsgCount": 216531,
+        "dataTxMsgCount": 244647,
+        "dataRxByteCount": 208906686,
+        "dataTxByteCount": 218158758,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    },
+    {
+      "t": 222572.16695775,
+      "vpn": {
+        "dataRxMsgCount": 219527,
+        "dataTxMsgCount": 250639,
+        "dataRxByteCount": 209943302,
+        "dataTxByteCount": 220291910,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {
+        "bcm-20261005-grid-101e8f5fb7-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-101e8f5fb7-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-4b07725e82-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-733fed4c74-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-7ba8aa1c9b-f01-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q00": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        },
+        "bcm-20261005-grid-88230d813a-f02-q01": {
+          "msgSpoolUsage": 0,
+          "txUnackedMsgCount": 0,
+          "maxMsgSpoolUsage": 100
+        }
+      }
+    }
+  ],
+  "queue_names": [
+    "bcm-20261005-grid-733fed4c74-f02-q00",
+    "bcm-20261005-grid-733fed4c74-f02-q01"
+  ],
+  "queues_empty": true,
+  "clean_shutdown": true,
+  "interrupted": false,
+  "guardrail": false
+}

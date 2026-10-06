@@ -1,0 +1,12 @@
+{
+  "cluster-eks-us-east-1a-jmmqldwprid": [
+    {
+      "dmrClusterName": "cluster-eks-us-east-1a-jmmqldwprid",
+      "enabled": true,
+      "remoteNodeName": "#ACTIVE",
+      "span": "internal",
+      "up": true,
+      "uptime": 619469
+    }
+  ]
+}

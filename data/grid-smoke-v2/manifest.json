@@ -1,0 +1,720 @@
+{
+  "schema_version": 1,
+  "campaign_id": "4b07725e82664e568306d6989a3c228a",
+  "broker_id": "4qn20a1u6ny",
+  "simulation": false,
+  "source_sha256": "7ceae8b870253c862a636904d84b5a9eb1bf70794ec91a5bdd0b03e96d08fe4b",
+  "settings": {
+    "warmup_seconds": 1,
+    "probe_seconds": 30,
+    "confirm_seconds": 30,
+    "max_probe_stages": 1,
+    "max_rate": 100.0,
+    "aggregate_mib_per_second": 128.0,
+    "initial_rate": 100.0,
+    "relative_width": 0.1
+  },
+  "grid": [
+    {
+      "id": "G001",
+      "mode": "direct",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 1
+    },
+    {
+      "id": "G002",
+      "mode": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 1
+    },
+    {
+      "id": "G003",
+      "mode": "direct",
+      "payload_bytes": 102400,
+      "fanout": 5,
+      "publishers": 4
+    },
+    {
+      "id": "G004",
+      "mode": "persistent",
+      "payload_bytes": 10240,
+      "fanout": 20,
+      "publishers": 4
+    },
+    {
+      "id": "G005",
+      "mode": "direct",
+      "payload_bytes": 1024,
+      "fanout": 5,
+      "publishers": 4
+    },
+    {
+      "id": "G006",
+      "mode": "persistent",
+      "payload_bytes": 102400,
+      "fanout": 20,
+      "publishers": 1
+    },
+    {
+      "id": "G007",
+      "mode": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 10,
+      "publishers": 1
+    },
+    {
+      "id": "G008",
+      "mode": "persistent",
+      "payload_bytes": 102400,
+      "fanout": 5,
+      "publishers": 1
+    },
+    {
+      "id": "G009",
+      "mode": "persistent",
+      "payload_bytes": 102400,
+      "fanout": 1,
+      "publishers": 4
+    },
+    {
+      "id": "G010",
+      "mode": "persistent",
+      "payload_bytes": 256,
+      "fanout": 1,
+      "publishers": 4
+    },
+    {
+      "id": "G011",
+      "mode": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 2,
+      "publishers": 1
+    },
+    {
+      "id": "G012",
+      "mode": "persistent",
+      "payload_bytes": 64,
+      "fanout": 10,
+      "publishers": 4
+    },
+    {
+      "id": "G013",
+      "mode": "direct",
+      "payload_bytes": 256,
+      "fanout": 2,
+      "publishers": 4
+    },
+    {
+      "id": "G014",
+      "mode": "direct",
+      "payload_bytes": 64,
+      "fanout": 10,
+      "publishers": 4
+    },
+    {
+      "id": "G015",
+      "mode": "direct",
+      "payload_bytes": 102400,
+      "fanout": 20,
+      "publishers": 4
+    },
+    {
+      "id": "G016",
+      "mode": "direct",
+      "payload_bytes": 102400,
+      "fanout": 5,
+      "publishers": 1
+    },
+    {
+      "id": "G017",
+      "mode": "persistent",
+      "payload_bytes": 256,
+      "fanout": 5,
+      "publishers": 1
+    },
+    {
+      "id": "G018",
+      "mode": "persistent",
+      "payload_bytes": 10240,
+      "fanout": 2,
+      "publishers": 4
+    },
+    {
+      "id": "G019",
+      "mode": "direct",
+      "payload_bytes": 1024,
+      "fanout": 5,
+      "publishers": 1
+    },
+    {
+      "id": "G020",
+      "mode": "direct",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 4
+    },
+    {
+      "id": "G021",
+      "mode": "direct",
+      "payload_bytes": 1024,
+      "fanout": 2,
+      "publishers": 1
+    },
+    {
+      "id": "G022",
+      "mode": "persistent",
+      "payload_bytes": 64,
+      "fanout": 20,
+      "publishers": 1
+    },
+    {
+      "id": "G023",
+      "mode": "direct",
+      "payload_bytes": 256,
+      "fanout": 10,
+      "publishers": 4
+    },
+    {
+      "id": "G024",
+      "mode": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 10,
+      "publishers": 4
+    },
+    {
+      "id": "G025",
+      "mode": "direct",
+      "payload_bytes": 1024,
+      "fanout": 10,
+      "publishers": 1
+    },
+    {
+      "id": "G026",
+      "mode": "direct",
+      "payload_bytes": 10240,
+      "fanout": 2,
+      "publishers": 1
+    },
+    {
+      "id": "G027",
+      "mode": "direct",
+      "payload_bytes": 64,
+      "fanout": 5,
+      "publishers": 4
+    },
+    {
+      "id": "G028",
+      "mode": "direct",
+      "payload_bytes": 1024,
+      "fanout": 20,
+      "publishers": 1
+    },
+    {
+      "id": "G029",
+      "mode": "persistent",
+      "payload_bytes": 64,
+      "fanout": 2,
+      "publishers": 4
+    },
+    {
+      "id": "G030",
+      "mode": "persistent",
+      "payload_bytes": 64,
+      "fanout": 5,
+      "publishers": 4
+    },
+    {
+      "id": "G031",
+      "mode": "direct",
+      "payload_bytes": 64,
+      "fanout": 20,
+      "publishers": 4
+    },
+    {
+      "id": "G032",
+      "mode": "direct",
+      "payload_bytes": 256,
+      "fanout": 20,
+      "publishers": 1
+    },
+    {
+      "id": "G033",
+      "mode": "direct",
+      "payload_bytes": 256,
+      "fanout": 1,
+      "publishers": 1
+    },
+    {
+      "id": "G034",
+      "mode": "persistent",
+      "payload_bytes": 102400,
+      "fanout": 2,
+      "publishers": 4
+    },
+    {
+      "id": "G035",
+      "mode": "persistent",
+      "payload_bytes": 256,
+      "fanout": 2,
+      "publishers": 1
+    },
+    {
+      "id": "G036",
+      "mode": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 4
+    },
+    {
+      "id": "G037",
+      "mode": "direct",
+      "payload_bytes": 10240,
+      "fanout": 20,
+      "publishers": 1
+    },
+    {
+      "id": "G038",
+      "mode": "direct",
+      "payload_bytes": 10240,
+      "fanout": 5,
+      "publishers": 1
+    },
+    {
+      "id": "G039",
+      "mode": "direct",
+      "payload_bytes": 10240,
+      "fanout": 1,
+      "publishers": 4
+    },
+    {
+      "id": "G040",
+      "mode": "persistent",
+      "payload_bytes": 64,
+      "fanout": 20,
+      "publishers": 4
+    },
+    {
+      "id": "G041",
+      "mode": "direct",
+      "payload_bytes": 102400,
+      "fanout": 1,
+      "publishers": 4
+    },
+    {
+      "id": "G042",
+      "mode": "direct",
+      "payload_bytes": 102400,
+      "fanout": 2,
+      "publishers": 1
+    },
+    {
+      "id": "G043",
+      "mode": "direct",
+      "payload_bytes": 102400,
+      "fanout": 2,
+      "publishers": 4
+    },
+    {
+      "id": "G044",
+      "mode": "persistent",
+      "payload_bytes": 256,
+      "fanout": 1,
+      "publishers": 1
+    },
+    {
+      "id": "G045",
+      "mode": "persistent",
+      "payload_bytes": 64,
+      "fanout": 5,
+      "publishers": 1
+    },
+    {
+      "id": "G046",
+      "mode": "direct",
+      "payload_bytes": 64,
+      "fanout": 2,
+      "publishers": 4
+    },
+    {
+      "id": "G047",
+      "mode": "direct",
+      "payload_bytes": 102400,
+      "fanout": 1,
+      "publishers": 1
+    },
+    {
+      "id": "G048",
+      "mode": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 20,
+      "publishers": 4
+    },
+    {
+      "id": "G049",
+      "mode": "persistent",
+      "payload_bytes": 10240,
+      "fanout": 5,
+      "publishers": 4
+    },
+    {
+      "id": "G050",
+      "mode": "direct",
+      "payload_bytes": 64,
+      "fanout": 5,
+      "publishers": 1
+    },
+    {
+      "id": "G051",
+      "mode": "direct",
+      "payload_bytes": 256,
+      "fanout": 10,
+      "publishers": 1
+    },
+    {
+      "id": "G052",
+      "mode": "direct",
+      "payload_bytes": 256,
+      "fanout": 5,
+      "publishers": 4
+    },
+    {
+      "id": "G053",
+      "mode": "direct",
+      "payload_bytes": 1024,
+      "fanout": 2,
+      "publishers": 4
+    },
+    {
+      "id": "G054",
+      "mode": "persistent",
+      "payload_bytes": 256,
+      "fanout": 10,
+      "publishers": 4
+    },
+    {
+      "id": "G055",
+      "mode": "persistent",
+      "payload_bytes": 10240,
+      "fanout": 10,
+      "publishers": 1
+    },
+    {
+      "id": "G056",
+      "mode": "persistent",
+      "payload_bytes": 64,
+      "fanout": 1,
+      "publishers": 1
+    },
+    {
+      "id": "G057",
+      "mode": "persistent",
+      "payload_bytes": 10240,
+      "fanout": 10,
+      "publishers": 4
+    },
+    {
+      "id": "G058",
+      "mode": "direct",
+      "payload_bytes": 64,
+      "fanout": 20,
+      "publishers": 1
+    },
+    {
+      "id": "G059",
+      "mode": "persistent",
+      "payload_bytes": 256,
+      "fanout": 5,
+      "publishers": 4
+    },
+    {
+      "id": "G060",
+      "mode": "direct",
+      "payload_bytes": 10240,
+      "fanout": 1,
+      "publishers": 1
+    },
+    {
+      "id": "G061",
+      "mode": "persistent",
+      "payload_bytes": 102400,
+      "fanout": 2,
+      "publishers": 1
+    },
+    {
+      "id": "G062",
+      "mode": "persistent",
+      "payload_bytes": 102400,
+      "fanout": 1,
+      "publishers": 1
+    },
+    {
+      "id": "G063",
+      "mode": "persistent",
+      "payload_bytes": 10240,
+      "fanout": 5,
+      "publishers": 1
+    },
+    {
+      "id": "G064",
+      "mode": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 2,
+      "publishers": 4
+    },
+    {
+      "id": "G065",
+      "mode": "direct",
+      "payload_bytes": 64,
+      "fanout": 1,
+      "publishers": 1
+    },
+    {
+      "id": "G066",
+      "mode": "persistent",
+      "payload_bytes": 10240,
+      "fanout": 1,
+      "publishers": 1
+    },
+    {
+      "id": "G067",
+      "mode": "persistent",
+      "payload_bytes": 256,
+      "fanout": 2,
+      "publishers": 4
+    },
+    {
+      "id": "G068",
+      "mode": "direct",
+      "payload_bytes": 10240,
+      "fanout": 20,
+      "publishers": 4
+    },
+    {
+      "id": "G069",
+      "mode": "direct",
+      "payload_bytes": 10240,
+      "fanout": 2,
+      "publishers": 4
+    },
+    {
+      "id": "G070",
+      "mode": "direct",
+      "payload_bytes": 1024,
+      "fanout": 10,
+      "publishers": 4
+    },
+    {
+      "id": "G071",
+      "mode": "direct",
+      "payload_bytes": 64,
+      "fanout": 10,
+      "publishers": 1
+    },
+    {
+      "id": "G072",
+      "mode": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 20,
+      "publishers": 1
+    },
+    {
+      "id": "G073",
+      "mode": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 5,
+      "publishers": 1
+    },
+    {
+      "id": "G074",
+      "mode": "persistent",
+      "payload_bytes": 102400,
+      "fanout": 20,
+      "publishers": 4
+    },
+    {
+      "id": "G075",
+      "mode": "persistent",
+      "payload_bytes": 10240,
+      "fanout": 1,
+      "publishers": 4
+    },
+    {
+      "id": "G076",
+      "mode": "persistent",
+      "payload_bytes": 102400,
+      "fanout": 10,
+      "publishers": 4
+    },
+    {
+      "id": "G077",
+      "mode": "direct",
+      "payload_bytes": 102400,
+      "fanout": 10,
+      "publishers": 4
+    },
+    {
+      "id": "G078",
+      "mode": "persistent",
+      "payload_bytes": 102400,
+      "fanout": 10,
+      "publishers": 1
+    },
+    {
+      "id": "G079",
+      "mode": "direct",
+      "payload_bytes": 102400,
+      "fanout": 10,
+      "publishers": 1
+    },
+    {
+      "id": "G080",
+      "mode": "persistent",
+      "payload_bytes": 102400,
+      "fanout": 5,
+      "publishers": 4
+    },
+    {
+      "id": "G081",
+      "mode": "direct",
+      "payload_bytes": 64,
+      "fanout": 1,
+      "publishers": 4
+    },
+    {
+      "id": "G082",
+      "mode": "direct",
+      "payload_bytes": 1024,
+      "fanout": 20,
+      "publishers": 4
+    },
+    {
+      "id": "G083",
+      "mode": "direct",
+      "payload_bytes": 102400,
+      "fanout": 20,
+      "publishers": 1
+    },
+    {
+      "id": "G084",
+      "mode": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 5,
+      "publishers": 4
+    },
+    {
+      "id": "G085",
+      "mode": "persistent",
+      "payload_bytes": 64,
+      "fanout": 2,
+      "publishers": 1
+    },
+    {
+      "id": "G086",
+      "mode": "persistent",
+      "payload_bytes": 10240,
+      "fanout": 2,
+      "publishers": 1
+    },
+    {
+      "id": "G087",
+      "mode": "persistent",
+      "payload_bytes": 64,
+      "fanout": 10,
+      "publishers": 1
+    },
+    {
+      "id": "G088",
+      "mode": "persistent",
+      "payload_bytes": 10240,
+      "fanout": 20,
+      "publishers": 1
+    },
+    {
+      "id": "G089",
+      "mode": "persistent",
+      "payload_bytes": 256,
+      "fanout": 20,
+      "publishers": 1
+    },
+    {
+      "id": "G090",
+      "mode": "direct",
+      "payload_bytes": 10240,
+      "fanout": 10,
+      "publishers": 1
+    },
+    {
+      "id": "G091",
+      "mode": "direct",
+      "payload_bytes": 256,
+      "fanout": 5,
+      "publishers": 1
+    },
+    {
+      "id": "G092",
+      "mode": "direct",
+      "payload_bytes": 256,
+      "fanout": 1,
+      "publishers": 4
+    },
+    {
+      "id": "G093",
+      "mode": "direct",
+      "payload_bytes": 64,
+      "fanout": 2,
+      "publishers": 1
+    },
+    {
+      "id": "G094",
+      "mode": "persistent",
+      "payload_bytes": 256,
+      "fanout": 10,
+      "publishers": 1
+    },
+    {
+      "id": "G095",
+      "mode": "direct",
+      "payload_bytes": 256,
+      "fanout": 2,
+      "publishers": 1
+    },
+    {
+      "id": "G096",
+      "mode": "direct",
+      "payload_bytes": 256,
+      "fanout": 20,
+      "publishers": 4
+    },
+    {
+      "id": "G097",
+      "mode": "persistent",
+      "payload_bytes": 64,
+      "fanout": 1,
+      "publishers": 4
+    },
+    {
+      "id": "G098",
+      "mode": "direct",
+      "payload_bytes": 10240,
+      "fanout": 10,
+      "publishers": 4
+    },
+    {
+      "id": "G099",
+      "mode": "persistent",
+      "payload_bytes": 256,
+      "fanout": 20,
+      "publishers": 4
+    },
+    {
+      "id": "G100",
+      "mode": "direct",
+      "payload_bytes": 10240,
+      "fanout": 5,
+      "publishers": 4
+    }
+  ],
+  "created": 1791236556.870401
+}

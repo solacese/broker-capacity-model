@@ -1,0 +1,2324 @@
+{
+  "simulation": true,
+  "source_sha256": "c6fdd9d6b75d66038d31c665d176b4ba211b9b584d0e68dd23b7415b326f1927",
+  "completed_experiments": 100,
+  "completed_stages": 1190,
+  "results": {
+    "simulation": true,
+    "campaign_id": "b523ab4d6bcb4370a647779fac23aa98",
+    "broker_id": "4qn20a1u6ny",
+    "settings": {
+      "warmup_seconds": 10,
+      "probe_seconds": 30,
+      "confirm_seconds": 120,
+      "max_probe_stages": 16,
+      "max_rate": 100000.0,
+      "aggregate_mib_per_second": 128.0,
+      "initial_rate": 100.0,
+      "relative_width": 0.1
+    },
+    "broker_capacity_validated": false,
+    "experiments": [
+      {
+        "id": "G001",
+        "workload": {
+          "id": "G001",
+          "mode": "direct",
+          "payload_bytes": 1024,
+          "fanout": 1,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 5600.0,
+          "scout_upper": 6000.0,
+          "confirmed_lower": 5600.0,
+          "confirmed_upper": 6000.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.07142857142857142,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 13
+        }
+      },
+      {
+        "id": "G002",
+        "workload": {
+          "id": "G002",
+          "mode": "persistent",
+          "payload_bytes": 1024,
+          "fanout": 1,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 5600.0,
+          "scout_upper": 6000.0,
+          "confirmed_lower": 5600.0,
+          "confirmed_upper": 6000.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.07142857142857142,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 13
+        }
+      },
+      {
+        "id": "G003",
+        "workload": {
+          "id": "G003",
+          "mode": "direct",
+          "payload_bytes": 102400,
+          "fanout": 5,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 18.75,
+          "scout_upper": 20.3125,
+          "confirmed_lower": 18.75,
+          "confirmed_upper": 20.3125,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.08333333333333333,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 10
+        }
+      },
+      {
+        "id": "G004",
+        "workload": {
+          "id": "G004",
+          "mode": "persistent",
+          "payload_bytes": 10240,
+          "fanout": 20,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 53.125,
+          "scout_upper": 56.25,
+          "confirmed_lower": 53.125,
+          "confirmed_upper": 56.25,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.058823529411764705,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G005",
+        "workload": {
+          "id": "G005",
+          "mode": "direct",
+          "payload_bytes": 1024,
+          "fanout": 5,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 1900.0,
+          "scout_upper": 2000.0,
+          "confirmed_lower": 1900.0,
+          "confirmed_upper": 2000.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05263157894736842,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 13
+        }
+      },
+      {
+        "id": "G006",
+        "workload": {
+          "id": "G006",
+          "mode": "persistent",
+          "payload_bytes": 102400,
+          "fanout": 20,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 5.363809523809524,
+          "scout_upper": 5.851428571428571,
+          "confirmed_lower": 5.363809523809524,
+          "confirmed_upper": 5.851428571428571,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909095,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 11
+        }
+      },
+      {
+        "id": "G007",
+        "workload": {
+          "id": "G007",
+          "mode": "persistent",
+          "payload_bytes": 1024,
+          "fanout": 10,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 1000.0,
+          "scout_upper": 1100.0,
+          "confirmed_lower": 1000.0,
+          "confirmed_upper": 1100.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.1,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 11
+        }
+      },
+      {
+        "id": "G008",
+        "workload": {
+          "id": "G008",
+          "mode": "persistent",
+          "payload_bytes": 102400,
+          "fanout": 5,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 18.75,
+          "scout_upper": 20.3125,
+          "confirmed_lower": 18.75,
+          "confirmed_upper": 20.3125,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.08333333333333333,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 10
+        }
+      },
+      {
+        "id": "G009",
+        "workload": {
+          "id": "G009",
+          "mode": "persistent",
+          "payload_bytes": 102400,
+          "fanout": 1,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 56.25,
+          "scout_upper": 59.375,
+          "confirmed_lower": 56.25,
+          "confirmed_upper": 59.375,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G010",
+        "workload": {
+          "id": "G010",
+          "mode": "persistent",
+          "payload_bytes": 256,
+          "fanout": 1,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G011",
+        "workload": {
+          "id": "G011",
+          "mode": "persistent",
+          "payload_bytes": 1024,
+          "fanout": 2,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 3800.0,
+          "scout_upper": 4000.0,
+          "confirmed_lower": 3800.0,
+          "confirmed_upper": 4000.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05263157894736842,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G012",
+        "workload": {
+          "id": "G012",
+          "mode": "persistent",
+          "payload_bytes": 64,
+          "fanout": 10,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G013",
+        "workload": {
+          "id": "G013",
+          "mode": "direct",
+          "payload_bytes": 256,
+          "fanout": 2,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 12000.0,
+          "scout_upper": 12800.0,
+          "confirmed_lower": 12000.0,
+          "confirmed_upper": 12800.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G014",
+        "workload": {
+          "id": "G014",
+          "mode": "direct",
+          "payload_bytes": 64,
+          "fanout": 10,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 12000.0,
+          "scout_upper": 12800.0,
+          "confirmed_lower": 12000.0,
+          "confirmed_upper": 12800.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G015",
+        "workload": {
+          "id": "G015",
+          "mode": "direct",
+          "payload_bytes": 102400,
+          "fanout": 20,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 5.363809523809524,
+          "scout_upper": 5.851428571428571,
+          "confirmed_lower": 5.363809523809524,
+          "confirmed_upper": 5.851428571428571,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909095,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 11
+        }
+      },
+      {
+        "id": "G016",
+        "workload": {
+          "id": "G016",
+          "mode": "direct",
+          "payload_bytes": 102400,
+          "fanout": 5,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 18.75,
+          "scout_upper": 20.3125,
+          "confirmed_lower": 18.75,
+          "confirmed_upper": 20.3125,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.08333333333333333,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 10
+        }
+      },
+      {
+        "id": "G017",
+        "workload": {
+          "id": "G017",
+          "mode": "persistent",
+          "payload_bytes": 256,
+          "fanout": 5,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G018",
+        "workload": {
+          "id": "G018",
+          "mode": "persistent",
+          "payload_bytes": 10240,
+          "fanout": 2,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 375.0,
+          "scout_upper": 400.0,
+          "confirmed_lower": 375.0,
+          "confirmed_upper": 400.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G019",
+        "workload": {
+          "id": "G019",
+          "mode": "direct",
+          "payload_bytes": 1024,
+          "fanout": 5,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 1900.0,
+          "scout_upper": 2000.0,
+          "confirmed_lower": 1900.0,
+          "confirmed_upper": 2000.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05263157894736842,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 13
+        }
+      },
+      {
+        "id": "G020",
+        "workload": {
+          "id": "G020",
+          "mode": "direct",
+          "payload_bytes": 1024,
+          "fanout": 1,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 5600.0,
+          "scout_upper": 6000.0,
+          "confirmed_lower": 5600.0,
+          "confirmed_upper": 6000.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.07142857142857142,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 13
+        }
+      },
+      {
+        "id": "G021",
+        "workload": {
+          "id": "G021",
+          "mode": "direct",
+          "payload_bytes": 1024,
+          "fanout": 2,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 3800.0,
+          "scout_upper": 4000.0,
+          "confirmed_lower": 3800.0,
+          "confirmed_upper": 4000.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05263157894736842,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G022",
+        "workload": {
+          "id": "G022",
+          "mode": "persistent",
+          "payload_bytes": 64,
+          "fanout": 20,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G023",
+        "workload": {
+          "id": "G023",
+          "mode": "direct",
+          "payload_bytes": 256,
+          "fanout": 10,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 4000.0,
+          "scout_upper": 4400.0,
+          "confirmed_lower": 4000.0,
+          "confirmed_upper": 4400.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.1,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 13
+        }
+      },
+      {
+        "id": "G024",
+        "workload": {
+          "id": "G024",
+          "mode": "persistent",
+          "payload_bytes": 1024,
+          "fanout": 10,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 1000.0,
+          "scout_upper": 1100.0,
+          "confirmed_lower": 1000.0,
+          "confirmed_upper": 1100.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.1,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 11
+        }
+      },
+      {
+        "id": "G025",
+        "workload": {
+          "id": "G025",
+          "mode": "direct",
+          "payload_bytes": 1024,
+          "fanout": 10,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 1000.0,
+          "scout_upper": 1100.0,
+          "confirmed_lower": 1000.0,
+          "confirmed_upper": 1100.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.1,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 11
+        }
+      },
+      {
+        "id": "G026",
+        "workload": {
+          "id": "G026",
+          "mode": "direct",
+          "payload_bytes": 10240,
+          "fanout": 2,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 375.0,
+          "scout_upper": 400.0,
+          "confirmed_lower": 375.0,
+          "confirmed_upper": 400.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G027",
+        "workload": {
+          "id": "G027",
+          "mode": "direct",
+          "payload_bytes": 64,
+          "fanout": 5,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 12000.0,
+          "scout_upper": 12800.0,
+          "confirmed_lower": 12000.0,
+          "confirmed_upper": 12800.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G028",
+        "workload": {
+          "id": "G028",
+          "mode": "direct",
+          "payload_bytes": 1024,
+          "fanout": 20,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 550.0,
+          "scout_upper": 600.0,
+          "confirmed_lower": 550.0,
+          "confirmed_upper": 600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909091,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 10
+        }
+      },
+      {
+        "id": "G029",
+        "workload": {
+          "id": "G029",
+          "mode": "persistent",
+          "payload_bytes": 64,
+          "fanout": 2,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G030",
+        "workload": {
+          "id": "G030",
+          "mode": "persistent",
+          "payload_bytes": 64,
+          "fanout": 5,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G031",
+        "workload": {
+          "id": "G031",
+          "mode": "direct",
+          "payload_bytes": 64,
+          "fanout": 20,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 8800.0,
+          "scout_upper": 9600.0,
+          "confirmed_lower": 8800.0,
+          "confirmed_upper": 9600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909091,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G032",
+        "workload": {
+          "id": "G032",
+          "mode": "direct",
+          "payload_bytes": 256,
+          "fanout": 20,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 2200.0,
+          "scout_upper": 2400.0,
+          "confirmed_lower": 2200.0,
+          "confirmed_upper": 2400.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909091,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 12
+        }
+      },
+      {
+        "id": "G033",
+        "workload": {
+          "id": "G033",
+          "mode": "direct",
+          "payload_bytes": 256,
+          "fanout": 1,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 12000.0,
+          "scout_upper": 12800.0,
+          "confirmed_lower": 12000.0,
+          "confirmed_upper": 12800.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G034",
+        "workload": {
+          "id": "G034",
+          "mode": "persistent",
+          "payload_bytes": 102400,
+          "fanout": 2,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 37.5,
+          "scout_upper": 40.625,
+          "confirmed_lower": 37.5,
+          "confirmed_upper": 40.625,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.08333333333333333,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G035",
+        "workload": {
+          "id": "G035",
+          "mode": "persistent",
+          "payload_bytes": 256,
+          "fanout": 2,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G036",
+        "workload": {
+          "id": "G036",
+          "mode": "persistent",
+          "payload_bytes": 1024,
+          "fanout": 1,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 5600.0,
+          "scout_upper": 6000.0,
+          "confirmed_lower": 5600.0,
+          "confirmed_upper": 6000.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.07142857142857142,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 13
+        }
+      },
+      {
+        "id": "G037",
+        "workload": {
+          "id": "G037",
+          "mode": "direct",
+          "payload_bytes": 10240,
+          "fanout": 20,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 53.125,
+          "scout_upper": 56.25,
+          "confirmed_lower": 53.125,
+          "confirmed_upper": 56.25,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.058823529411764705,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G038",
+        "workload": {
+          "id": "G038",
+          "mode": "direct",
+          "payload_bytes": 10240,
+          "fanout": 5,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 187.5,
+          "scout_upper": 200.0,
+          "confirmed_lower": 187.5,
+          "confirmed_upper": 200.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 8
+        }
+      },
+      {
+        "id": "G039",
+        "workload": {
+          "id": "G039",
+          "mode": "direct",
+          "payload_bytes": 10240,
+          "fanout": 1,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 550.0,
+          "scout_upper": 600.0,
+          "confirmed_lower": 550.0,
+          "confirmed_upper": 600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909091,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 10
+        }
+      },
+      {
+        "id": "G040",
+        "workload": {
+          "id": "G040",
+          "mode": "persistent",
+          "payload_bytes": 64,
+          "fanout": 20,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G041",
+        "workload": {
+          "id": "G041",
+          "mode": "direct",
+          "payload_bytes": 102400,
+          "fanout": 1,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 56.25,
+          "scout_upper": 59.375,
+          "confirmed_lower": 56.25,
+          "confirmed_upper": 59.375,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G042",
+        "workload": {
+          "id": "G042",
+          "mode": "direct",
+          "payload_bytes": 102400,
+          "fanout": 2,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 37.5,
+          "scout_upper": 40.625,
+          "confirmed_lower": 37.5,
+          "confirmed_upper": 40.625,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.08333333333333333,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G043",
+        "workload": {
+          "id": "G043",
+          "mode": "direct",
+          "payload_bytes": 102400,
+          "fanout": 2,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 37.5,
+          "scout_upper": 40.625,
+          "confirmed_lower": 37.5,
+          "confirmed_upper": 40.625,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.08333333333333333,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G044",
+        "workload": {
+          "id": "G044",
+          "mode": "persistent",
+          "payload_bytes": 256,
+          "fanout": 1,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G045",
+        "workload": {
+          "id": "G045",
+          "mode": "persistent",
+          "payload_bytes": 64,
+          "fanout": 5,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G046",
+        "workload": {
+          "id": "G046",
+          "mode": "direct",
+          "payload_bytes": 64,
+          "fanout": 2,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 12000.0,
+          "scout_upper": 12800.0,
+          "confirmed_lower": 12000.0,
+          "confirmed_upper": 12800.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G047",
+        "workload": {
+          "id": "G047",
+          "mode": "direct",
+          "payload_bytes": 102400,
+          "fanout": 1,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 56.25,
+          "scout_upper": 59.375,
+          "confirmed_lower": 56.25,
+          "confirmed_upper": 59.375,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G048",
+        "workload": {
+          "id": "G048",
+          "mode": "persistent",
+          "payload_bytes": 1024,
+          "fanout": 20,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 550.0,
+          "scout_upper": 600.0,
+          "confirmed_lower": 550.0,
+          "confirmed_upper": 600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909091,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 10
+        }
+      },
+      {
+        "id": "G049",
+        "workload": {
+          "id": "G049",
+          "mode": "persistent",
+          "payload_bytes": 10240,
+          "fanout": 5,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 187.5,
+          "scout_upper": 200.0,
+          "confirmed_lower": 187.5,
+          "confirmed_upper": 200.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 8
+        }
+      },
+      {
+        "id": "G050",
+        "workload": {
+          "id": "G050",
+          "mode": "direct",
+          "payload_bytes": 64,
+          "fanout": 5,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 12000.0,
+          "scout_upper": 12800.0,
+          "confirmed_lower": 12000.0,
+          "confirmed_upper": 12800.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G051",
+        "workload": {
+          "id": "G051",
+          "mode": "direct",
+          "payload_bytes": 256,
+          "fanout": 10,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 4000.0,
+          "scout_upper": 4400.0,
+          "confirmed_lower": 4000.0,
+          "confirmed_upper": 4400.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.1,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 13
+        }
+      },
+      {
+        "id": "G052",
+        "workload": {
+          "id": "G052",
+          "mode": "direct",
+          "payload_bytes": 256,
+          "fanout": 5,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7600.0,
+          "scout_upper": 8000.0,
+          "confirmed_lower": 7600.0,
+          "confirmed_upper": 8000.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05263157894736842,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G053",
+        "workload": {
+          "id": "G053",
+          "mode": "direct",
+          "payload_bytes": 1024,
+          "fanout": 2,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 3800.0,
+          "scout_upper": 4000.0,
+          "confirmed_lower": 3800.0,
+          "confirmed_upper": 4000.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05263157894736842,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G054",
+        "workload": {
+          "id": "G054",
+          "mode": "persistent",
+          "payload_bytes": 256,
+          "fanout": 10,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 4000.0,
+          "scout_upper": 4400.0,
+          "confirmed_lower": 4000.0,
+          "confirmed_upper": 4400.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.1,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 13
+        }
+      },
+      {
+        "id": "G055",
+        "workload": {
+          "id": "G055",
+          "mode": "persistent",
+          "payload_bytes": 10240,
+          "fanout": 10,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 106.25,
+          "scout_upper": 112.5,
+          "confirmed_lower": 106.25,
+          "confirmed_upper": 112.5,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.058823529411764705,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G056",
+        "workload": {
+          "id": "G056",
+          "mode": "persistent",
+          "payload_bytes": 64,
+          "fanout": 1,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G057",
+        "workload": {
+          "id": "G057",
+          "mode": "persistent",
+          "payload_bytes": 10240,
+          "fanout": 10,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 106.25,
+          "scout_upper": 112.5,
+          "confirmed_lower": 106.25,
+          "confirmed_upper": 112.5,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.058823529411764705,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G058",
+        "workload": {
+          "id": "G058",
+          "mode": "direct",
+          "payload_bytes": 64,
+          "fanout": 20,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 8800.0,
+          "scout_upper": 9600.0,
+          "confirmed_lower": 8800.0,
+          "confirmed_upper": 9600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909091,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G059",
+        "workload": {
+          "id": "G059",
+          "mode": "persistent",
+          "payload_bytes": 256,
+          "fanout": 5,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G060",
+        "workload": {
+          "id": "G060",
+          "mode": "direct",
+          "payload_bytes": 10240,
+          "fanout": 1,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 550.0,
+          "scout_upper": 600.0,
+          "confirmed_lower": 550.0,
+          "confirmed_upper": 600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909091,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 10
+        }
+      },
+      {
+        "id": "G061",
+        "workload": {
+          "id": "G061",
+          "mode": "persistent",
+          "payload_bytes": 102400,
+          "fanout": 2,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 37.5,
+          "scout_upper": 40.625,
+          "confirmed_lower": 37.5,
+          "confirmed_upper": 40.625,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.08333333333333333,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G062",
+        "workload": {
+          "id": "G062",
+          "mode": "persistent",
+          "payload_bytes": 102400,
+          "fanout": 1,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 56.25,
+          "scout_upper": 59.375,
+          "confirmed_lower": 56.25,
+          "confirmed_upper": 59.375,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G063",
+        "workload": {
+          "id": "G063",
+          "mode": "persistent",
+          "payload_bytes": 10240,
+          "fanout": 5,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 187.5,
+          "scout_upper": 200.0,
+          "confirmed_lower": 187.5,
+          "confirmed_upper": 200.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 8
+        }
+      },
+      {
+        "id": "G064",
+        "workload": {
+          "id": "G064",
+          "mode": "persistent",
+          "payload_bytes": 1024,
+          "fanout": 2,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 3800.0,
+          "scout_upper": 4000.0,
+          "confirmed_lower": 3800.0,
+          "confirmed_upper": 4000.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05263157894736842,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G065",
+        "workload": {
+          "id": "G065",
+          "mode": "direct",
+          "payload_bytes": 64,
+          "fanout": 1,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 12000.0,
+          "scout_upper": 12800.0,
+          "confirmed_lower": 12000.0,
+          "confirmed_upper": 12800.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G066",
+        "workload": {
+          "id": "G066",
+          "mode": "persistent",
+          "payload_bytes": 10240,
+          "fanout": 1,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 550.0,
+          "scout_upper": 600.0,
+          "confirmed_lower": 550.0,
+          "confirmed_upper": 600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909091,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 10
+        }
+      },
+      {
+        "id": "G067",
+        "workload": {
+          "id": "G067",
+          "mode": "persistent",
+          "payload_bytes": 256,
+          "fanout": 2,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G068",
+        "workload": {
+          "id": "G068",
+          "mode": "direct",
+          "payload_bytes": 10240,
+          "fanout": 20,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 53.125,
+          "scout_upper": 56.25,
+          "confirmed_lower": 53.125,
+          "confirmed_upper": 56.25,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.058823529411764705,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G069",
+        "workload": {
+          "id": "G069",
+          "mode": "direct",
+          "payload_bytes": 10240,
+          "fanout": 2,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 375.0,
+          "scout_upper": 400.0,
+          "confirmed_lower": 375.0,
+          "confirmed_upper": 400.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G070",
+        "workload": {
+          "id": "G070",
+          "mode": "direct",
+          "payload_bytes": 1024,
+          "fanout": 10,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 1000.0,
+          "scout_upper": 1100.0,
+          "confirmed_lower": 1000.0,
+          "confirmed_upper": 1100.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.1,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 11
+        }
+      },
+      {
+        "id": "G071",
+        "workload": {
+          "id": "G071",
+          "mode": "direct",
+          "payload_bytes": 64,
+          "fanout": 10,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 12000.0,
+          "scout_upper": 12800.0,
+          "confirmed_lower": 12000.0,
+          "confirmed_upper": 12800.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G072",
+        "workload": {
+          "id": "G072",
+          "mode": "persistent",
+          "payload_bytes": 1024,
+          "fanout": 20,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 550.0,
+          "scout_upper": 600.0,
+          "confirmed_lower": 550.0,
+          "confirmed_upper": 600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909091,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 10
+        }
+      },
+      {
+        "id": "G073",
+        "workload": {
+          "id": "G073",
+          "mode": "persistent",
+          "payload_bytes": 1024,
+          "fanout": 5,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 1900.0,
+          "scout_upper": 2000.0,
+          "confirmed_lower": 1900.0,
+          "confirmed_upper": 2000.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05263157894736842,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 13
+        }
+      },
+      {
+        "id": "G074",
+        "workload": {
+          "id": "G074",
+          "mode": "persistent",
+          "payload_bytes": 102400,
+          "fanout": 20,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 5.363809523809524,
+          "scout_upper": 5.851428571428571,
+          "confirmed_lower": 5.363809523809524,
+          "confirmed_upper": 5.851428571428571,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909095,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 11
+        }
+      },
+      {
+        "id": "G075",
+        "workload": {
+          "id": "G075",
+          "mode": "persistent",
+          "payload_bytes": 10240,
+          "fanout": 1,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 550.0,
+          "scout_upper": 600.0,
+          "confirmed_lower": 550.0,
+          "confirmed_upper": 600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909091,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 10
+        }
+      },
+      {
+        "id": "G076",
+        "workload": {
+          "id": "G076",
+          "mode": "persistent",
+          "payload_bytes": 102400,
+          "fanout": 10,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 10.15625,
+          "scout_upper": 10.9375,
+          "confirmed_lower": 10.15625,
+          "confirmed_upper": 10.9375,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.07692307692307693,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 11
+        }
+      },
+      {
+        "id": "G077",
+        "workload": {
+          "id": "G077",
+          "mode": "direct",
+          "payload_bytes": 102400,
+          "fanout": 10,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 10.15625,
+          "scout_upper": 10.9375,
+          "confirmed_lower": 10.15625,
+          "confirmed_upper": 10.9375,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.07692307692307693,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 11
+        }
+      },
+      {
+        "id": "G078",
+        "workload": {
+          "id": "G078",
+          "mode": "persistent",
+          "payload_bytes": 102400,
+          "fanout": 10,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 10.15625,
+          "scout_upper": 10.9375,
+          "confirmed_lower": 10.15625,
+          "confirmed_upper": 10.9375,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.07692307692307693,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 11
+        }
+      },
+      {
+        "id": "G079",
+        "workload": {
+          "id": "G079",
+          "mode": "direct",
+          "payload_bytes": 102400,
+          "fanout": 10,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 10.15625,
+          "scout_upper": 10.9375,
+          "confirmed_lower": 10.15625,
+          "confirmed_upper": 10.9375,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.07692307692307693,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 11
+        }
+      },
+      {
+        "id": "G080",
+        "workload": {
+          "id": "G080",
+          "mode": "persistent",
+          "payload_bytes": 102400,
+          "fanout": 5,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 18.75,
+          "scout_upper": 20.3125,
+          "confirmed_lower": 18.75,
+          "confirmed_upper": 20.3125,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.08333333333333333,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 10
+        }
+      },
+      {
+        "id": "G081",
+        "workload": {
+          "id": "G081",
+          "mode": "direct",
+          "payload_bytes": 64,
+          "fanout": 1,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 12000.0,
+          "scout_upper": 12800.0,
+          "confirmed_lower": 12000.0,
+          "confirmed_upper": 12800.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G082",
+        "workload": {
+          "id": "G082",
+          "mode": "direct",
+          "payload_bytes": 1024,
+          "fanout": 20,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 550.0,
+          "scout_upper": 600.0,
+          "confirmed_lower": 550.0,
+          "confirmed_upper": 600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909091,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 10
+        }
+      },
+      {
+        "id": "G083",
+        "workload": {
+          "id": "G083",
+          "mode": "direct",
+          "payload_bytes": 102400,
+          "fanout": 20,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 5.363809523809524,
+          "scout_upper": 5.851428571428571,
+          "confirmed_lower": 5.363809523809524,
+          "confirmed_upper": 5.851428571428571,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909095,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 11
+        }
+      },
+      {
+        "id": "G084",
+        "workload": {
+          "id": "G084",
+          "mode": "persistent",
+          "payload_bytes": 1024,
+          "fanout": 5,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 1900.0,
+          "scout_upper": 2000.0,
+          "confirmed_lower": 1900.0,
+          "confirmed_upper": 2000.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05263157894736842,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 13
+        }
+      },
+      {
+        "id": "G085",
+        "workload": {
+          "id": "G085",
+          "mode": "persistent",
+          "payload_bytes": 64,
+          "fanout": 2,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G086",
+        "workload": {
+          "id": "G086",
+          "mode": "persistent",
+          "payload_bytes": 10240,
+          "fanout": 2,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 375.0,
+          "scout_upper": 400.0,
+          "confirmed_lower": 375.0,
+          "confirmed_upper": 400.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G087",
+        "workload": {
+          "id": "G087",
+          "mode": "persistent",
+          "payload_bytes": 64,
+          "fanout": 10,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G088",
+        "workload": {
+          "id": "G088",
+          "mode": "persistent",
+          "payload_bytes": 10240,
+          "fanout": 20,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 53.125,
+          "scout_upper": 56.25,
+          "confirmed_lower": 53.125,
+          "confirmed_upper": 56.25,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.058823529411764705,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G089",
+        "workload": {
+          "id": "G089",
+          "mode": "persistent",
+          "payload_bytes": 256,
+          "fanout": 20,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 2200.0,
+          "scout_upper": 2400.0,
+          "confirmed_lower": 2200.0,
+          "confirmed_upper": 2400.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909091,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 12
+        }
+      },
+      {
+        "id": "G090",
+        "workload": {
+          "id": "G090",
+          "mode": "direct",
+          "payload_bytes": 10240,
+          "fanout": 10,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 106.25,
+          "scout_upper": 112.5,
+          "confirmed_lower": 106.25,
+          "confirmed_upper": 112.5,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.058823529411764705,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G091",
+        "workload": {
+          "id": "G091",
+          "mode": "direct",
+          "payload_bytes": 256,
+          "fanout": 5,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7600.0,
+          "scout_upper": 8000.0,
+          "confirmed_lower": 7600.0,
+          "confirmed_upper": 8000.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05263157894736842,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G092",
+        "workload": {
+          "id": "G092",
+          "mode": "direct",
+          "payload_bytes": 256,
+          "fanout": 1,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 12000.0,
+          "scout_upper": 12800.0,
+          "confirmed_lower": 12000.0,
+          "confirmed_upper": 12800.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G093",
+        "workload": {
+          "id": "G093",
+          "mode": "direct",
+          "payload_bytes": 64,
+          "fanout": 2,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 12000.0,
+          "scout_upper": 12800.0,
+          "confirmed_lower": 12000.0,
+          "confirmed_upper": 12800.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G094",
+        "workload": {
+          "id": "G094",
+          "mode": "persistent",
+          "payload_bytes": 256,
+          "fanout": 10,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 4000.0,
+          "scout_upper": 4400.0,
+          "confirmed_lower": 4000.0,
+          "confirmed_upper": 4400.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.1,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 13
+        }
+      },
+      {
+        "id": "G095",
+        "workload": {
+          "id": "G095",
+          "mode": "direct",
+          "payload_bytes": 256,
+          "fanout": 2,
+          "publishers": 1
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 12000.0,
+          "scout_upper": 12800.0,
+          "confirmed_lower": 12000.0,
+          "confirmed_upper": 12800.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 14
+        }
+      },
+      {
+        "id": "G096",
+        "workload": {
+          "id": "G096",
+          "mode": "direct",
+          "payload_bytes": 256,
+          "fanout": 20,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 2200.0,
+          "scout_upper": 2400.0,
+          "confirmed_lower": 2200.0,
+          "confirmed_upper": 2400.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909091,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 12
+        }
+      },
+      {
+        "id": "G097",
+        "workload": {
+          "id": "G097",
+          "mode": "persistent",
+          "payload_bytes": 64,
+          "fanout": 1,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 7200.0,
+          "scout_upper": 7600.0,
+          "confirmed_lower": 7200.0,
+          "confirmed_upper": 7600.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.05555555555555555,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 15
+        }
+      },
+      {
+        "id": "G098",
+        "workload": {
+          "id": "G098",
+          "mode": "direct",
+          "payload_bytes": 10240,
+          "fanout": 10,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 106.25,
+          "scout_upper": 112.5,
+          "confirmed_lower": 106.25,
+          "confirmed_upper": 112.5,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.058823529411764705,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 9
+        }
+      },
+      {
+        "id": "G099",
+        "workload": {
+          "id": "G099",
+          "mode": "persistent",
+          "payload_bytes": 256,
+          "fanout": 20,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 2200.0,
+          "scout_upper": 2400.0,
+          "confirmed_lower": 2200.0,
+          "confirmed_upper": 2400.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.09090909090909091,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 12
+        }
+      },
+      {
+        "id": "G100",
+        "workload": {
+          "id": "G100",
+          "mode": "direct",
+          "payload_bytes": 10240,
+          "fanout": 5,
+          "publishers": 4
+        },
+        "status": "done",
+        "summary": {
+          "reason": "MEASURED",
+          "scout_lower": 187.5,
+          "scout_upper": 200.0,
+          "confirmed_lower": 187.5,
+          "confirmed_upper": 200.0,
+          "interval_kind": "interval",
+          "confirmed_relative_width": 0.06666666666666667,
+          "boundary_scope": "end_to_end_measured_path",
+          "broker_capacity_validated": false,
+          "stages": 8
+        }
+      }
+    ]
+  }
+}

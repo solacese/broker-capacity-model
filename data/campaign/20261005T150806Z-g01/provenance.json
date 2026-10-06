@@ -1,0 +1,50 @@
+{
+  "discardedRxMsgCount": {
+    "description": "The number of messages discarded during reception by the Message VPN.\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+    "endpoint": "/SEMP/v2/monitor/msgVpns/{msgVpnName}",
+    "json_pointer": "/data/discardedRxMsgCount",
+    "schema_url": "returned SEMP origin + /SEMP/v2/monitor/spec",
+    "schema_version": "10.26.0.9000",
+    "unit": "count"
+  },
+  "discardedTxMsgCount": {
+    "description": "The number of messages discarded during transmission by the Message VPN.\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+    "endpoint": "/SEMP/v2/monitor/msgVpns/{msgVpnName}",
+    "json_pointer": "/data/discardedTxMsgCount",
+    "schema_url": "returned SEMP origin + /SEMP/v2/monitor/spec",
+    "schema_version": "10.26.0.9000",
+    "unit": "count"
+  },
+  "rxByteCount": {
+    "description": "The amount of messages received from clients by the Message VPN, in bytes (B).\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+    "endpoint": "/SEMP/v2/monitor/msgVpns/{msgVpnName}",
+    "json_pointer": "/data/rxByteCount",
+    "schema_url": "returned SEMP origin + /SEMP/v2/monitor/spec",
+    "schema_version": "10.26.0.9000",
+    "unit": "bytes"
+  },
+  "rxMsgCount": {
+    "description": "The number of messages received from clients by the Message VPN.\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+    "endpoint": "/SEMP/v2/monitor/msgVpns/{msgVpnName}",
+    "json_pointer": "/data/rxMsgCount",
+    "schema_url": "returned SEMP origin + /SEMP/v2/monitor/spec",
+    "schema_version": "10.26.0.9000",
+    "unit": "count"
+  },
+  "txByteCount": {
+    "description": "The amount of messages transmitted to clients by the Message VPN, in bytes (B).\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+    "endpoint": "/SEMP/v2/monitor/msgVpns/{msgVpnName}",
+    "json_pointer": "/data/txByteCount",
+    "schema_url": "returned SEMP origin + /SEMP/v2/monitor/spec",
+    "schema_version": "10.26.0.9000",
+    "unit": "bytes"
+  },
+  "txMsgCount": {
+    "description": "The number of messages transmitted to clients by the Message VPN.\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+    "endpoint": "/SEMP/v2/monitor/msgVpns/{msgVpnName}",
+    "json_pointer": "/data/txMsgCount",
+    "schema_url": "returned SEMP origin + /SEMP/v2/monitor/spec",
+    "schema_version": "10.26.0.9000",
+    "unit": "count"
+  }
+}

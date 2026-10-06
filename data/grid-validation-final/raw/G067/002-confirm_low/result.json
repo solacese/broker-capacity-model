@@ -1,0 +1,29 @@
+{
+  "outcome": "INVALID",
+  "reasons": [
+    "unrelated_ingress_or_counter_scope"
+  ],
+  "metrics": {
+    "requested": 3000,
+    "attempted": 2996,
+    "submitted": 2996,
+    "acknowledged": 2996,
+    "rejected": 0,
+    "nacks": 0,
+    "generator_max_process_cpu_percent": 5.0,
+    "received_by_destination": {
+      "receiver-0": 2996,
+      "receiver-1": 2996
+    },
+    "rxMsgCount_delta": 3077,
+    "txMsgCount_delta": 6098,
+    "rxByteCount_delta": 1028888,
+    "txByteCount_delta": 2115560,
+    "discardedRxMsgCount_delta": 0,
+    "discardedTxMsgCount_delta": 0,
+    "broker_accepted_rate": 102.56666666666666
+  },
+  "measurement_seconds": 30,
+  "boundary_scope": "end_to_end_measured_path",
+  "broker_capacity_validated": false
+}

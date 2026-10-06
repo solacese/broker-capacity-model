@@ -1,0 +1,10 @@
+{
+  "service_id": "4qn20a1u6ny",
+  "service_name": "bcm-20261005-5k",
+  "semp_api_version": "10.26.0.9000",
+  "service_class": "enterprise-5k-standalone",
+  "transport": "SMF/TLS",
+  "generator_placement": "local_to_runner_host",
+  "semp_sha256": "e5dec0f20a7a1eb8efb07b6fb5d412a6110057c314f7bff6804587c1a87166a0",
+  "broker_capacity_validated": false
+}

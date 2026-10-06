@@ -1,0 +1,26 @@
+{
+  "broker_version": "10.26",
+  "msg_vpn": "msgvpn-avfk5i15jtm",
+  "owner_verified": true,
+  "path_counts": {
+    "config": 177,
+    "monitor": 234
+  },
+  "returned_semp_config_urls_used": true,
+  "run_id": "20261005T142929Z-discovery",
+  "service_name": "swlb-20260928-121042-c-data-1k",
+  "service_verified": true,
+  "statuses": {
+    "bridges_config": 200,
+    "bridges_monitor": 200,
+    "clients": 200,
+    "config_spec": 200,
+    "monitor_spec": 200,
+    "queues_config": 200,
+    "queues_monitor": 200,
+    "topic_endpoints_config": 200,
+    "topic_endpoints_monitor": 200,
+    "vpn_config": 200,
+    "vpn_monitor": 200
+  }
+}

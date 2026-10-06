@@ -1,0 +1,47 @@
+{
+  "outcome": "SUSTAINABLE",
+  "reasons": [
+    "all_checks_passed_for_measured_horizon"
+  ],
+  "metrics": {
+    "requested": 1500,
+    "attempted": 1496,
+    "submitted": 1496,
+    "acknowledged": 1496,
+    "rejected": 0,
+    "nacks": 0,
+    "generator_max_process_cpu_percent": 2.2,
+    "received_by_destination": {
+      "receiver-3": 1496,
+      "receiver-16": 1496,
+      "receiver-14": 1496,
+      "receiver-8": 1496,
+      "receiver-9": 1496,
+      "receiver-5": 1496,
+      "receiver-1": 1496,
+      "receiver-7": 1496,
+      "receiver-18": 1496,
+      "receiver-15": 1496,
+      "receiver-0": 1496,
+      "receiver-11": 1496,
+      "receiver-12": 1496,
+      "receiver-4": 1496,
+      "receiver-2": 1496,
+      "receiver-13": 1496,
+      "receiver-6": 1496,
+      "receiver-17": 1496,
+      "receiver-19": 1496,
+      "receiver-10": 1496
+    },
+    "dataRxMsgCount_delta": 1496,
+    "dataTxMsgCount_delta": 29920,
+    "dataRxByteCount_delta": 15453680,
+    "dataTxByteCount_delta": 309372800,
+    "discardedRxMsgCount_delta": 0,
+    "discardedTxMsgCount_delta": 0,
+    "broker_accepted_rate": 49.86666666666667
+  },
+  "measurement_seconds": 30,
+  "boundary_scope": "end_to_end_measured_path",
+  "broker_capacity_validated": false
+}

@@ -1,0 +1,21 @@
+{
+  "outcome": "INCONCLUSIVE",
+  "reasons": [
+    "insufficient_broker_samples"
+  ],
+  "metrics": {
+    "requested": 1200,
+    "attempted": 1199,
+    "submitted": 1199,
+    "acknowledged": 0,
+    "rejected": 0,
+    "nacks": 0,
+    "generator_max_process_cpu_percent": 5.8,
+    "received_by_destination": {
+      "receiver-0": 1199
+    }
+  },
+  "measurement_seconds": 12,
+  "boundary_scope": "end_to_end_measured_path",
+  "broker_capacity_validated": false
+}

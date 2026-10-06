@@ -1,0 +1,149 @@
+{
+  "source_sha256": "c6fdd9d6b75d66038d31c665d176b4ba211b9b584d0e68dd23b7415b326f1927",
+  "stages": [
+    {
+      "stage": "raw/G013/001-probe",
+      "outcome": "SUSTAINABLE",
+      "metrics": {
+        "requested": 3000,
+        "attempted": 2996,
+        "submitted": 2996,
+        "acknowledged": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "generator_max_process_cpu_percent": 3.9,
+        "received_by_destination": {
+          "receiver-1": 2996,
+          "receiver-0": 2996
+        },
+        "dataRxMsgCount_delta": 2996,
+        "dataTxMsgCount_delta": 5992,
+        "dataRxByteCount_delta": 922768,
+        "dataTxByteCount_delta": 1845536,
+        "discardedRxMsgCount_delta": 0,
+        "discardedTxMsgCount_delta": 0,
+        "broker_accepted_rate": 99.86666666666666
+      }
+    },
+    {
+      "stage": "raw/G013/002-confirm_low",
+      "outcome": "SUSTAINABLE",
+      "metrics": {
+        "requested": 3000,
+        "attempted": 2996,
+        "submitted": 2996,
+        "acknowledged": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "generator_max_process_cpu_percent": 4.2,
+        "received_by_destination": {
+          "receiver-1": 2996,
+          "receiver-0": 2996
+        },
+        "dataRxMsgCount_delta": 2996,
+        "dataTxMsgCount_delta": 5992,
+        "dataRxByteCount_delta": 922768,
+        "dataTxByteCount_delta": 1845536,
+        "discardedRxMsgCount_delta": 0,
+        "discardedTxMsgCount_delta": 0,
+        "broker_accepted_rate": 99.86666666666666
+      }
+    },
+    {
+      "stage": "raw/G013/003-confirm_low",
+      "outcome": "SUSTAINABLE",
+      "metrics": {
+        "requested": 3000,
+        "attempted": 2996,
+        "submitted": 2996,
+        "acknowledged": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "generator_max_process_cpu_percent": 4.0,
+        "received_by_destination": {
+          "receiver-0": 2996,
+          "receiver-1": 2996
+        },
+        "dataRxMsgCount_delta": 2996,
+        "dataTxMsgCount_delta": 5992,
+        "dataRxByteCount_delta": 922768,
+        "dataTxByteCount_delta": 1845536,
+        "discardedRxMsgCount_delta": 0,
+        "discardedTxMsgCount_delta": 0,
+        "broker_accepted_rate": 99.86666666666666
+      }
+    },
+    {
+      "stage": "raw/G067/001-probe",
+      "outcome": "SUSTAINABLE",
+      "metrics": {
+        "requested": 3000,
+        "attempted": 2996,
+        "submitted": 2996,
+        "acknowledged": 2996,
+        "rejected": 0,
+        "nacks": 0,
+        "generator_max_process_cpu_percent": 4.3,
+        "received_by_destination": {
+          "receiver-1": 2996,
+          "receiver-0": 2996
+        },
+        "dataRxMsgCount_delta": 2996,
+        "dataTxMsgCount_delta": 5992,
+        "dataRxByteCount_delta": 1036616,
+        "dataTxByteCount_delta": 2133152,
+        "discardedRxMsgCount_delta": 0,
+        "discardedTxMsgCount_delta": 0,
+        "broker_accepted_rate": 99.86666666666666
+      }
+    },
+    {
+      "stage": "raw/G067/002-confirm_low",
+      "outcome": "SUSTAINABLE",
+      "metrics": {
+        "requested": 3000,
+        "attempted": 2996,
+        "submitted": 2996,
+        "acknowledged": 2996,
+        "rejected": 0,
+        "nacks": 0,
+        "generator_max_process_cpu_percent": 5.1,
+        "received_by_destination": {
+          "receiver-1": 2996,
+          "receiver-0": 2996
+        },
+        "dataRxMsgCount_delta": 2996,
+        "dataTxMsgCount_delta": 5992,
+        "dataRxByteCount_delta": 1036616,
+        "dataTxByteCount_delta": 2133152,
+        "discardedRxMsgCount_delta": 0,
+        "discardedTxMsgCount_delta": 0,
+        "broker_accepted_rate": 99.86666666666666
+      }
+    },
+    {
+      "stage": "raw/G067/003-confirm_low",
+      "outcome": "SUSTAINABLE",
+      "metrics": {
+        "requested": 3000,
+        "attempted": 2996,
+        "submitted": 2996,
+        "acknowledged": 2996,
+        "rejected": 0,
+        "nacks": 0,
+        "generator_max_process_cpu_percent": 4.5,
+        "received_by_destination": {
+          "receiver-0": 2996,
+          "receiver-1": 2996
+        },
+        "dataRxMsgCount_delta": 2996,
+        "dataTxMsgCount_delta": 5992,
+        "dataRxByteCount_delta": 1036616,
+        "dataTxByteCount_delta": 2133152,
+        "discardedRxMsgCount_delta": 0,
+        "discardedTxMsgCount_delta": 0,
+        "broker_accepted_rate": 99.86666666666666
+      }
+    }
+  ]
+}

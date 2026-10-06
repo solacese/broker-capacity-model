@@ -1,0 +1,48 @@
+{
+  "broker_config_sha256": "43c8c71e0a1458a9b2bd36d192c748071f37615b1060801616ae642e301c6e28",
+  "broker_version": "10.26.0.9000",
+  "capacity_label_allowed": false,
+  "config_spec_sha256": "928164df9914711ad1c1845abc377dcbd34989a0201a78f586a2ed762f59b103",
+  "created_at": "2026-10-05T15:02:54.853509+00:00",
+  "drain_seconds": 10,
+  "generator": {
+    "adapter": "solace-pubsubplus-python",
+    "hostname": "RaphaelCaillon-GCYH7MK9YP",
+    "placement": "local_wan",
+    "process_isolated": true,
+    "python": "3.13.7"
+  },
+  "kind": "wiring_calibration",
+  "measurement_seconds": 60,
+  "monitor_spec_sha256": "6c82eed58c0de4a65dccd90fb41c332f1953ab040bb408f84d92197de12cbdfb",
+  "msg_vpn": "bcm-20261005-5k",
+  "owner_id": "usfos7cfqge",
+  "resource": null,
+  "run_id": "20261005T150250Z-g01",
+  "schema_version": 1,
+  "service_class": "enterprise-5k-standalone",
+  "service_id": "4qn20a1u6ny",
+  "service_name": "bcm-20261005-5k",
+  "stage_id": "G01",
+  "warmup_seconds": 15,
+  "workload": {
+    "acknowledgement_mode": null,
+    "composition": {
+      "consumers_per_destination": 1,
+      "publishers": 1,
+      "tls": true
+    },
+    "delivery_mode": "direct",
+    "destination_ids": [
+      "bcm-20261005-g01"
+    ],
+    "egress_protocol": "SMF",
+    "fanout": 1,
+    "ingress_protocol": "SMF",
+    "message_size_bytes": 1024,
+    "partition_count": null,
+    "queue_type": null,
+    "requested_rate": 100.0
+  },
+  "workload_config_sha256": "efae7916d44620ee16154c776b6d4b888a538b055afa305df591859b6d50c173"
+}

@@ -1,0 +1,184 @@
+[
+  {
+    "case": {
+      "id": "V01",
+      "mode": "direct",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 20,
+      "reference_rate": 138026,
+      "reference_cell": "D34"
+    },
+    "stage": "qualification",
+    "offered_rate": 100.0,
+    "reference_fraction": 0.000724501180936925,
+    "result": {
+      "outcome": "SUSTAINABLE",
+      "reasons": [
+        "all_checks_passed_for_measured_horizon"
+      ],
+      "metrics": {
+        "requested": 3000,
+        "attempted": 2980,
+        "submitted": 2980,
+        "acknowledged": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "generator_max_process_cpu_percent": 3.2,
+        "received_by_destination": {
+          "receiver-0": 2980
+        },
+        "dataRxMsgCount_delta": 2980,
+        "dataTxMsgCount_delta": 2980,
+        "dataRxByteCount_delta": 3206480,
+        "dataTxByteCount_delta": 3206480,
+        "discardedRxMsgCount_delta": 0,
+        "discardedTxMsgCount_delta": 0,
+        "broker_accepted_rate": 99.33333333333333
+      },
+      "measurement_seconds": 30,
+      "boundary_scope": "end_to_end_measured_path",
+      "broker_capacity_validated": false
+    },
+    "archived_reference_validated": false,
+    "setup_differences": "Standalone versus HA; one subscriber/topic versus 100; Python SDK versus CCSMP; local WAN; different broker build; windows/cipher not matched"
+  },
+  {
+    "case": {
+      "id": "V01",
+      "mode": "direct",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 20,
+      "reference_rate": 138026,
+      "reference_cell": "D34"
+    },
+    "stage": "reference_probe",
+    "offered_rate": 65536.0,
+    "reference_fraction": 0.47480909393882315,
+    "result": {
+      "outcome": "INVALID",
+      "reasons": [
+        "worker_or_telemetry_failure",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "PublisherOverflowError",
+        "RuntimeError:stage_failed"
+      ],
+      "metrics": {},
+      "measurement_seconds": 30,
+      "boundary_scope": "end_to_end_measured_path",
+      "broker_capacity_validated": false
+    },
+    "archived_reference_validated": false,
+    "setup_differences": "Standalone versus HA; one subscriber/topic versus 100; Python SDK versus CCSMP; local WAN; different broker build; windows/cipher not matched"
+  },
+  {
+    "case": {
+      "id": "V02",
+      "mode": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 10,
+      "reference_rate": 54923,
+      "reference_cell": "D44"
+    },
+    "stage": "qualification",
+    "offered_rate": 100.0,
+    "reference_fraction": 0.0018207308413597217,
+    "result": {
+      "outcome": "INVALID",
+      "reasons": [
+        "unrelated_ingress_or_counter_scope"
+      ],
+      "metrics": {
+        "requested": 3000,
+        "attempted": 2990,
+        "submitted": 2990,
+        "acknowledged": 2990,
+        "rejected": 0,
+        "nacks": 0,
+        "generator_max_process_cpu_percent": 4.5,
+        "received_by_destination": {
+          "receiver-0": 2990
+        },
+        "dataRxMsgCount_delta": 4374,
+        "dataTxMsgCount_delta": 2990,
+        "dataRxByteCount_delta": 4877481,
+        "dataTxByteCount_delta": 3360760,
+        "discardedRxMsgCount_delta": 1384,
+        "discardedTxMsgCount_delta": 0,
+        "broker_accepted_rate": 145.8
+      },
+      "measurement_seconds": 30,
+      "boundary_scope": "end_to_end_measured_path",
+      "broker_capacity_validated": false
+    },
+    "archived_reference_validated": false,
+    "setup_differences": "Standalone versus HA; one subscriber/topic versus 100; Python SDK versus CCSMP; local WAN; different broker build; windows/cipher not matched"
+  },
+  {
+    "case": {
+      "id": "V03",
+      "mode": "persistent",
+      "payload_bytes": 204800,
+      "fanout": 1,
+      "publishers": 10,
+      "reference_rate": 349,
+      "reference_cell": "H44"
+    },
+    "stage": "qualification",
+    "offered_rate": 100.0,
+    "reference_fraction": 0.28653295128939826,
+    "result": {
+      "outcome": "INVALID",
+      "reasons": [
+        "worker_or_telemetry_failure",
+        "RuntimeError:stage_failed",
+        "IncompleteMessageDeliveryError",
+        "IncompleteMessageDeliveryError",
+        "IncompleteMessageDeliveryError",
+        "IncompleteMessageDeliveryError",
+        "IncompleteMessageDeliveryError",
+        "IncompleteMessageDeliveryError",
+        "IncompleteMessageDeliveryError",
+        "IncompleteMessageDeliveryError",
+        "IncompleteMessageDeliveryError",
+        "IncompleteMessageDeliveryError",
+        "forced_worker_shutdown",
+        "forced_worker_shutdown",
+        "forced_worker_shutdown",
+        "forced_worker_shutdown",
+        "forced_worker_shutdown",
+        "forced_worker_shutdown",
+        "forced_worker_shutdown",
+        "forced_worker_shutdown",
+        "forced_worker_shutdown",
+        "forced_worker_shutdown"
+      ],
+      "metrics": {},
+      "measurement_seconds": 30,
+      "boundary_scope": "end_to_end_measured_path",
+      "broker_capacity_validated": false
+    },
+    "archived_reference_validated": false,
+    "setup_differences": "Standalone versus HA; one subscriber/topic versus 100; Python SDK versus CCSMP; local WAN; different broker build; windows/cipher not matched"
+  }
+]

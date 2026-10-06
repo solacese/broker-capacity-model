@@ -1,0 +1,115 @@
+{
+  "base_path": "/SEMP/v2/monitor",
+  "fields": {
+    "MsgVpn.discardedRxMsgCount": {
+      "description": "The number of messages discarded during reception by the Message VPN.\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/discardedRxMsgCount",
+      "type": "integer"
+    },
+    "MsgVpn.discardedTxMsgCount": {
+      "description": "The number of messages discarded during transmission by the Message VPN.\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/discardedTxMsgCount",
+      "type": "integer"
+    },
+    "MsgVpn.msgSpoolMsgCount": {
+      "description": "The current number of messages spooled (persisted in the Message Spool) in the Message VPN.\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/msgSpoolMsgCount",
+      "type": "integer"
+    },
+    "MsgVpn.msgSpoolUsage": {
+      "description": "The current message spool usage by the Message VPN, in bytes (B).\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/msgSpoolUsage",
+      "type": "integer"
+    },
+    "MsgVpn.rxByteCount": {
+      "description": "The amount of messages received from clients by the Message VPN, in bytes (B).\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/rxByteCount",
+      "type": "integer"
+    },
+    "MsgVpn.rxMsgCount": {
+      "description": "The number of messages received from clients by the Message VPN.\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/rxMsgCount",
+      "type": "integer"
+    },
+    "MsgVpn.txByteCount": {
+      "description": "The amount of messages transmitted to clients by the Message VPN, in bytes (B).\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/txByteCount",
+      "type": "integer"
+    },
+    "MsgVpn.txMsgCount": {
+      "description": "The number of messages transmitted to clients by the Message VPN.\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/txMsgCount",
+      "type": "integer"
+    },
+    "MsgVpnQueue.msgSpoolUsage": {
+      "description": "The message spool usage by the Queue, in bytes (B).\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/msgSpoolUsage",
+      "type": "integer"
+    },
+    "MsgVpnQueue.rxMsgRate": {
+      "description": "The current message rate received by the Queue, in messages per second (msg/sec).\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/rxMsgRate",
+      "type": "integer"
+    },
+    "MsgVpnQueue.spooledMsgCount": {
+      "description": "The number of guaranteed messages that were spooled in the Queue.\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/spooledMsgCount",
+      "type": "integer"
+    },
+    "MsgVpnQueue.txMsgRate": {
+      "description": "The current message rate transmitted by the Queue, in messages per second (msg/sec).\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/txMsgRate",
+      "type": "integer"
+    },
+    "MsgVpnQueue.txUnackedMsgCount": {
+      "description": "The number of guaranteed messages in the Queue that have been transmitted but not acknowledged by all consumers.\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/txUnackedMsgCount",
+      "type": "integer"
+    },
+    "MsgVpnTopicEndpoint.msgSpoolUsage": {
+      "description": "The message spool usage by the Topic Endpoint, in bytes (B).\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/msgSpoolUsage",
+      "type": "integer"
+    },
+    "MsgVpnTopicEndpoint.rxMsgRate": {
+      "description": "The current message rate received by the Topic Endpoint, in messages per second (msg/sec).\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/rxMsgRate",
+      "type": "integer"
+    },
+    "MsgVpnTopicEndpoint.spooledMsgCount": {
+      "description": "The number of guaranteed messages that were spooled in the Topic Endpoint.\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/spooledMsgCount",
+      "type": "integer"
+    },
+    "MsgVpnTopicEndpoint.txMsgRate": {
+      "description": "The current message rate transmitted by the Topic Endpoint, in messages per second (msg/sec).\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/txMsgRate",
+      "type": "integer"
+    },
+    "MsgVpnTopicEndpoint.txUnackedMsgCount": {
+      "description": "The number of guaranteed messages in the Topic Endpoint that have been transmitted but not acknowledged by all consumers.\n\nThe minimum access scope/level required to retrieve this attribute is \"vpn/read-only\".",
+      "format": "int64",
+      "json_pointer": "/data/txUnackedMsgCount",
+      "type": "integer"
+    }
+  },
+  "schema_url_source": "SEMP Read-Only managementProtocols endpoint returned by Cloud service detail",
+  "schema_version": "10.26.0.8894"
+}

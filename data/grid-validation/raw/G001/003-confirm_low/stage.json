@@ -1,0 +1,14 @@
+{
+  "workload": {
+    "id": "G001",
+    "mode": "direct",
+    "payload_bytes": 1024,
+    "fanout": 1,
+    "publishers": 1
+  },
+  "kind": "confirm_low",
+  "rate": 100.0,
+  "seconds": 30,
+  "source_sha256": "845946a2c925ab9699861a9187547bfadb4aab9d931cc08dcc0963ae892b8865",
+  "warmup_seconds": 1
+}

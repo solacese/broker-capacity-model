@@ -1,0 +1,19 @@
+{
+  "verified_on": "2026-10-05",
+  "token_file": ".env",
+  "token_name": "broker-capacity-model-provisioning",
+  "organization": "seall",
+  "owner": "usfos7cfqge",
+  "permissions": [
+    "mission_control:access",
+    "services:get:self",
+    "services:post",
+    "services:view:self"
+  ],
+  "service_discovery_http": 200,
+  "secrets_saved_in_report": false,
+  "create_schema_probe_http": 400,
+  "create_schema_probe_result": "Required-field validation instead of prior services:post permission denial; no resource created",
+  "actual_additional_creation_tested": false,
+  "service_management_credentials_retrieval_http": 200
+}

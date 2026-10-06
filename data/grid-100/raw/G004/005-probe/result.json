@@ -1,0 +1,50 @@
+{
+  "outcome": "UNSUSTAINABLE",
+  "reasons": [
+    "sustained_queue_growth:bcm-20261005-grid-8876e806ac-f20-q02:msgSpoolUsage",
+    "sustained_queue_growth:bcm-20261005-grid-8876e806ac-f20-q05:msgSpoolUsage",
+    "sustained_queue_growth:bcm-20261005-grid-8876e806ac-f20-q06:msgSpoolUsage",
+    "sustained_queue_growth:bcm-20261005-grid-8876e806ac-f20-q14:msgSpoolUsage"
+  ],
+  "metrics": {
+    "requested": 1687,
+    "attempted": 1684,
+    "submitted": 1684,
+    "acknowledged": 1684,
+    "rejected": 0,
+    "nacks": 0,
+    "generator_max_process_cpu_percent": 2.4,
+    "received_by_destination": {
+      "receiver-2": 1684,
+      "receiver-1": 1684,
+      "receiver-0": 1684,
+      "receiver-4": 1684,
+      "receiver-9": 1684,
+      "receiver-5": 1684,
+      "receiver-7": 1684,
+      "receiver-16": 1684,
+      "receiver-6": 1684,
+      "receiver-3": 1684,
+      "receiver-10": 1684,
+      "receiver-13": 1684,
+      "receiver-17": 1684,
+      "receiver-11": 1684,
+      "receiver-8": 1684,
+      "receiver-12": 1684,
+      "receiver-18": 1684,
+      "receiver-19": 1684,
+      "receiver-14": 1684,
+      "receiver-15": 1684
+    },
+    "dataRxMsgCount_delta": 1684,
+    "dataTxMsgCount_delta": 33680,
+    "dataRxByteCount_delta": 17395720,
+    "dataTxByteCount_delta": 348251200,
+    "discardedRxMsgCount_delta": 0,
+    "discardedTxMsgCount_delta": 0,
+    "broker_accepted_rate": 56.13333333333333
+  },
+  "measurement_seconds": 30,
+  "boundary_scope": "end_to_end_measured_path",
+  "broker_capacity_validated": false
+}

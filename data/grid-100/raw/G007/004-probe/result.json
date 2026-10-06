@@ -1,0 +1,37 @@
+{
+  "outcome": "UNSUSTAINABLE",
+  "reasons": [
+    "sustained_queue_growth:bcm-20261005-grid-8876e806ac-f10-q06:msgSpoolUsage"
+  ],
+  "metrics": {
+    "requested": 2625,
+    "attempted": 2624,
+    "submitted": 2624,
+    "acknowledged": 2624,
+    "rejected": 0,
+    "nacks": 0,
+    "generator_max_process_cpu_percent": 4.7,
+    "received_by_destination": {
+      "receiver-1": 2624,
+      "receiver-5": 2624,
+      "receiver-7": 2624,
+      "receiver-3": 2624,
+      "receiver-9": 2624,
+      "receiver-4": 2624,
+      "receiver-6": 2624,
+      "receiver-0": 2624,
+      "receiver-2": 2624,
+      "receiver-8": 2624
+    },
+    "dataRxMsgCount_delta": 2624,
+    "dataTxMsgCount_delta": 26240,
+    "dataRxByteCount_delta": 2923136,
+    "dataTxByteCount_delta": 29493760,
+    "discardedRxMsgCount_delta": 0,
+    "discardedTxMsgCount_delta": 0,
+    "broker_accepted_rate": 87.46666666666667
+  },
+  "measurement_seconds": 30,
+  "boundary_scope": "end_to_end_measured_path",
+  "broker_capacity_validated": false
+}

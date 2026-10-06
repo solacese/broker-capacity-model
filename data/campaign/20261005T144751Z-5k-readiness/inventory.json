@@ -1,0 +1,21 @@
+{
+  "bridges": [],
+  "clients": [
+    {
+      "clientName": "#client",
+      "platform": "Linux26-x86_64_opt - C SDK",
+      "rxMsgRate": 0,
+      "txMsgRate": 0
+    }
+  ],
+  "dmr_bridges": [],
+  "dmr_clusters": [
+    {
+      "dmrClusterName": "cluster-eks-us-east-1a-tpfmz68lrm4",
+      "enabled": true
+    }
+  ],
+  "queue_subscriptions": {},
+  "queues": [],
+  "topic_endpoints": []
+}

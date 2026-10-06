@@ -1,0 +1,102 @@
+{
+  "seconds": 30,
+  "rate": 800.0,
+  "mode": "persistent",
+  "publishers": 1,
+  "fanout": 1,
+  "payload_bytes": 1024,
+  "workers": {
+    "publisher-0": {
+      "event": "stopped",
+      "id": "publisher-0",
+      "role": "publisher",
+      "t": 234116.58077975,
+      "warmup": {
+        "attempted": 1511,
+        "submitted": 1510,
+        "acked": 1510,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 0.0,
+      "cpu": 5.1,
+      "network_tx_bytes": 1968128,
+      "network_rx_bytes": 3073024,
+      "measurement_done": false,
+      "clean_shutdown": false
+    },
+    "receiver-0": {
+      "event": "stopped",
+      "id": "receiver-0",
+      "role": "receiver",
+      "t": 234115.681726625,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 655,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 655,
+        "latency_sum_ns": 911651228576,
+        "latency_max_ns": 2156566625
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 0.0,
+      "cpu": 7.8,
+      "network_tx_bytes": 1526784,
+      "network_rx_bytes": 2667520,
+      "measurement_done": false,
+      "clean_shutdown": true
+    }
+  },
+  "errors": [
+    "PublisherOverflowError",
+    "RuntimeError:stage_failed"
+  ],
+  "telemetry": [],
+  "receiver_lag_series": {
+    "receiver-0": []
+  },
+  "counter_bracket": [],
+  "queue_names": [
+    "bcm-20261005-grid-8876e806ac-f01-q00"
+  ],
+  "queues_empty": false,
+  "clean_shutdown": false,
+  "interrupted": false,
+  "guardrail": false
+}

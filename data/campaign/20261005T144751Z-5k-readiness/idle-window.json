@@ -1,0 +1,56 @@
+[
+  {
+    "queues": [],
+    "timestamp": "2026-10-05T14:47:57.972779+00:00",
+    "vpn": {
+      "discardedRxMsgCount": 0,
+      "discardedTxMsgCount": 0,
+      "msgSpoolMsgCount": 0,
+      "msgSpoolUsage": 0,
+      "rxByteCount": 493,
+      "rxByteRate": 0,
+      "rxMsgCount": 7,
+      "rxMsgRate": 0,
+      "txByteCount": 342,
+      "txByteRate": 0,
+      "txMsgCount": 2,
+      "txMsgRate": 0
+    }
+  },
+  {
+    "queues": [],
+    "timestamp": "2026-10-05T14:48:03.823900+00:00",
+    "vpn": {
+      "discardedRxMsgCount": 0,
+      "discardedTxMsgCount": 0,
+      "msgSpoolMsgCount": 0,
+      "msgSpoolUsage": 0,
+      "rxByteCount": 493,
+      "rxByteRate": 0,
+      "rxMsgCount": 7,
+      "rxMsgRate": 0,
+      "txByteCount": 342,
+      "txByteRate": 0,
+      "txMsgCount": 2,
+      "txMsgRate": 0
+    }
+  },
+  {
+    "queues": [],
+    "timestamp": "2026-10-05T14:48:09.626885+00:00",
+    "vpn": {
+      "discardedRxMsgCount": 0,
+      "discardedTxMsgCount": 0,
+      "msgSpoolMsgCount": 0,
+      "msgSpoolUsage": 0,
+      "rxByteCount": 493,
+      "rxByteRate": 0,
+      "rxMsgCount": 7,
+      "rxMsgRate": 0,
+      "txByteCount": 342,
+      "txByteRate": 0,
+      "txMsgCount": 2,
+      "txMsgRate": 0
+    }
+  }
+]

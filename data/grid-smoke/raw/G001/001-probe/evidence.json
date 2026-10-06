@@ -1,0 +1,180 @@
+{
+  "seconds": 12,
+  "rate": 100.0,
+  "mode": "direct",
+  "publishers": 1,
+  "fanout": 1,
+  "payload_bytes": 1024,
+  "workers": {
+    "publisher-0": {
+      "event": "stopped",
+      "id": "publisher-0",
+      "role": "publisher",
+      "t": 221210.105517458,
+      "warmup": {
+        "attempted": 99,
+        "submitted": 99,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "measure": {
+        "attempted": 1199,
+        "submitted": 1199,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 5.8,
+      "cpu": 24.3,
+      "network_tx_bytes": 2576384,
+      "network_rx_bytes": 2576384,
+      "measurement_done": true,
+      "clean_shutdown": true
+    },
+    "receiver-0": {
+      "event": "stopped",
+      "id": "receiver-0",
+      "role": "receiver",
+      "t": 221210.306477125,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 99,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 99,
+        "latency_sum_ns": 38633303921,
+        "latency_max_ns": 700320500
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 1199,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 1199,
+        "latency_sum_ns": 628393427452,
+        "latency_max_ns": 956019250
+      },
+      "max_cpu": 3.4,
+      "cpu": 3.8,
+      "network_tx_bytes": 2579456,
+      "network_rx_bytes": 2579456,
+      "measurement_done": false,
+      "clean_shutdown": true
+    }
+  },
+  "errors": [],
+  "telemetry": [
+    {
+      "t": 221193.461597458,
+      "vpn": {
+        "rxMsgCount": 167630,
+        "txMsgCount": 167625,
+        "rxByteCount": 177125601,
+        "txByteCount": 177126385,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {}
+    },
+    {
+      "t": 221198.168221041,
+      "vpn": {
+        "rxMsgCount": 167824,
+        "txMsgCount": 167819,
+        "rxByteCount": 177332217,
+        "txByteCount": 177333017,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {}
+    },
+    {
+      "t": 221202.595609708,
+      "vpn": {
+        "rxMsgCount": 168353,
+        "txMsgCount": 168348,
+        "rxByteCount": 177897165,
+        "txByteCount": 177897997,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {}
+    },
+    {
+      "t": 221207.445314791,
+      "vpn": {
+        "rxMsgCount": 168750,
+        "txMsgCount": 168745,
+        "rxByteCount": 178322209,
+        "txByteCount": 178323057,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {}
+    },
+    {
+      "t": 221208.651493083,
+      "vpn": {
+        "rxMsgCount": 168839,
+        "txMsgCount": 168834,
+        "rxByteCount": 178415845,
+        "txByteCount": 178416709,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "msgSpoolMsgCount": 0
+      },
+      "queues": {}
+    }
+  ],
+  "receiver_lag_series": {
+    "receiver-0": [
+      [
+        221198.168477625,
+        10
+      ],
+      [
+        221202.595847416,
+        113
+      ],
+      [
+        221207.44555025,
+        13
+      ]
+    ]
+  },
+  "queue_names": [],
+  "queues_empty": true,
+  "clean_shutdown": true,
+  "interrupted": false,
+  "guardrail": false
+}

@@ -1,0 +1,14 @@
+{
+  "workload": {
+    "id": "G004",
+    "mode": "persistent",
+    "payload_bytes": 10240,
+    "fanout": 20,
+    "publishers": 4
+  },
+  "kind": "confirm_low",
+  "rate": 50.0,
+  "seconds": 120,
+  "source_sha256": "c6fdd9d6b75d66038d31c665d176b4ba211b9b584d0e68dd23b7415b326f1927",
+  "warmup_seconds": 10
+}

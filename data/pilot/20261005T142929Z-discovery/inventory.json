@@ -1,0 +1,298 @@
+{
+  "bridges_config": {
+    "data": [],
+    "meta": {
+      "request": {
+        "method": "GET",
+        "uri": "https://mr-connection-dc4c76iuwy6.messaging.solace.cloud:943/SEMP/v2/config/msgVpns/msgvpn-avfk5i15jtm/bridges?count=100"
+      },
+      "responseCode": 200
+    }
+  },
+  "bridges_monitor": {
+    "data": [],
+    "meta": {
+      "request": {
+        "method": "GET",
+        "uri": "https://mr-connection-dc4c76iuwy6.messaging.solace.cloud:943/SEMP/v2/monitor/msgVpns/msgvpn-avfk5i15jtm/bridges?count=100"
+      },
+      "responseCode": 200
+    }
+  },
+  "clients": {
+    "data": [
+      {
+        "bindRequestCount": 1,
+        "bindSuccessCount": 1,
+        "clientId": 99,
+        "clientName": "#amqp/client/a130b7a998c7e5ff/events-b-subscriber-1.broker-c",
+        "platform": "",
+        "rxByteCount": 505,
+        "rxMsgCount": 6,
+        "rxMsgRate": 0,
+        "slowSubscriber": false,
+        "txByteCount": 100403,
+        "txMsgCount": 12469,
+        "txMsgRate": 0
+      },
+      {
+        "bindRequestCount": 1,
+        "bindSuccessCount": 1,
+        "clientId": 98,
+        "clientName": "#amqp/client/a130b7a99ac7e5e3/events-a-subscriber-1.broker-c",
+        "platform": "",
+        "rxByteCount": 17155,
+        "rxMsgCount": 258,
+        "rxMsgRate": 0,
+        "slowSubscriber": false,
+        "txByteCount": 511901,
+        "txMsgCount": 12721,
+        "txMsgRate": 0
+      },
+      {
+        "bindRequestCount": 0,
+        "bindSuccessCount": 0,
+        "clientId": 97,
+        "clientName": "#amqp/client/a130b7a99ec7e5e0/events-a-publisher-1.broker-c",
+        "platform": "",
+        "rxByteCount": 405480,
+        "rxMsgCount": 255,
+        "rxMsgRate": 0,
+        "slowSubscriber": false,
+        "txByteCount": 110336,
+        "txMsgCount": 12720,
+        "txMsgRate": 0
+      },
+      {
+        "bindRequestCount": 0,
+        "bindSuccessCount": 0,
+        "clientId": 2,
+        "clientName": "#client",
+        "platform": "Linux26-x86_64_opt - C SDK",
+        "rxByteCount": 496,
+        "rxMsgCount": 7,
+        "rxMsgRate": 0,
+        "slowSubscriber": false,
+        "txByteCount": 345,
+        "txMsgCount": 2,
+        "txMsgRate": 0
+      }
+    ],
+    "meta": {
+      "count": 4,
+      "request": {
+        "method": "GET",
+        "uri": "https://mr-connection-dc4c76iuwy6.messaging.solace.cloud:943/SEMP/v2/monitor/msgVpns/msgvpn-avfk5i15jtm/clients?count=100"
+      },
+      "responseCode": 200
+    }
+  },
+  "queues_config": {
+    "data": [
+      {
+        "accessType": "exclusive",
+        "egressEnabled": true,
+        "ingressEnabled": true,
+        "maxBindCount": 1000,
+        "maxDeliveredUnackedMsgsPerFlow": 1000,
+        "maxMsgSize": 10000000,
+        "maxMsgSpoolUsage": 256,
+        "partitionCount": 0,
+        "permission": "delete",
+        "queueName": "swlb-live-20260928-121042.data.baggage-tracking.broker-c.tracking.e1"
+      },
+      {
+        "accessType": "exclusive",
+        "egressEnabled": true,
+        "ingressEnabled": true,
+        "maxBindCount": 1000,
+        "maxDeliveredUnackedMsgsPerFlow": 1000,
+        "maxMsgSize": 10000000,
+        "maxMsgSpoolUsage": 256,
+        "partitionCount": 0,
+        "permission": "delete",
+        "queueName": "swlb-live-20260928-121042.data.flight-operations.broker-c.operations.e1"
+      },
+      {
+        "accessType": "exclusive",
+        "egressEnabled": true,
+        "ingressEnabled": true,
+        "maxBindCount": 1000,
+        "maxDeliveredUnackedMsgsPerFlow": 1000,
+        "maxMsgSize": 10000000,
+        "maxMsgSpoolUsage": 256,
+        "partitionCount": 0,
+        "permission": "delete",
+        "queueName": "swlb-neutral-20260928.data.events-a.broker-c.set-a.e1"
+      },
+      {
+        "accessType": "exclusive",
+        "egressEnabled": true,
+        "ingressEnabled": true,
+        "maxBindCount": 1000,
+        "maxDeliveredUnackedMsgsPerFlow": 1000,
+        "maxMsgSize": 10000000,
+        "maxMsgSpoolUsage": 256,
+        "partitionCount": 0,
+        "permission": "delete",
+        "queueName": "swlb-neutral-20260928.data.events-b.broker-c.set-b.e1"
+      }
+    ],
+    "meta": {
+      "request": {
+        "method": "GET",
+        "uri": "https://mr-connection-dc4c76iuwy6.messaging.solace.cloud:943/SEMP/v2/config/msgVpns/msgvpn-avfk5i15jtm/queues?count=100"
+      },
+      "responseCode": 200
+    }
+  },
+  "queues_monitor": {
+    "data": [
+      {
+        "accessType": "exclusive",
+        "disabledDiscardedMsgCount": 0,
+        "durable": true,
+        "maxMsgSizeExceededDiscardedMsgCount": 0,
+        "maxMsgSpoolUsageExceededDiscardedMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "partitionOperationalCount": 0,
+        "partitionRebalanceStatus": "ready",
+        "queueName": "swlb-live-20260928-121042.data.baggage-tracking.broker-c.tracking.e1",
+        "rxByteRate": 0,
+        "rxMsgRate": 0,
+        "spooledMsgCount": 185,
+        "txByteRate": 0,
+        "txMsgRate": 0,
+        "txUnackedMsgCount": 0
+      },
+      {
+        "accessType": "exclusive",
+        "disabledDiscardedMsgCount": 0,
+        "durable": true,
+        "maxMsgSizeExceededDiscardedMsgCount": 0,
+        "maxMsgSpoolUsageExceededDiscardedMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "partitionOperationalCount": 0,
+        "partitionRebalanceStatus": "ready",
+        "queueName": "swlb-live-20260928-121042.data.flight-operations.broker-c.operations.e1",
+        "rxByteRate": 0,
+        "rxMsgRate": 0,
+        "spooledMsgCount": 196,
+        "txByteRate": 0,
+        "txMsgRate": 0,
+        "txUnackedMsgCount": 0
+      },
+      {
+        "accessType": "exclusive",
+        "disabledDiscardedMsgCount": 0,
+        "durable": true,
+        "maxMsgSizeExceededDiscardedMsgCount": 0,
+        "maxMsgSpoolUsageExceededDiscardedMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "partitionOperationalCount": 0,
+        "partitionRebalanceStatus": "ready",
+        "queueName": "swlb-neutral-20260928.data.events-a.broker-c.set-a.e1",
+        "rxByteRate": 0,
+        "rxMsgRate": 0,
+        "spooledMsgCount": 4585322,
+        "txByteRate": 0,
+        "txMsgRate": 0,
+        "txUnackedMsgCount": 0
+      },
+      {
+        "accessType": "exclusive",
+        "disabledDiscardedMsgCount": 0,
+        "durable": true,
+        "maxMsgSizeExceededDiscardedMsgCount": 0,
+        "maxMsgSpoolUsageExceededDiscardedMsgCount": 0,
+        "msgSpoolUsage": 0,
+        "partitionOperationalCount": 0,
+        "partitionRebalanceStatus": "ready",
+        "queueName": "swlb-neutral-20260928.data.events-b.broker-c.set-b.e1",
+        "rxByteRate": 0,
+        "rxMsgRate": 0,
+        "spooledMsgCount": 218196,
+        "txByteRate": 0,
+        "txMsgRate": 0,
+        "txUnackedMsgCount": 0
+      }
+    ],
+    "meta": {
+      "count": 4,
+      "request": {
+        "method": "GET",
+        "uri": "https://mr-connection-dc4c76iuwy6.messaging.solace.cloud:943/SEMP/v2/monitor/msgVpns/msgvpn-avfk5i15jtm/queues?count=100"
+      },
+      "responseCode": 200
+    }
+  },
+  "topic_endpoints_config": {
+    "data": [],
+    "meta": {
+      "request": {
+        "method": "GET",
+        "uri": "https://mr-connection-dc4c76iuwy6.messaging.solace.cloud:943/SEMP/v2/config/msgVpns/msgvpn-avfk5i15jtm/topicEndpoints?count=100"
+      },
+      "responseCode": 200
+    }
+  },
+  "topic_endpoints_monitor": {
+    "data": [],
+    "meta": {
+      "count": 0,
+      "request": {
+        "method": "GET",
+        "uri": "https://mr-connection-dc4c76iuwy6.messaging.solace.cloud:943/SEMP/v2/monitor/msgVpns/msgvpn-avfk5i15jtm/topicEndpoints?count=100"
+      },
+      "responseCode": 200
+    }
+  },
+  "vpn_config": {
+    "data": {
+      "enabled": true,
+      "maxConnectionCount": 1000,
+      "maxEgressFlowCount": 1000,
+      "maxEndpointCount": 1000,
+      "maxIngressFlowCount": 1000,
+      "maxMsgSpoolUsage": 200000,
+      "maxSubscriptionCount": 100000,
+      "maxTransactionCount": 5000,
+      "msgVpnName": "msgvpn-avfk5i15jtm"
+    },
+    "meta": {
+      "request": {
+        "method": "GET",
+        "uri": "https://mr-connection-dc4c76iuwy6.messaging.solace.cloud:943/SEMP/v2/config/msgVpns/msgvpn-avfk5i15jtm"
+      },
+      "responseCode": 200
+    }
+  },
+  "vpn_monitor": {
+    "data": {
+      "averageRxByteRate": 0,
+      "averageRxMsgRate": 0,
+      "averageTxByteRate": 0,
+      "averageTxMsgRate": 0,
+      "discardedRxMsgCount": 0,
+      "discardedTxMsgCount": 0,
+      "msgSpoolMsgCount": 0,
+      "msgSpoolUsage": 0,
+      "msgVpnName": "msgvpn-avfk5i15jtm",
+      "rxByteCount": 8093005507,
+      "rxByteRate": 0,
+      "rxMsgCount": 9622175,
+      "rxMsgRate": 0,
+      "txByteCount": 8088574663,
+      "txByteRate": 0,
+      "txMsgCount": 9667298,
+      "txMsgRate": 0
+    },
+    "meta": {
+      "request": {
+        "method": "GET",
+        "uri": "https://mr-connection-dc4c76iuwy6.messaging.solace.cloud:943/SEMP/v2/monitor/msgVpns/msgvpn-avfk5i15jtm"
+      },
+      "responseCode": 200
+    }
+  }
+}

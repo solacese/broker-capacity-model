@@ -1,0 +1,100 @@
+[
+  {
+    "clients": [
+      {
+        "clientId": 99,
+        "clientName": "#amqp/client/a130b7a998c7e5ff/events-b-subscriber-1.broker-c",
+        "platform": "",
+        "rxByteCount": 505,
+        "rxMsgCount": 6,
+        "rxMsgRate": 0,
+        "txByteCount": 100435,
+        "txMsgCount": 12473,
+        "txMsgRate": 0
+      },
+      {
+        "clientId": 98,
+        "clientName": "#amqp/client/a130b7a99ac7e5e3/events-a-subscriber-1.broker-c",
+        "platform": "",
+        "rxByteCount": 17155,
+        "rxMsgCount": 258,
+        "rxMsgRate": 0,
+        "txByteCount": 511933,
+        "txMsgCount": 12725,
+        "txMsgRate": 0
+      },
+      {
+        "clientId": 97,
+        "clientName": "#amqp/client/a130b7a99ec7e5e0/events-a-publisher-1.broker-c",
+        "platform": "",
+        "rxByteCount": 405480,
+        "rxMsgCount": 255,
+        "rxMsgRate": 0,
+        "txByteCount": 110368,
+        "txMsgCount": 12724,
+        "txMsgRate": 0
+      },
+      {
+        "clientId": 2,
+        "clientName": "#client",
+        "platform": "Linux26-x86_64_opt - C SDK",
+        "rxByteCount": 496,
+        "rxMsgCount": 7,
+        "rxMsgRate": 0,
+        "txByteCount": 345,
+        "txMsgCount": 2,
+        "txMsgRate": 0
+      }
+    ],
+    "timestamp": "2026-10-05T14:31:17.512308+00:00"
+  },
+  {
+    "clients": [
+      {
+        "clientId": 99,
+        "clientName": "#amqp/client/a130b7a998c7e5ff/events-b-subscriber-1.broker-c",
+        "platform": "",
+        "rxByteCount": 505,
+        "rxMsgCount": 6,
+        "rxMsgRate": 0,
+        "txByteCount": 100435,
+        "txMsgCount": 12473,
+        "txMsgRate": 0
+      },
+      {
+        "clientId": 98,
+        "clientName": "#amqp/client/a130b7a99ac7e5e3/events-a-subscriber-1.broker-c",
+        "platform": "",
+        "rxByteCount": 17155,
+        "rxMsgCount": 258,
+        "rxMsgRate": 0,
+        "txByteCount": 511933,
+        "txMsgCount": 12725,
+        "txMsgRate": 0
+      },
+      {
+        "clientId": 97,
+        "clientName": "#amqp/client/a130b7a99ec7e5e0/events-a-publisher-1.broker-c",
+        "platform": "",
+        "rxByteCount": 405480,
+        "rxMsgCount": 255,
+        "rxMsgRate": 0,
+        "txByteCount": 110368,
+        "txMsgCount": 12724,
+        "txMsgRate": 0
+      },
+      {
+        "clientId": 2,
+        "clientName": "#client",
+        "platform": "Linux26-x86_64_opt - C SDK",
+        "rxByteCount": 496,
+        "rxMsgCount": 7,
+        "rxMsgRate": 0,
+        "txByteCount": 345,
+        "txMsgCount": 2,
+        "txMsgRate": 0
+      }
+    ],
+    "timestamp": "2026-10-05T14:31:28.003313+00:00"
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "capacity_label_allowed": false,
+  "forced_stop": false,
+  "generator_placement": "local_wan",
+  "metrics": {
+    "accepted_unique_messages": 6000,
+    "actual_accepted_rate": 98.6771392056658,
+    "attempted_publishes": 6000,
+    "broker_delta_discardedRxMsgCount": 0,
+    "broker_delta_discardedTxMsgCount": 0,
+    "broker_delta_rxByteCount": 6348279,
+    "broker_delta_rxMsgCount": 6021,
+    "broker_delta_txByteCount": 6348447,
+    "broker_delta_txMsgCount": 6021,
+    "expected_deliveries": 6000,
+    "max_generator_cpu_percent": 101.2,
+    "measurement_seconds": 60.804357,
+    "nacks": null,
+    "requested_expected": 6080.4357,
+    "requested_publishes": 6000,
+    "retransmitted_receipts": 0,
+    "scheduled_publishes": 6000,
+    "successful_publishes": 6000,
+    "unique_receipts": 5988
+  },
+  "outcome": "INVALID",
+  "processes_stopped": true,
+  "queue_empty": true,
+  "reasons": [
+    "generator_cpu_limit"
+  ],
+  "run_id": "20261005T150623Z-g01",
+  "stage_id": "G01"
+}

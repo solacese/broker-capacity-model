@@ -1,0 +1,301 @@
+{
+  "brokers": [
+    {
+      "broker_version": "10.26",
+      "current": {
+        "bridges": 0,
+        "connections": 2,
+        "delivered_unacked_messages": 0,
+        "endpoints": 2,
+        "queues": 2,
+        "spool_bytes": 72922,
+        "spool_messages": 0,
+        "topic_endpoints": 0,
+        "transactions": 0
+      },
+      "deterministic_utilization": 0.02,
+      "id": "0rhy4ozc9z4",
+      "limiting_factor": "connections",
+      "limits": {
+        "connections": 100,
+        "egress_flows": 100,
+        "endpoints": 100,
+        "ingress_flows": 100,
+        "spool_bytes": 25000000000,
+        "spool_mb": 25000,
+        "subscriptions": 1000,
+        "transactions": 500
+      },
+      "msg_vpn": "fleet-broker",
+      "name": "fleet-broker",
+      "owner_id": "usfos7cfqge",
+      "queue_summary": {
+        "count": 2,
+        "historical_spool_limit_discards": 0,
+        "max_depth_messages": 0,
+        "max_usage_bytes": 72922,
+        "most_utilized_queue": "edm0-routing-pilot",
+        "most_utilized_queue_spool": 1.45844e-05,
+        "non_empty": 0
+      },
+      "service_class": "developer",
+      "traffic": {
+        "averageRxByteRate": 0,
+        "averageRxMsgRate": 0,
+        "averageTxByteRate": 0,
+        "averageTxMsgRate": 0,
+        "discardedRxMsgCount": 18361,
+        "discardedTxMsgCount": 1383,
+        "rxByteRate": 0,
+        "rxMsgRate": 0,
+        "txByteRate": 0,
+        "txMsgRate": 0
+      },
+      "utilization": {
+        "connections": 0.02,
+        "endpoints": 0.02,
+        "most_utilized_queue_spool": 1.45844e-05,
+        "spool": 2.91688e-06,
+        "transactions": 0.0
+      }
+    },
+    {
+      "broker_version": "10.26",
+      "current": {
+        "bridges": 0,
+        "connections": 4,
+        "delivered_unacked_messages": 0,
+        "endpoints": 4,
+        "queues": 4,
+        "spool_bytes": 0,
+        "spool_messages": 0,
+        "topic_endpoints": 0,
+        "transactions": 0
+      },
+      "deterministic_utilization": 0.004,
+      "id": "avfk5i15jtm",
+      "limiting_factor": "connections",
+      "limits": {
+        "connections": 1000,
+        "egress_flows": 1000,
+        "endpoints": 1000,
+        "ingress_flows": 1000,
+        "spool_bytes": 200000000000,
+        "spool_mb": 200000,
+        "subscriptions": 100000,
+        "transactions": 5000
+      },
+      "msg_vpn": "msgvpn-avfk5i15jtm",
+      "name": "swlb-20260928-121042-c-data-1k",
+      "owner_id": "usfos7cfqge",
+      "queue_summary": {
+        "count": 4,
+        "historical_spool_limit_discards": 0,
+        "max_depth_messages": 0,
+        "max_usage_bytes": 0,
+        "most_utilized_queue": "swlb-live-20260928-121042.data.baggage-tracking.broker-c.tracking.e1",
+        "most_utilized_queue_spool": 0.0,
+        "non_empty": 0
+      },
+      "service_class": "enterprise-1k-standalone",
+      "traffic": {
+        "averageRxByteRate": 0,
+        "averageRxMsgRate": 0,
+        "averageTxByteRate": 0,
+        "averageTxMsgRate": 0,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "rxByteRate": 0,
+        "rxMsgRate": 0,
+        "txByteRate": 0,
+        "txMsgRate": 0
+      },
+      "utilization": {
+        "connections": 0.004,
+        "endpoints": 0.004,
+        "most_utilized_queue_spool": 0.0,
+        "spool": 0.0,
+        "transactions": 0.0
+      }
+    },
+    {
+      "broker_version": "10.26",
+      "current": {
+        "bridges": 0,
+        "connections": 8,
+        "delivered_unacked_messages": 0,
+        "endpoints": 58,
+        "queues": 58,
+        "spool_bytes": 0,
+        "spool_messages": 0,
+        "topic_endpoints": 0,
+        "transactions": 0
+      },
+      "deterministic_utilization": 0.058,
+      "id": "da4bhp70ft3",
+      "limiting_factor": "endpoints",
+      "limits": {
+        "connections": 1000,
+        "egress_flows": 1000,
+        "endpoints": 1000,
+        "ingress_flows": 1000,
+        "spool_bytes": 200000000000,
+        "spool_mb": 200000,
+        "subscriptions": 100000,
+        "transactions": 5000
+      },
+      "msg_vpn": "msgvpn-da4bhp70ft3",
+      "name": "swlb-20260928-121042-a-control-data-1k",
+      "owner_id": "usfos7cfqge",
+      "queue_summary": {
+        "count": 58,
+        "historical_spool_limit_discards": 0,
+        "max_depth_messages": 0,
+        "max_usage_bytes": 0,
+        "most_utilized_queue": "swlb-live-20260928-121042.ctl.baggage-tracking.ack.publisher.baggage-publisher-1",
+        "most_utilized_queue_spool": 0.0,
+        "non_empty": 0
+      },
+      "service_class": "enterprise-1k-standalone",
+      "traffic": {
+        "averageRxByteRate": 22,
+        "averageRxMsgRate": 0,
+        "averageTxByteRate": 23,
+        "averageTxMsgRate": 0,
+        "discardedRxMsgCount": 17,
+        "discardedTxMsgCount": 7,
+        "rxByteRate": 0,
+        "rxMsgRate": 0,
+        "txByteRate": 0,
+        "txMsgRate": 0
+      },
+      "utilization": {
+        "connections": 0.008,
+        "endpoints": 0.058,
+        "most_utilized_queue_spool": 0.0,
+        "spool": 0.0,
+        "transactions": 0.0
+      }
+    },
+    {
+      "broker_version": "10.25",
+      "current": {
+        "bridges": 0,
+        "connections": 1,
+        "delivered_unacked_messages": 0,
+        "endpoints": 12,
+        "queues": 12,
+        "spool_bytes": 45476824,
+        "spool_messages": 0,
+        "topic_endpoints": 0,
+        "transactions": 0
+      },
+      "deterministic_utilization": 0.90942336,
+      "id": "oaizk4na61b",
+      "limiting_factor": "most_utilized_queue_spool",
+      "limits": {
+        "connections": 250,
+        "egress_flows": 250,
+        "endpoints": 250,
+        "ingress_flows": 250,
+        "spool_bytes": 50000000000,
+        "spool_mb": 50000,
+        "subscriptions": 50000,
+        "transactions": 2500
+      },
+      "msg_vpn": "autoscale_demo_e5dc4c22_01",
+      "name": "autoscale-demo-e5dc4c22-01",
+      "owner_id": "usfos7cfqge",
+      "queue_summary": {
+        "count": 12,
+        "historical_spool_limit_discards": 947384,
+        "max_depth_messages": 0,
+        "max_usage_bytes": 45471168,
+        "most_utilized_queue": "autoscale-demo-load",
+        "most_utilized_queue_spool": 0.90942336,
+        "non_empty": 0
+      },
+      "service_class": "enterprise-250-standalone",
+      "traffic": {
+        "averageRxByteRate": 0,
+        "averageRxMsgRate": 0,
+        "averageTxByteRate": 0,
+        "averageTxMsgRate": 0,
+        "discardedRxMsgCount": 952752,
+        "discardedTxMsgCount": 4078,
+        "rxByteRate": 0,
+        "rxMsgRate": 0,
+        "txByteRate": 0,
+        "txMsgRate": 0
+      },
+      "utilization": {
+        "connections": 0.004,
+        "endpoints": 0.048,
+        "most_utilized_queue_spool": 0.90942336,
+        "spool": 0.00090953648,
+        "transactions": 0.0
+      }
+    },
+    {
+      "broker_version": "10.26",
+      "current": {
+        "bridges": 0,
+        "connections": 3,
+        "delivered_unacked_messages": 0,
+        "endpoints": 4,
+        "queues": 4,
+        "spool_bytes": 0,
+        "spool_messages": 0,
+        "topic_endpoints": 0,
+        "transactions": 0
+      },
+      "deterministic_utilization": 0.004,
+      "id": "t95ezd27d6e",
+      "limiting_factor": "endpoints",
+      "limits": {
+        "connections": 1000,
+        "egress_flows": 1000,
+        "endpoints": 1000,
+        "ingress_flows": 1000,
+        "spool_bytes": 200000000000,
+        "spool_mb": 200000,
+        "subscriptions": 100000,
+        "transactions": 5000
+      },
+      "msg_vpn": "msgvpn-t95ezd27d6e",
+      "name": "swlb-20260928-121042-b-data-1k",
+      "owner_id": "usfos7cfqge",
+      "queue_summary": {
+        "count": 4,
+        "historical_spool_limit_discards": 0,
+        "max_depth_messages": 0,
+        "max_usage_bytes": 0,
+        "most_utilized_queue": "swlb-live-20260928-121042.data.baggage-tracking.broker-b.tracking.e1",
+        "most_utilized_queue_spool": 0.0,
+        "non_empty": 0
+      },
+      "service_class": "enterprise-1k-standalone",
+      "traffic": {
+        "averageRxByteRate": 0,
+        "averageRxMsgRate": 0,
+        "averageTxByteRate": 0,
+        "averageTxMsgRate": 0,
+        "discardedRxMsgCount": 0,
+        "discardedTxMsgCount": 0,
+        "rxByteRate": 0,
+        "rxMsgRate": 0,
+        "txByteRate": 0,
+        "txMsgRate": 0
+      },
+      "utilization": {
+        "connections": 0.003,
+        "endpoints": 0.004,
+        "most_utilized_queue_spool": 0.0,
+        "spool": 0.0,
+        "transactions": 0.0
+      }
+    }
+  ],
+  "collected_at": "2026-10-05T14:10:58.425747+00:00",
+  "owner_id": "usfos7cfqge"
+}

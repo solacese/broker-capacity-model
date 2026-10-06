@@ -1,0 +1,47 @@
+{
+  "case": {
+    "id": "V03",
+    "mode": "persistent",
+    "payload_bytes": 204800,
+    "fanout": 1,
+    "publishers": 10,
+    "reference_rate": 349,
+    "reference_cell": "H44"
+  },
+  "stage": "qualification",
+  "offered_rate": 100.0,
+  "reference_fraction": 0.28653295128939826,
+  "result": {
+    "outcome": "INVALID",
+    "reasons": [
+      "worker_or_telemetry_failure",
+      "RuntimeError:stage_failed",
+      "IncompleteMessageDeliveryError",
+      "IncompleteMessageDeliveryError",
+      "IncompleteMessageDeliveryError",
+      "IncompleteMessageDeliveryError",
+      "IncompleteMessageDeliveryError",
+      "IncompleteMessageDeliveryError",
+      "IncompleteMessageDeliveryError",
+      "IncompleteMessageDeliveryError",
+      "IncompleteMessageDeliveryError",
+      "IncompleteMessageDeliveryError",
+      "forced_worker_shutdown",
+      "forced_worker_shutdown",
+      "forced_worker_shutdown",
+      "forced_worker_shutdown",
+      "forced_worker_shutdown",
+      "forced_worker_shutdown",
+      "forced_worker_shutdown",
+      "forced_worker_shutdown",
+      "forced_worker_shutdown",
+      "forced_worker_shutdown"
+    ],
+    "metrics": {},
+    "measurement_seconds": 30,
+    "boundary_scope": "end_to_end_measured_path",
+    "broker_capacity_validated": false
+  },
+  "archived_reference_validated": false,
+  "setup_differences": "Standalone versus HA; one subscriber/topic versus 100; Python SDK versus CCSMP; local WAN; different broker build; windows/cipher not matched"
+}

@@ -1,0 +1,14 @@
+{
+  "workload": {
+    "id": "G067",
+    "mode": "persistent",
+    "payload_bytes": 256,
+    "fanout": 2,
+    "publishers": 4
+  },
+  "kind": "probe",
+  "rate": 100.0,
+  "seconds": 30,
+  "source_sha256": "1bc5c2515748f05bd52f182d1bbf01694ca35599b089a49864353345ed6027e6",
+  "warmup_seconds": 1
+}

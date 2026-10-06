@@ -1,0 +1,104 @@
+[
+  {
+    "queues": [
+      {
+        "msgSpoolUsage": 0,
+        "queueName": "swlb-live-20260928-121042.data.baggage-tracking.broker-c.tracking.e1",
+        "rxMsgRate": 0,
+        "spooledMsgCount": 185,
+        "txMsgRate": 0,
+        "txUnackedMsgCount": 0
+      },
+      {
+        "msgSpoolUsage": 0,
+        "queueName": "swlb-live-20260928-121042.data.flight-operations.broker-c.operations.e1",
+        "rxMsgRate": 0,
+        "spooledMsgCount": 196,
+        "txMsgRate": 0,
+        "txUnackedMsgCount": 0
+      },
+      {
+        "msgSpoolUsage": 0,
+        "queueName": "swlb-neutral-20260928.data.events-a.broker-c.set-a.e1",
+        "rxMsgRate": 0,
+        "spooledMsgCount": 4585322,
+        "txMsgRate": 0,
+        "txUnackedMsgCount": 0
+      },
+      {
+        "msgSpoolUsage": 0,
+        "queueName": "swlb-neutral-20260928.data.events-b.broker-c.set-b.e1",
+        "rxMsgRate": 0,
+        "spooledMsgCount": 218196,
+        "txMsgRate": 0,
+        "txUnackedMsgCount": 0
+      }
+    ],
+    "timestamp": "2026-10-05T14:30:42.631437+00:00",
+    "vpn": {
+      "discardedRxMsgCount": 0,
+      "discardedTxMsgCount": 0,
+      "msgSpoolMsgCount": 0,
+      "msgSpoolUsage": 0,
+      "rxByteCount": 8093005507,
+      "rxByteRate": 0,
+      "rxMsgCount": 9622175,
+      "rxMsgRate": 0,
+      "txByteCount": 8088574719,
+      "txByteRate": 0,
+      "txMsgCount": 9667305,
+      "txMsgRate": 0
+    }
+  },
+  {
+    "queues": [
+      {
+        "msgSpoolUsage": 0,
+        "queueName": "swlb-live-20260928-121042.data.baggage-tracking.broker-c.tracking.e1",
+        "rxMsgRate": 0,
+        "spooledMsgCount": 185,
+        "txMsgRate": 0,
+        "txUnackedMsgCount": 0
+      },
+      {
+        "msgSpoolUsage": 0,
+        "queueName": "swlb-live-20260928-121042.data.flight-operations.broker-c.operations.e1",
+        "rxMsgRate": 0,
+        "spooledMsgCount": 196,
+        "txMsgRate": 0,
+        "txUnackedMsgCount": 0
+      },
+      {
+        "msgSpoolUsage": 0,
+        "queueName": "swlb-neutral-20260928.data.events-a.broker-c.set-a.e1",
+        "rxMsgRate": 0,
+        "spooledMsgCount": 4585322,
+        "txMsgRate": 0,
+        "txUnackedMsgCount": 0
+      },
+      {
+        "msgSpoolUsage": 0,
+        "queueName": "swlb-neutral-20260928.data.events-b.broker-c.set-b.e1",
+        "rxMsgRate": 0,
+        "spooledMsgCount": 218196,
+        "txMsgRate": 0,
+        "txUnackedMsgCount": 0
+      }
+    ],
+    "timestamp": "2026-10-05T14:30:53.667130+00:00",
+    "vpn": {
+      "discardedRxMsgCount": 0,
+      "discardedTxMsgCount": 0,
+      "msgSpoolMsgCount": 0,
+      "msgSpoolUsage": 0,
+      "rxByteCount": 8093005507,
+      "rxByteRate": 0,
+      "rxMsgCount": 9622175,
+      "rxMsgRate": 0,
+      "txByteCount": 8088574735,
+      "txByteRate": 0,
+      "txMsgCount": 9667307,
+      "txMsgRate": 0
+    }
+  }
+]

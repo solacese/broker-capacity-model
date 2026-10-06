@@ -1,0 +1,47 @@
+{
+  "case": {
+    "id": "V01",
+    "mode": "direct",
+    "payload_bytes": 1024,
+    "fanout": 1,
+    "publishers": 20,
+    "reference_rate": 138026,
+    "reference_cell": "D34"
+  },
+  "stage": "reference_probe",
+  "offered_rate": 65536.0,
+  "reference_fraction": 0.47480909393882315,
+  "result": {
+    "outcome": "INVALID",
+    "reasons": [
+      "worker_or_telemetry_failure",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "PublisherOverflowError",
+      "RuntimeError:stage_failed"
+    ],
+    "metrics": {},
+    "measurement_seconds": 30,
+    "boundary_scope": "end_to_end_measured_path",
+    "broker_capacity_validated": false
+  },
+  "archived_reference_validated": false,
+  "setup_differences": "Standalone versus HA; one subscriber/topic versus 100; Python SDK versus CCSMP; local WAN; different broker build; windows/cipher not matched"
+}

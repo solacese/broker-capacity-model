@@ -1,0 +1,61 @@
+{
+  "seconds": 1,
+  "rate": 1,
+  "mode": "persistent",
+  "publishers": 0,
+  "fanout": 1,
+  "payload_bytes": 1024,
+  "workers": {
+    "receiver-0": {
+      "event": "stopped",
+      "id": "receiver-0",
+      "role": "receiver",
+      "t": 234131.041229833,
+      "warmup": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 535,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 535,
+        "latency_sum_ns": 8159077448713,
+        "latency_max_ns": 15403057375
+      },
+      "measure": {
+        "attempted": 0,
+        "submitted": 0,
+        "acked": 0,
+        "rejected": 0,
+        "nacks": 0,
+        "received": 0,
+        "duplicates": 0,
+        "unexpected": 0,
+        "latency_count": 0,
+        "latency_sum_ns": 0,
+        "latency_max_ns": 0
+      },
+      "max_cpu": 0.0,
+      "cpu": 2.0,
+      "network_tx_bytes": 610304,
+      "network_rx_bytes": 2954240,
+      "measurement_done": false,
+      "clean_shutdown": true
+    }
+  },
+  "errors": [],
+  "telemetry": [],
+  "receiver_lag_series": {
+    "receiver-0": []
+  },
+  "counter_bracket": [],
+  "queue_names": [
+    "bcm-20261005-grid-8876e806ac-f01-q00"
+  ],
+  "queues_empty": true,
+  "clean_shutdown": true,
+  "interrupted": false,
+  "guardrail": false
+}

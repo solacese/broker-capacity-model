@@ -1,0 +1,18 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.playwright-mcp/
+
+# Local Claude orchestration logs may contain tool output.
+.pilot/
+
+# Process coordination and transient SQLite state.
+*.lock
+*.sqlite-wal
+*.sqlite-shm
+
+# Spreadsheet inspection output; keep the actual workbook.
+*.xlsx.inspect.ndjson

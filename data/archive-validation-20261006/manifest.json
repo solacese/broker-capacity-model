@@ -1,0 +1,34 @@
+{
+  "campaign_id": "339358a232b8490299833aefd6839e5d",
+  "broker_id": "4qn20a1u6ny",
+  "source_sha256": "c6fdd9d6b75d66038d31c665d176b4ba211b9b584d0e68dd23b7415b326f1927",
+  "cases": [
+    {
+      "id": "V01",
+      "mode": "direct",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 20,
+      "reference_rate": 138026,
+      "reference_cell": "D34"
+    },
+    {
+      "id": "V02",
+      "mode": "persistent",
+      "payload_bytes": 1024,
+      "fanout": 1,
+      "publishers": 10,
+      "reference_rate": 54923,
+      "reference_cell": "D44"
+    },
+    {
+      "id": "V03",
+      "mode": "persistent",
+      "payload_bytes": 204800,
+      "fanout": 1,
+      "publishers": 10,
+      "reference_rate": 349,
+      "reference_cell": "H44"
+    }
+  ]
+}

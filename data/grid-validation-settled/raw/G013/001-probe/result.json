@@ -1,0 +1,11 @@
+{
+  "outcome": "INVALID",
+  "reasons": [
+    "worker_or_telemetry_failure",
+    "RuntimeError:stage_failed"
+  ],
+  "metrics": {},
+  "measurement_seconds": 30,
+  "boundary_scope": "end_to_end_measured_path",
+  "broker_capacity_validated": false
+}

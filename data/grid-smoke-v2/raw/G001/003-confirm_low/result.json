@@ -1,0 +1,28 @@
+{
+  "outcome": "SUSTAINABLE",
+  "reasons": [
+    "all_checks_passed_for_measured_horizon"
+  ],
+  "metrics": {
+    "requested": 3000,
+    "attempted": 2999,
+    "submitted": 2999,
+    "acknowledged": 0,
+    "rejected": 0,
+    "nacks": 0,
+    "generator_max_process_cpu_percent": 8.0,
+    "received_by_destination": {
+      "receiver-0": 2999
+    },
+    "rxMsgCount_delta": 3002,
+    "txMsgCount_delta": 3002,
+    "rxByteCount_delta": 3208872,
+    "txByteCount_delta": 3209032,
+    "discardedRxMsgCount_delta": 0,
+    "discardedTxMsgCount_delta": 0,
+    "broker_accepted_rate": 100.06666666666666
+  },
+  "measurement_seconds": 30,
+  "boundary_scope": "end_to_end_measured_path",
+  "broker_capacity_validated": false
+}
