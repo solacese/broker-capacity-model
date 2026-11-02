@@ -169,6 +169,7 @@ a{color:var(--link)}
 .eyebrow,.smalltag,.surface-head p,.surface-footer p,.plot-hint,.plot-actions,.legend,.broker-page-head p{color:var(--muted)}
 .surface-head{padding:11px 14px 10px;align-items:center;flex-wrap:wrap;background:#1b2830;border-bottom:1px solid var(--line)}.surface-head h2{font-size:16px;font-weight:500;color:var(--text);margin:0 0 2px}
 .surface-title{flex:1 1 255px;min-width:0}.surface-head .capacity-controls{flex:0 0 256px;width:256px;margin-left:auto}.point-error{font-size:11px;color:var(--muted)}.point-error strong{font-weight:600;color:#c7d9de}
+.compare-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:6px 14px;border-bottom:1px solid var(--line);background:#18252c}.compare-bar button{background:#21343d;border:1px solid #48616c;border-radius:3px;color:#c5e7e9;padding:4px 8px;font-size:11px}.compare-bar button:hover{background:#2d4750}.compare-bar span{font-size:11px;color:#bcd0d8}.compare-bar .compare-delta{font-weight:700;color:#f2d17d}.compare-bar .compare-delta.positive{color:#71dfbd}.compare-bar .compare-delta.negative{color:#f3a0a0}.scale-control{display:flex;align-items:center;gap:6px;font-size:11px}.scale-control select{height:25px;border:1px solid #48616c;border-radius:3px;background:#21343d;color:#c5e7e9;padding:2px 5px;font-size:11px}.scale-note{color:#f2d17d;font-size:10px}
 .surface-controls{display:flex;justify-content:flex-end;padding:6px 14px 0}
 .surface-head .capacity-controls{margin-left:auto}
 .smalltag{background:#1c3039;border-color:#3f606b;padding:3px 6px;font-size:10px}
@@ -271,8 +272,9 @@ a{color:var(--link)}
     <main class="results-column">
       <section class="panel surface-card" aria-labelledby="surfaceTitle">
       <div class="surface-head"><div class="surface-title"><h2 id="surfaceTitle">Estimated maximum stable broker capacity</h2><div class="point-error" title="A numeric margin needs repeated broker-limited maximum measurements for this exact configuration.">Selected-point margin of error: <strong id="pointError">Not established</strong></div><span id="headline" class="sr-only" aria-live="polite">—</span></div><div class="capacity-controls"><div class="control"><label for="payload">Message size</label><select id="payload"><option value="512">512 B</option><option value="1024" selected>1 KiB</option><option value="2048">2 KiB</option><option value="8192">8 KiB</option><option value="65536">64 KiB</option><option value="204800">200 KiB</option></select></div><div class="control"><label for="fanout">Queue fanout</label><select id="fanout"><option value="1">1 copy</option><option value="2">2 copies</option><option value="4" selected>4 copies</option><option value="5">5 copies</option><option value="10">10 copies</option><option value="20">20 copies</option></select></div></div></div>
+      <div class="compare-bar"><button id="saveConfig" type="button">Save config</button><button id="clearSaved" type="button" hidden>Clear saved</button><span id="compareSummary">Save a configuration to compare with the current one.</span><span id="compareDelta" class="compare-delta" hidden></span></div>
       <div class="plot-wrap" id="plotWrap"><canvas id="surface" role="img" aria-label="Three-dimensional modeled throughput surface with MSG Size and Fanout on the horizontal plane and estimated Stable MSG/S as height"></canvas><div class="plot-tooltip" id="plotTooltip"></div><div class="plot-hint">Drag left or right to rotate · hover to inspect · click to select · double-click to reset</div></div>
-      <div class="surface-footer"><div class="plot-actions"><div class="plot-scale" role="img" aria-label="Throughput colors range from lower in red to higher in blue"><span>Lower</span><i aria-hidden="true"></i><span>Higher</span></div><button id="resetView" type="button">Reset view</button></div><div class="sdkperf-command"><div class="sdkperf-command-head"><a href="https://docs.solace.com/API/SDKPerf/Command-Line-Options.htm" target="_blank" rel="noopener noreferrer">SDKPerf target command</a><button id="copyCommand" type="button">Copy</button></div><code id="sdkperfCommand"></code><small id="sdkperfNote"></small></div></div>
+      <div class="surface-footer"><div class="plot-actions"><div class="plot-scale" role="img" aria-label="Throughput colors range from lower in red to higher in blue"><span>Lower</span><i aria-hidden="true"></i><span>Higher</span></div><label class="scale-control" for="verticalScale">Vertical scale <select id="verticalScale"><option value="auto">Auto</option><option value="100000">100K msg/s</option></select></label><button id="resetView" type="button">Reset view</button></div><span id="scaleNote" class="scale-note" hidden></span><div class="sdkperf-command"><div class="sdkperf-command-head"><a href="https://docs.solace.com/API/SDKPerf/Command-Line-Options.htm" target="_blank" rel="noopener noreferrer">SDKPerf target command</a><button id="copyCommand" type="button">Copy</button></div><code id="sdkperfCommand"></code><small id="sdkperfNote"></small></div></div>
       </section>
     </main>
   </div>
@@ -403,6 +405,18 @@ function state(){return{
   extraQueues:nonnegative('extraQueues'),connectionChurn:nonnegative('connectionChurn'),
   ingressMbps:positive('ingressMbps'),egressMbps:positive('egressMbps')
 }}
+const SAVED_CONFIG_KEY='bcm-saved-config-v1';
+function loadSavedConfig(){
+  try{
+    const record=JSON.parse(localStorage.getItem(SAVED_CONFIG_KEY));
+    const s=record?.state;
+    if(record?.version===1&&s&&TIER[s.tier]&&COST.protocol[s.protocol]&&COST.delivery[s.delivery]&&
+       PAYLOADS.includes(s.payload)&&FANOUTS.includes(s.fanout)&&Number.isFinite(s.baseline)&&s.baseline>0&&
+       Number.isFinite(s.connections)&&s.connections>=1&&s.features&&typeof s.features==='object')return s
+  }catch{}
+  return null
+}
+let savedScenario=loadSavedConfig();
 function model(s,payload=s.payload,fanout=s.fanout){
   if(!s.baseline)return null;
   const featureCost=MODELED_FEATURES.reduce((cost,f)=>cost*(s.features[f.id]&&(!f.mode||f.mode===s.delivery)&&(!f.protocol||f.protocol===s.protocol)&&(!f.protocols||f.protocols.includes(s.protocol))?f.factor:1),1);
@@ -629,11 +643,12 @@ function drawSurface(s){
   const fanoutV=f=>Math.log(f)/Math.log(maxFanout);
   const payloadAt=u=>minPayload*Math.pow(maxPayload/minPayload,u);
   const fanoutAt=v=>Math.pow(maxFanout,v);
-  const maxRate=surfaceScaleMax(s);
+  const maxRate=$('verticalScale').value==='100000'?100000:Math.max(surfaceScaleMax(s),savedScenario?surfaceScaleMax(savedScenario):0);
   const ax=Math.min(w*.31,285),ay=Math.min(h*.19,120),az=Math.min(h*.42,250),cx=w*.5,cy=h*.72;
   const sin=Math.sin(viewYaw),cos=Math.cos(viewYaw);
   function project(u,v,z){const xx=u-.5,yy=v-.5;return{x:cx+(xx*cos-yy*sin)*ax*2,y:cy+(xx*sin+yy*cos)*ay*2-z*az}}
-  function projectRate(p,f){const rate=model(s,p,f)?.rate||0,z=Math.sqrt(Math.min(1,rate/maxRate));return{...project(payloadU(p),fanoutV(f),z),rate,payload:p,fanout:f,z}}
+  function projectRateFor(scenario,p,f){const rate=model(scenario,p,f)?.rate||0,z=Math.sqrt(Math.min(1,rate/maxRate));return{...project(payloadU(p),fanoutV(f),z),rate,payload:p,fanout:f,z}}
+  function projectRate(p,f){return projectRateFor(s,p,f)}
   function path(pts){c.beginPath();c.moveTo(pts[0].x,pts[0].y);for(let k=1;k<pts.length;k++)c.lineTo(pts[k].x,pts[k].y);c.closePath()}
   function segment(a,b){c.beginPath();c.moveTo(a.x,a.y);c.lineTo(b.x,b.y);c.stroke()}
   const corners=[[0,0],[1,0],[1,1],[0,1]],floor=corners.map(([u,v])=>project(u,v,0));
@@ -658,6 +673,12 @@ function drawSurface(s){
   }
   quads.sort((a,b)=>a.depth-b.depth);
   for(const q of quads){path(q.pts);c.fillStyle=color(colorPosition(q.rate),q.light);c.fill();c.strokeStyle=c.fillStyle;c.lineWidth=.8;c.stroke()}
+  if(savedScenario){
+    c.save();c.setLineDash([5,5]);c.strokeStyle='rgba(255,208,112,.78)';c.lineWidth=1.3;
+    for(const p of PAYLOADS)for(let k=0;k<59;k++)segment(projectRateFor(savedScenario,p,fanoutAt(k/59)),projectRateFor(savedScenario,p,fanoutAt((k+1)/59)));
+    for(const f of FANOUTS)for(let k=0;k<59;k++)segment(projectRateFor(savedScenario,payloadAt(k/59),f),projectRateFor(savedScenario,payloadAt((k+1)/59),f));
+    c.restore()
+  }
   // Only benchmark-sized message and fanout guides are drawn over the smooth surface.
   function surfaceGuide(points,selected){
     c.beginPath();points.forEach((p,k)=>{const point=projectRate(p[0],p[1]);if(k)c.lineTo(point.x,point.y);else c.moveTo(point.x,point.y)});
@@ -675,6 +696,9 @@ function drawSurface(s){
   for(const p of payloadTicks){const point=project(payloadU(p),0,0);c.fillText(payloadLabel(p),point.x+(p===minPayload?7:-14),point.y+15)}
   for(const f of [1,4,10,20]){const point=project(0,fanoutV(f),0);c.fillText(String(f),point.x-(f===1?20:13),point.y+4)}
   for(const z of [0,.5,1]){const point=project(0,0,z);c.fillText(roundedRate(z*z*maxRate),point.x-43,point.y+3)}
+  const peak=(scenario)=>Math.max(...PAYLOADS.flatMap(p=>FANOUTS.map(f=>model(scenario,p,f)?.rate||0)));
+  const clipped=peak(s)>maxRate||(savedScenario&&peak(savedScenario)>maxRate);
+  $('scaleNote').hidden=!clipped;$('scaleNote').textContent=clipped?'Surface clipped above '+roundedRate(maxRate)+' msg/s; selected values remain exact.':'';
   const selected=projectRate(s.payload,s.fanout),payloadIndex=PAYLOADS.indexOf(s.payload),fanoutIndex=FANOUTS.indexOf(s.fanout);
   const neighbors=[];
   if(payloadIndex>0)neighbors.push({p:PAYLOADS[payloadIndex-1],f:s.fanout,label:payloadLabel(PAYLOADS[payloadIndex-1])});
@@ -699,6 +723,13 @@ function drawSurface(s){
     c.fillStyle='#132b34';c.strokeStyle='#8abec1';c.lineWidth=1;c.fillRect(box.x,box.y,box.w,box.h);c.strokeRect(box.x,box.y,box.w,box.h);
     c.fillStyle='#ecf9f6';c.fillText(label,box.x+6,box.y+14)
   }
+  if(savedScenario){
+    const savedPoint=projectRateFor(savedScenario,savedScenario.payload,savedScenario.fanout);
+    if(Math.hypot(savedPoint.x-selected.x,savedPoint.y-selected.y)>18){
+      c.fillStyle='#ffd078';c.fillRect(savedPoint.x-5,savedPoint.y-5,10,10);
+      c.fillStyle='#ffe6ac';c.font='700 10px system-ui';c.fillText('SAVED',savedPoint.x+8,savedPoint.y-8)
+    }
+  }
   const callout={x:Math.max(8,w-182),y:16,w:166,h:52};
   c.strokeStyle='rgba(255,218,119,.85)';c.lineWidth=1.4;segment(selected,{x:callout.x+10,y:callout.y+callout.h});
   c.beginPath();c.arc(selected.x,selected.y,15,0,Math.PI*2);c.fillStyle='rgba(255,207,86,.25)';c.fill();
@@ -708,7 +739,7 @@ function drawSurface(s){
   c.strokeStyle='#ffcf56';c.lineWidth=1.4;c.strokeRect(callout.x,callout.y,callout.w,callout.h);
   c.fillStyle='#bdd3d6';c.font='600 9px system-ui';c.fillText('SELECTED POINT',callout.x+9,callout.y+15);
   c.fillStyle='#ffffff';c.font='700 17px system-ui';c.fillText(`${roundedRate(selected.rate)} MSG/S`,callout.x+9,callout.y+39);
-  canvas.setAttribute('aria-label',`Three-dimensional modeled surface. Selected ${payloadLabel(s.payload)} message size, ${s.fanout} queue copies, ${s.connections} connections: ${roundedRate(selected.rate)} messages per second. Neighbor points show adjacent message sizes and fanouts.`)
+  canvas.setAttribute('aria-label',`Three-dimensional modeled surface. Selected ${payloadLabel(s.payload)} message size, ${s.fanout} queue copies, ${s.connections} connections: ${roundedRate(selected.rate)} messages per second. ${savedScenario?'Dashed gold lines and a square show the saved configuration. ':''}Neighbor points show adjacent message sizes and fanouts.`)
 }
 function renderSdkperfCommand(s,m){
   const code=$('sdkperfCommand'),note=$('sdkperfNote'),copy=$('copyCommand');
@@ -730,6 +761,17 @@ function renderSdkperfCommand(s,m){
   const extra=s.protocol==='JMS'?' JMS needs a connection factory.':s.protocol==='MQTT'&&s.delivery==='persistent'?' MQTT QoS 1 approximates this model mode.':'';
   note.textContent=`Five-minute publish target. Set up ${setup} separately, along with other workload settings. This does not validate capacity.${extra}`
 }
+function renderComparison(s,m){
+  const summary=$('compareSummary'),delta=$('compareDelta');
+  $('clearSaved').hidden=!savedScenario;
+  if(!savedScenario){summary.textContent='Save a configuration to compare with the current one.';delta.hidden=true;return}
+  const saved=model(savedScenario);
+  summary.textContent=`Saved ${roundedRate(saved?.rate)} msg/s (${payloadLabel(savedScenario.payload)}, fanout ${savedScenario.fanout}) · Current ${roundedRate(m?.rate)} msg/s (${payloadLabel(s.payload)}, fanout ${s.fanout})`;
+  if(!saved||!m||saved.rate<=0){delta.hidden=true;return}
+  const difference=displayRate(m.rate)-displayRate(saved.rate),sign=difference>0?'+':difference<0?'−':'';
+  delta.textContent=`${sign}${roundedRate(Math.abs(difference))} msg/s (${pct(m.rate/saved.rate).slice(1)})`;
+  delta.className='compare-delta'+(difference>0?' positive':difference<0?' negative':'');delta.hidden=false
+}
 function render(){
   const s=state(),m=model(s);
   syncFeatureFlags(s);
@@ -738,6 +780,7 @@ function render(){
   $('connectionMaxLabel').textContent=`${fmt(s.limit)} limit`;
   $('connectionSlider').value=sliderValue(s.connections,s.limit||10000);
   $('headline').textContent=m?`${roundedRate(m.rate)} msg/s`:'—';
+  renderComparison(s,m);
   $('assumptionNote').textContent=`${fmt(s.baseline)} msg/s is ${baselineEdited?'user-supplied':'an illustrative sample'} for ${s.tier} (${TIER[s.tier].group}).`;
   renderSdkperfCommand(s,m);
   renderBrokerPage(s,m);
@@ -752,6 +795,9 @@ $('connectionLimit').addEventListener('input',()=>{limitEdited=true;render()});
 $('connections').addEventListener('input',render);
 $('connectionSlider').addEventListener('input',()=>{$('connections').value=countFromSlider(Number($('connectionSlider').value),positive('connectionLimit')||10000);render()});
 $('copyCommand').addEventListener('click',async()=>{if($('copyCommand').disabled)return;try{await navigator.clipboard.writeText($('sdkperfCommand').textContent);$('copyCommand').textContent='Copied';setTimeout(()=>$('copyCommand').textContent='Copy',1800)}catch{$('copyCommand').textContent='Select command'}});
+$('saveConfig').addEventListener('click',()=>{savedScenario=JSON.parse(JSON.stringify(state()));try{localStorage.setItem(SAVED_CONFIG_KEY,JSON.stringify({version:1,state:savedScenario}))}catch{}render()});
+$('clearSaved').addEventListener('click',()=>{savedScenario=null;try{localStorage.removeItem(SAVED_CONFIG_KEY)}catch{}render()});
+$('verticalScale').addEventListener('change',render);
 $('resetView').addEventListener('click',()=>{viewYaw=.77;render()});const canvas=$('surface');canvas.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,yaw:viewYaw,moved:false};canvas.setPointerCapture(e.pointerId);canvas.classList.add('dragging')});canvas.addEventListener('pointermove',e=>{const rect=canvas.getBoundingClientRect();if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>4)drag.moved=true;viewYaw=Math.max(-.4,Math.min(1.9,drag.yaw+dx/350));drawSurface(state());$('plotTooltip').style.display='none';return}let best=null,dist=Infinity;for(const p of surfacePoints){const d=(p.x-(e.clientX-rect.left))**2+(p.y-(e.clientY-rect.top))**2;if(d<dist){best=p;dist=d}}hovered=dist<1200?best:null;const tip=$('plotTooltip');if(!hovered){tip.style.display='none';return}tip.textContent=`${Math.round(hovered.payload)} B · fanout ${hovered.fanout.toFixed(1)} · ${roundedRate(hovered.rate)} msg/s`;tip.style.display='block';tip.style.left=Math.min(rect.width-190,e.clientX-rect.left+14)+'px';tip.style.top=Math.max(3,e.clientY-rect.top-35)+'px'});canvas.addEventListener('pointerup',e=>{canvas.classList.remove('dragging');if(drag&&!drag.moved){const rect=canvas.getBoundingClientRect(),x=e.clientX-rect.left,y=e.clientY-rect.top;let nearest=null,distance=Infinity;for(const point of surfacePoints){const d=(point.x-x)**2+(point.y-y)**2;if(d<distance){nearest=point;distance=d}}if(nearest&&distance<1200){$('payload').value=PAYLOADS.reduce((a,b)=>Math.abs(Math.log(b/nearest.payload))<Math.abs(Math.log(a/nearest.payload))?b:a);$('fanout').value=FANOUTS.reduce((a,b)=>Math.abs(b-nearest.fanout)<Math.abs(a-nearest.fanout)?b:a);render()}}drag=null});canvas.addEventListener('pointerleave',()=>{$('plotTooltip').style.display='none'});canvas.addEventListener('dblclick',()=>{viewYaw=.77;render()});window.addEventListener('resize',()=>drawSurface(state()));
 function modal(open){$('connectModal').hidden=!open;if(open){$('connectStatus').textContent='';$('serviceId').focus()}else $('cloudToken').value=''}
 $('openConnect').addEventListener('click',()=>modal(true));

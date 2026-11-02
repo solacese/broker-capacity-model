@@ -46,6 +46,12 @@ the surface on the same scale; changing the reference rate or class resets it.
 The selected-point margin of error is shown as not established until repeated,
 broker-limited maximum measurements support a numeric interval for the exact
 configuration. Finite-horizon stable lower observations do not supply that margin.
+The vertical-scale control can pin the axis at 100,000 msg/s; values above that
+height are clipped on the drawing and called out, while the numeric values stay
+unchanged. Save config stores one non-secret manual scenario in this browser.
+The current scenario is compared with that saved scenario at each scenario's
+selected message size and fanout. Dashed gold lines and a square show the saved
+surface and selected point on the shared axis; Clear saved removes the local copy.
 The red-to-blue color scale runs from the lowest to highest throughput within
 that reference scale. Logarithmic color spacing and slope lighting make the
 full range legible; colors are relative to the selected service class and
