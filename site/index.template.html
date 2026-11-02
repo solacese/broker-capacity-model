@@ -172,7 +172,7 @@ a{color:var(--link)}
 .surface-head .capacity-controls{margin-left:auto}
 .smalltag{background:#1c3039;border-color:#3f606b;padding:3px 6px;font-size:10px}
 .plot-wrap{margin:2px 7px 0;background:#111b22}
-.results-column .plot-wrap canvas{height:min(68vh,640px);min-height:490px}
+.results-column .plot-wrap canvas{height:560px;min-height:560px;max-height:560px}
 .plot-tooltip{background:#20333d;border-color:#6bc9c5;color:#e9f7f7;box-shadow:0 8px 24px #0008}
 .surface-footer{padding:10px 12px;background:#18252c;display:block}
 .plot-actions{justify-content:flex-end}.plot-actions button{background:#21343d;border-color:#48616c;color:#c5e7e9}
@@ -227,6 +227,7 @@ a{color:var(--link)}
 .connect-status{color:#b9d2d8}.connect-status.error{color:#ff9d9d}
 .experiments-page{margin-top:12px}.experiments-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}.experiments-head h1{font-size:20px;font-weight:500;margin:0;color:var(--text)}.experiments-head p{font-size:11px;color:var(--muted);margin:2px 0 0}.experiments-actions{display:flex;gap:7px;align-items:center}.experiments-actions a{font-size:11px;text-decoration:none;border:1px solid #48616c;border-radius:3px;padding:6px 9px;color:#c5e7e9}.experiments-actions a:hover{background:#21343d}
 .experiment-counts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:10px}.experiment-count{padding:9px 12px;display:flex;align-items:baseline;gap:9px}.experiment-count strong{font-size:22px;font-variant-numeric:tabular-nums;color:#e8f7f6}.experiment-count span{font-size:11px;color:var(--muted)}
+.experiment-eta{display:flex;align-items:baseline;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;padding:9px 12px;margin-bottom:10px}.experiment-eta span{display:block;color:var(--muted);font-size:11px}.experiment-eta strong{display:block;color:var(--text);font-size:16px;font-weight:600}.experiment-eta small{color:var(--muted);font-size:11px;max-width:480px}
 .experiment-filters{display:flex;gap:8px;align-items:end;flex-wrap:wrap;padding:10px 12px;margin-bottom:10px}.experiment-filters .control{min-width:130px}.experiment-filters .search-control{flex:1;min-width:190px}.experiment-filters input,.experiment-filters select{height:32px;width:100%;background:#0f1b22;border:1px solid #425967;border-radius:3px;color:var(--text);padding:0 8px}.experiment-filters label{font-size:10px}.experiment-filters .filter-count{color:var(--muted);font-size:11px;margin-left:auto;padding-bottom:8px}
 .experiment-table-wrap{overflow:auto;max-height:58vh}.experiment-table{width:100%;border-collapse:collapse;min-width:850px;font-size:11px}.experiment-table th{position:sticky;top:0;z-index:1;background:#1b2c34;color:#b8cdd5;text-align:left;font-weight:600;padding:8px 9px;border-bottom:1px solid #425967;white-space:nowrap}.experiment-table td{padding:7px 9px;border-bottom:1px solid #2b3c45;color:#d8e7ea;white-space:nowrap}.experiment-table tbody tr:hover{background:#1c3038}.experiment-table tbody tr.selected{background:#18443f}.experiment-table button{border:0;background:none;padding:0;color:#8ee5d2;font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}.experiment-table .muted{color:var(--muted)}
 .experiment-status{display:inline-block;min-width:65px;text-align:center;padding:2px 6px;border:1px solid #5d6e76;border-radius:3px;color:#c5d3d7;font-size:10px;font-weight:700;letter-spacing:.02em}.experiment-status.RUNNING{color:#f4d28a;border-color:#916f2a;background:#43351c}.experiment-status.DONE{color:#82e4b6;border-color:#2a8d65;background:#173f32}
@@ -242,11 +243,11 @@ a{color:var(--link)}
 .experiment-detail-empty{color:var(--muted)!important}
 @media(max-width:1100px){.experiment-workspace{grid-template-columns:1fr}.experiment-workspace .experiment-detail{position:static;max-height:none;min-height:160px}.experiment-workspace .experiment-table-wrap{max-height:48vh;min-height:300px}}
 @media(max-width:680px){.experiment-counts{gap:5px}.experiment-count{padding:7px 8px;gap:5px}.experiment-count strong{font-size:18px}.experiment-detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.experiment-table-wrap{max-height:62vh}}
-@media(max-width:900px){.results-column .plot-wrap canvas{height:490px}}
+@media(max-width:900px){.results-column .plot-wrap canvas{height:490px;min-height:490px;max-height:490px}}
 @media(max-width:1080px){.capacity-controls{grid-template-columns:repeat(2,minmax(105px,1fr));width:100%}}
 @media(max-width:680px){.topbar{height:auto;min-height:66px}.page-nav{height:32px}.header-connect{margin-left:auto}}
 @media(max-width:560px){.broker-class-options{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:560px){.shell{padding:0 12px 28px}.topbar{margin:0 -12px;padding:6px 12px}.brand{font-size:16px}.broker-settings,.settings-group{padding:10px 11px}.results-column .plot-wrap canvas{height:390px;min-height:390px}}
+@media(max-width:560px){.shell{padding:0 12px 28px}.topbar{margin:0 -12px;padding:6px 12px}.brand{font-size:16px}.broker-settings,.settings-group{padding:10px 11px}.results-column .plot-wrap canvas{height:390px;min-height:390px;max-height:390px}}
 </style>
 </head>
 <body>
@@ -269,7 +270,7 @@ a{color:var(--link)}
       <section class="panel surface-card" aria-labelledby="surfaceTitle">
       <div class="surface-head"><h2 id="surfaceTitle">Estimated maximum stable broker capacity</h2><span id="headline" class="sr-only" aria-live="polite">—</span></div>
       <div class="surface-controls"><div class="capacity-controls"><div class="control"><label for="payload">Message size</label><select id="payload"><option value="512">512 B</option><option value="1024" selected>1 KiB</option><option value="2048">2 KiB</option><option value="8192">8 KiB</option><option value="65536">64 KiB</option><option value="204800">200 KiB</option></select></div><div class="control"><label for="fanout">Queue fanout</label><select id="fanout"><option value="1">1 copy</option><option value="2">2 copies</option><option value="4" selected>4 copies</option><option value="5">5 copies</option><option value="10">10 copies</option><option value="20">20 copies</option></select></div></div></div>
-      <div class="plot-wrap" id="plotWrap"><canvas id="surface" role="img" aria-label="Three-dimensional modeled throughput surface with MSG Size and Fanout on the horizontal plane and estimated Stable MSG/S as height"></canvas><div class="plot-tooltip" id="plotTooltip"></div><div class="plot-hint">Drag to rotate · hover to inspect · click to select · double-click to reset</div></div>
+      <div class="plot-wrap" id="plotWrap"><canvas id="surface" role="img" aria-label="Three-dimensional modeled throughput surface with MSG Size and Fanout on the horizontal plane and estimated Stable MSG/S as height"></canvas><div class="plot-tooltip" id="plotTooltip"></div><div class="plot-hint">Drag left or right to rotate · hover to inspect · click to select · double-click to reset</div></div>
       <div class="surface-footer"><div class="plot-actions"><div class="plot-scale" role="img" aria-label="Throughput colors range from lower in red to higher in blue"><span>Lower</span><i aria-hidden="true"></i><span>Higher</span></div><button id="resetView" type="button">Reset view</button></div><div class="sdkperf-command"><div class="sdkperf-command-head"><a href="https://docs.solace.com/API/SDKPerf/Command-Line-Options.htm" target="_blank" rel="noopener noreferrer">SDKPerf target command</a><button id="copyCommand" type="button">Copy</button></div><code id="sdkperfCommand"></code><small id="sdkperfNote"></small></div></div>
       </section>
     </main>
@@ -285,6 +286,7 @@ a{color:var(--link)}
   <section class="experiments-page" id="experimentsPage" hidden>
     <div class="experiments-head"><div><h1>Experiments</h1><p id="experimentsMeta">Loading the planned campaign…</p></div><div class="experiments-actions"><a href="/experiments.csv" download>Download CSV</a><button type="button" class="secondary" id="refreshExperiments">Refresh status</button></div></div>
     <div class="experiment-counts" aria-label="Experiment status totals"><div class="panel experiment-count"><strong id="todoCount">—</strong><span>TODO</span></div><div class="panel experiment-count"><strong id="runningCount">—</strong><span>RUNNING</span></div><div class="panel experiment-count"><strong id="doneCount">—</strong><span>DONE</span></div></div>
+    <div class="panel experiment-eta"><div><span>Projected finish if started now</span><strong id="experimentEta">Calculating…</strong></div><small id="experimentEtaAssumptions">One dedicated broker per class; estimate only.</small></div>
     <div class="panel experiment-filters"><div class="control search-control"><label for="experimentSearch">Search</label><input id="experimentSearch" type="search" placeholder="ID, stage, API, feature"></div><div class="control"><label for="experimentStatusFilter">Status</label><select id="experimentStatusFilter"><option value="">All statuses</option><option value="TODO">TODO</option><option value="RUNNING">RUNNING</option><option value="DONE">DONE</option></select></div><div class="control"><label for="experimentClassFilter">Service class</label><select id="experimentClassFilter"><option value="">All classes</option><option>1K</option><option>5K</option><option>10K</option><option>50K</option><option>100K</option><option>200K</option></select></div><span class="filter-count" id="experimentFilterCount"></span></div>
     <div class="experiment-workspace"><div class="panel experiment-table-wrap"><table class="experiment-table"><thead><tr><th>ID</th><th>Status</th><th>Stable msg/s</th><th>Stage</th><th>Class</th><th>API</th><th>Delivery</th><th>Message size</th><th>Fanout</th><th>Feature</th><th>Readiness</th></tr></thead><tbody id="experimentRows"><tr><td colspan="11" class="muted">Loading…</td></tr></tbody></table></div>
     <section class="panel experiment-detail" id="experimentDetail" aria-live="polite"><h2>Experiment description</h2><p class="experiment-detail-empty">Select a row to see its workload, setup, and commands.</p></section></div>
@@ -379,7 +381,7 @@ const ARGUMENTS={
   expiry:{flag:'-mtl',help:'Publisher TTL; queue respect-TTL configuration is separate.',feature:true,applies:s=>s.delivery==='persistent'&&['SMF','JMS','REST'].includes(s.protocol)},
   dmq:{flag:'-mdq',help:'Publisher DMQ eligibility; broker-side DMQ setup is separate.',feature:true,applies:s=>s.delivery==='persistent'&&['SMF','JMS','REST'].includes(s.protocol)}
 };
-const $=id=>document.getElementById(id);let connected=null,baselineEdited=false,limitEdited=false,viewYaw=.77,viewPitch=.62,hovered=null,drag=null,surfacePoints=[];
+const $=id=>document.getElementById(id);let connected=null,baselineEdited=false,limitEdited=false,viewYaw=.77,hovered=null,drag=null,surfacePoints=[];
 function selectedServiceClass(){return document.querySelector('input[name="brokerClass"]:checked').value}
 function selectServiceClass(value){const radio=Array.from(document.querySelectorAll('input[name="brokerClass"]')).find(item=>item.value===value);if(radio)radio.checked=true}
 function positive(id){const v=Number($(id).value);return Number.isFinite(v)&&v>0?v:null}
@@ -548,11 +550,26 @@ function showExperimentDetail(work){
   detailBlock(root,'Notes',work.notes);
   for(const tr of $('experimentRows').querySelectorAll('tr'))tr.classList.toggle('selected',tr.dataset.id===work.id)
 }
+function updateExperimentEta(){
+  if(!experimentData)return;
+  const remaining=experimentData.experiments.filter(work=>work.status!=='DONE');
+  if(!remaining.length){$('experimentEta').textContent='All catalog rows marked DONE';$('experimentEtaAssumptions').textContent='Completion still requires evidence review for each result.';return}
+  const byClass={};for(const work of remaining)byClass[work.service_class]=(byClass[work.service_class]||0)+1;
+  const [bottleneckClass,bottleneck]=Object.entries(byClass).sort((a,b)=>b[1]-a[1])[0];
+  const now=Date.now(),hour=60*60*1000;
+  const earliest=new Date(now+(4+bottleneck*12/60)*hour),latest=new Date(now+(12+bottleneck*20/60)*hour);
+  const format=new Intl.DateTimeFormat(undefined,{weekday:'short',month:'short',day:'numeric',hour:'numeric',timeZoneName:'short'});
+  $('experimentEta').textContent=`≈ ${format.format(earliest)} – ${format.format(latest)}`;
+  const adapters=remaining.filter(work=>work.readiness==='adapter_needed').length;
+  const provisional=remaining.filter(work=>work.readiness==='provisional').length;
+  $('experimentEtaAssumptions').textContent=`One dedicated broker per class · one test per broker · 12–20 min/config + 4–12 h setup. ${bottleneckClass}: ${bottleneck} remaining; ${adapters} need adapters, ${provisional} provisional. Hypothetical; subject to the $20/day generator and traffic cap.`
+}
 function renderExperiments(){
   if(!experimentData)return;
   const rows=experimentData.experiments,counts={TODO:0,RUNNING:0,DONE:0};
   for(const work of rows)counts[work.status]++;
   $('todoCount').textContent=counts.TODO;$('runningCount').textContent=counts.RUNNING;$('doneCount').textContent=counts.DONE;
+  updateExperimentEta();
   const updated=experimentData.progress_updated_at;
   $('experimentsMeta').textContent=`${rows.length} configurations · ${updated?'Status updated '+new Date(updated).toLocaleString():'No runs recorded'}`;
   const query=$('experimentSearch').value.trim().toLowerCase(),status=$('experimentStatusFilter').value,serviceClass=$('experimentClassFilter').value;
@@ -591,7 +608,7 @@ function showPage(){
   $('modelPage').hidden=page!=='model';$('brokerPage').hidden=page!=='broker';$('experimentsPage').hidden=page!=='experiments';
   for(const [id,name] of [['modelNav','model'],['brokerNav','broker'],['experimentsNav','experiments']])$(id).setAttribute('aria-current',page===name?'page':'false');
   if(page==='model')drawSurface(state());
-  if(page==='experiments')loadExperiments()
+  if(page==='experiments'){loadExperiments();updateExperimentEta()}
 }
 function color(t,light=1){const stops=[[165,35,62],[219,66,65],[243,137,54],[225,208,72],[39,181,126],[28,158,192],[40,85,165]],x=Math.max(0,Math.min(1,t))*(stops.length-1),i=Math.min(stops.length-2,Math.floor(x)),a=x-i;return`rgb(${stops[i].map((v,k)=>Math.max(0,Math.min(255,Math.round((v+(stops[i+1][k]-v)*a)*light)))).join(',')})`}
 function payloadLabel(bytes){return bytes<1024?`${bytes} B`:`${Math.round(bytes/1024)} KiB`}
@@ -609,7 +626,7 @@ function drawSurface(s){
   const maxRate=Math.max(10000,Math.ceil(sampledPeak/10000)*10000);
   const ax=Math.min(w*.31,285),ay=Math.min(h*.19,120),az=Math.min(h*.42,250),cx=w*.5,cy=h*.72;
   const sin=Math.sin(viewYaw),cos=Math.cos(viewYaw);
-  function project(u,v,z){const xx=u-.5,yy=v-.5;return{x:cx+(xx*cos-yy*sin)*ax*2,y:cy+(xx*sin+yy*cos)*ay*2-z*az*viewPitch/.62}}
+  function project(u,v,z){const xx=u-.5,yy=v-.5;return{x:cx+(xx*cos-yy*sin)*ax*2,y:cy+(xx*sin+yy*cos)*ay*2-z*az}}
   function projectRate(p,f){const rate=model(s,p,f)?.rate||0,z=Math.sqrt(Math.min(1,rate/maxRate));return{...project(payloadU(p),fanoutV(f),z),rate,payload:p,fanout:f,z}}
   function path(pts){c.beginPath();c.moveTo(pts[0].x,pts[0].y);for(let k=1;k<pts.length;k++)c.lineTo(pts[k].x,pts[k].y);c.closePath()}
   function segment(a,b){c.beginPath();c.moveTo(a.x,a.y);c.lineTo(b.x,b.y);c.stroke()}
@@ -731,7 +748,7 @@ $('connectionLimit').addEventListener('input',()=>{limitEdited=true;render()});
 $('connections').addEventListener('input',render);
 $('connectionSlider').addEventListener('input',()=>{$('connections').value=countFromSlider(Number($('connectionSlider').value),positive('connectionLimit')||10000);render()});
 $('copyCommand').addEventListener('click',async()=>{if($('copyCommand').disabled)return;try{await navigator.clipboard.writeText($('sdkperfCommand').textContent);$('copyCommand').textContent='Copied';setTimeout(()=>$('copyCommand').textContent='Copy',1800)}catch{$('copyCommand').textContent='Select command'}});
-$('resetView').addEventListener('click',()=>{viewYaw=.77;viewPitch=.62;render()});const canvas=$('surface');canvas.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,yaw:viewYaw,pitch:viewPitch,moved:false};canvas.setPointerCapture(e.pointerId);canvas.classList.add('dragging')});canvas.addEventListener('pointermove',e=>{const rect=canvas.getBoundingClientRect();if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>4)drag.moved=true;viewYaw=Math.max(-.4,Math.min(1.9,drag.yaw+dx/350));viewPitch=Math.max(.35,Math.min(.95,drag.pitch-dy/500));drawSurface(state());$('plotTooltip').style.display='none';return}let best=null,dist=Infinity;for(const p of surfacePoints){const d=(p.x-(e.clientX-rect.left))**2+(p.y-(e.clientY-rect.top))**2;if(d<dist){best=p;dist=d}}hovered=dist<1200?best:null;const tip=$('plotTooltip');if(!hovered){tip.style.display='none';return}tip.textContent=`${Math.round(hovered.payload)} B · fanout ${hovered.fanout.toFixed(1)} · ${roundedRate(hovered.rate)} msg/s`;tip.style.display='block';tip.style.left=Math.min(rect.width-190,e.clientX-rect.left+14)+'px';tip.style.top=Math.max(3,e.clientY-rect.top-35)+'px'});canvas.addEventListener('pointerup',e=>{canvas.classList.remove('dragging');if(drag&&!drag.moved){const rect=canvas.getBoundingClientRect(),x=e.clientX-rect.left,y=e.clientY-rect.top;let nearest=null,distance=Infinity;for(const point of surfacePoints){const d=(point.x-x)**2+(point.y-y)**2;if(d<distance){nearest=point;distance=d}}if(nearest&&distance<1200){$('payload').value=PAYLOADS.reduce((a,b)=>Math.abs(Math.log(b/nearest.payload))<Math.abs(Math.log(a/nearest.payload))?b:a);$('fanout').value=FANOUTS.reduce((a,b)=>Math.abs(b-nearest.fanout)<Math.abs(a-nearest.fanout)?b:a);render()}}drag=null});canvas.addEventListener('pointerleave',()=>{$('plotTooltip').style.display='none'});canvas.addEventListener('dblclick',()=>{viewYaw=.77;viewPitch=.62;render()});window.addEventListener('resize',()=>drawSurface(state()));
+$('resetView').addEventListener('click',()=>{viewYaw=.77;render()});const canvas=$('surface');canvas.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,yaw:viewYaw,moved:false};canvas.setPointerCapture(e.pointerId);canvas.classList.add('dragging')});canvas.addEventListener('pointermove',e=>{const rect=canvas.getBoundingClientRect();if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>4)drag.moved=true;viewYaw=Math.max(-.4,Math.min(1.9,drag.yaw+dx/350));drawSurface(state());$('plotTooltip').style.display='none';return}let best=null,dist=Infinity;for(const p of surfacePoints){const d=(p.x-(e.clientX-rect.left))**2+(p.y-(e.clientY-rect.top))**2;if(d<dist){best=p;dist=d}}hovered=dist<1200?best:null;const tip=$('plotTooltip');if(!hovered){tip.style.display='none';return}tip.textContent=`${Math.round(hovered.payload)} B · fanout ${hovered.fanout.toFixed(1)} · ${roundedRate(hovered.rate)} msg/s`;tip.style.display='block';tip.style.left=Math.min(rect.width-190,e.clientX-rect.left+14)+'px';tip.style.top=Math.max(3,e.clientY-rect.top-35)+'px'});canvas.addEventListener('pointerup',e=>{canvas.classList.remove('dragging');if(drag&&!drag.moved){const rect=canvas.getBoundingClientRect(),x=e.clientX-rect.left,y=e.clientY-rect.top;let nearest=null,distance=Infinity;for(const point of surfacePoints){const d=(point.x-x)**2+(point.y-y)**2;if(d<distance){nearest=point;distance=d}}if(nearest&&distance<1200){$('payload').value=PAYLOADS.reduce((a,b)=>Math.abs(Math.log(b/nearest.payload))<Math.abs(Math.log(a/nearest.payload))?b:a);$('fanout').value=FANOUTS.reduce((a,b)=>Math.abs(b-nearest.fanout)<Math.abs(a-nearest.fanout)?b:a);render()}}drag=null});canvas.addEventListener('pointerleave',()=>{$('plotTooltip').style.display='none'});canvas.addEventListener('dblclick',()=>{viewYaw=.77;render()});window.addEventListener('resize',()=>drawSurface(state()));
 function modal(open){$('connectModal').hidden=!open;if(open){$('connectStatus').textContent='';$('serviceId').focus()}else $('cloudToken').value=''}
 $('openConnect').addEventListener('click',()=>modal(true));
 $('refreshBroker').addEventListener('click',()=>modal(true));
@@ -764,6 +781,7 @@ $('connectButton').addEventListener('click',async()=>{
 installFeatureFlags();installControlDocs();installArgumentBadges();
 render();
 showPage();
+setInterval(()=>{if(!$('experimentsPage').hidden)updateExperimentEta()},60000);
 </script>
 </body>
 </html>

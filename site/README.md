@@ -39,6 +39,7 @@ documented mechanisms and test priorities.
 On the surface, payload and fanout span the floor, modeled throughput is the
 vertical axis, and the connection control selects a slice. Drag to rotate,
 hover for values, click to select a point, or use the payload/fanout selectors.
+Horizontal dragging rotates the surface; its vertical projection is fixed.
 The red-to-blue color scale runs from the lowest to highest throughput within
 the current surface. Logarithmic color spacing and slope lighting make the
 full range legible; colors are relative to the selected scenario.
@@ -143,7 +144,12 @@ by `site/build.py`, and offers a status-enriched CSV for download. It shows TODO
 RUNNING, and DONE independently of experiment readiness. Selecting a table row
 shows its purpose, configuration, setup, and commands in a panel to the right
 (below the table on narrow screens). With no progress file,
-all 300 rows are TODO. A controller can supply
+all 300 rows are TODO. The projected completion range assumes one dedicated
+broker per service class, one trial per broker, 12–20 minutes per remaining
+configuration, and 4–12 hours for setup and qualification. It is a hypothetical
+start-now estimate that updates from the remaining class counts, not a schedule
+or a claim that adapter and provisional rows are runnable. The estimate is
+subject to the existing $20/day generator and traffic cap. A controller can supply
 `campaigns/site-model-300-progress.json` with an `experiments` map keyed by ID:
 
 ```json
