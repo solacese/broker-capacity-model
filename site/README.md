@@ -57,9 +57,10 @@ that reference scale. Logarithmic color spacing and slope lighting make the
 full range legible; colors are relative to the selected service class and
 reference rate.
 Protocol and delivery use ordinary native dropdowns; service class uses radios.
-The plot uses a 350,000 msg/s reference scale (expanded only for larger
-user-entered scenarios) with a square-root height transform, so workload
-multipliers visibly change the surface. The model has no measured regional
+In Auto mode, the vertical maximum is the fastest modeled reference workload
+for the selected class, or the larger of two saved/current references during
+comparison. A square-root height transform keeps lower rates legible. The model
+has no measured regional
 correction. Service classes sharing an underlying software
 broker size can have the same illustrative shape and rate; the selected class
 and connection limit still update.
@@ -76,6 +77,9 @@ The page separates two things:
 The archived 5K pilot remains in `data/math-pilot-20261102` for research, but
 its observations are not displayed on this simplified page and are not used to
 set the illustrative baseline.
+The [focused ten-run 5K pilot](../docs/5k-pilot-20261102.md) is likewise a
+separate set of stable lower observations; the Experiments page links its
+report without marking any 300-catalog row complete.
 
 The calculator is deterministic. Its processing envelope is
 `baseline / (protocol cost × delivery cost × payload cost × fanout cost × routing and connection density costs × enabled feature costs)`.

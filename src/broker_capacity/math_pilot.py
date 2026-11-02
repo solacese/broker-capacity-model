@@ -241,14 +241,19 @@ def classify_transition(evidence, *, minimum_seconds=300):
     ingress_change=statistics.median(rates[-n:])/max(statistics.median(rates[:n]),1)-1
     variation=statistics.pstdev(rates)/mean
     stable=abs(ingress_change)<=.05 and variation<=.05
-    drops=[];lags=[];queue_slopes={}
+    drops=[];lags=[];queue_slopes={};deficits=[]
     tolerance=max(2,mean*.002)
+    queue_names=evidence.get('queue_names',[])
+    if len(queue_names)!=fanout or len(set(queue_names))!=fanout:
+        return done('INCONCLUSIVE','Queue-to-destination pairing is missing or ambiguous')
+    tail_ingress=statistics.median(x['ingress'] for x in intervals[-n:])
     for i in range(fanout):
         first=statistics.median(x['egress'][i] for x in intervals[:n])
         last=statistics.median(x['egress'][i] for x in intervals[-n:])
         drops.append(1-last/max(first,1))
+        deficits.append(max(0,(tail_ingress-last)/max(tail_ingress,1)))
         lags.append(trend([(s['t'],s['accepted']-s['received_by_destination'][i]) for s in samples],tolerance=tolerance))
-    for name in evidence.get('queue_names',[]):
+    for name in queue_names:
         if any(name not in s.get('queue_bytes',{}) for s in samples):return done('INCONCLUSIVE','Queue gauge missing')
         queue_slopes[name]=trend([(s['t'],s['queue_bytes'][name]) for s in samples],tolerance=max(1024,mean*work['payload_bytes']*.002))
     subscriber_pressure=[k for k,v in evidence.get('cpu_by_worker',{}).items()
@@ -256,7 +261,8 @@ def classify_transition(evidence, *, minimum_seconds=300):
     transport_pressure=any(any(s.get('slow_subscriber_by_destination',[False]*fanout)) for s in samples)
     answer['metrics']=dict(ingress_msgps=mean,ingress_rate_cv=variation,ingress_relative_change=ingress_change,
         ingress_stable=stable,requested_rate=evidence['rate'],requested_rate_demonstrated=mean>=.98*evidence['rate'],
-        egress_drop_by_destination=drops,delivery_deficit_trends=lags,queue_byte_trends=queue_slopes,
+        egress_drop_by_destination=drops,tail_egress_deficit_fraction_by_destination=deficits,
+        delivery_deficit_trends=lags,queue_byte_trends=queue_slopes,
         maximum_queue_bytes=max((v for s in samples for v in s.get('queue_bytes',{}).values()),default=0),
         subscriber_cpu_pressure=bool(subscriber_pressure),consumer_transport_pressure=transport_pressure,
         egress_msgps_by_destination=[statistics.mean(x['egress'][i] for x in intervals) for i in range(fanout)])
@@ -267,10 +273,16 @@ def classify_transition(evidence, *, minimum_seconds=300):
     if any(s.get('crc_errors') is None or s.get('crc_errors')!=0 for s in subs):return done('INCONCLUSIVE','CRC evidence missing or failed')
     if not stable:return done('INGRESS_UNSTABLE','Cannot isolate an egress transition at stable ingress')
     if mean<.98*evidence['rate']:return done('UNDERDRIVEN_OR_BACKPRESSURED','Stable accepted ingress is below requested rate; cause unresolved')
-    growing=any(x.get('decision')=='growing' for x in lags) and any(x.get('decision')=='growing' for x in queue_slopes.values())
-    if growing and max(drops)>=.10:
+    paired_deficits=[i for i,name in enumerate(queue_names)
+                     if lags[i].get('decision')=='growing'
+                     and queue_slopes[name].get('decision')=='growing'
+                     and deficits[i]>=max(.02,100/max(tail_ingress,1))]
+    if any(drops[i]>=.10 for i in paired_deficits):
         return done('EGRESS_DEGRADATION_WITH_BACKLOG','Candidate transition; independent generator/network controls and disk evidence still required')
-    if growing:return done('BACKLOG_GROWTH_WITHOUT_EGRESS_DECLINE','Sustained delivery deficit; not necessarily a fast-to-slow transition')
+    if paired_deficits:
+        return done('BACKLOG_GROWTH_WITHOUT_EGRESS_DECLINE','Sustained egress plateau below accepted ingress on the same queue; broker attribution still requires apparatus controls')
+    if any(x.get('decision')=='growing' for x in lags) or any(x.get('decision')=='growing' for x in queue_slopes.values()):
+        return done('INCONCLUSIVE','Queue growth and delivery deficit did not form a sustained paired egress shortfall')
     sent=sum(p.get('transmitted') or 0 for p in pubs)
     integrity=(sent>0 and all(s.get('received')==sent and s.get('duplicates')==0 and s.get('missing')==0
                   and s.get('checked',-1)>=sent and s.get('crc_ok',-1)>=sent for s in subs))
@@ -292,7 +304,7 @@ def export(directory, state=None):
     save(directory/'observations.json',dict(updated_utc=utc(),attempts=rows,broker_capacity_validated=False,
         note='No capacity regression is fitted from unbracketed or unattributed observations.'))
     fields=['experiment','shape_id','payload_bytes','fanout','publishers','requested_rate','seconds','outcome',
-            'ingress_msgps','egress_msgps_by_destination','egress_drop_by_destination','queue_growth_bytes_per_second',
+            'ingress_msgps','egress_msgps_by_destination','egress_drop_by_destination','tail_egress_deficit_fraction_by_destination','queue_growth_bytes_per_second',
             'maximum_queue_bytes','reason','artifact_path']
     with (directory/'observations.csv').open('w',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader()
@@ -301,7 +313,9 @@ def export(directory, state=None):
             v=dict(experiment=work['id'],shape_id=work['shape_id'],payload_bytes=work['payload_bytes'],fanout=work['fanout'],
                 publishers=work['publishers'],requested_rate=row['rate'],seconds=row['seconds'],outcome=r['outcome'],
                 ingress_msgps=m.get('ingress_msgps'),egress_msgps_by_destination=json.dumps(m.get('egress_msgps_by_destination')),
-                egress_drop_by_destination=json.dumps(m.get('egress_drop_by_destination')),reason=r.get('reason'),artifact_path=row['artifact_path'])
+                egress_drop_by_destination=json.dumps(m.get('egress_drop_by_destination')),
+                tail_egress_deficit_fraction_by_destination=json.dumps(m.get('tail_egress_deficit_fraction_by_destination')),
+                reason=r.get('reason'),artifact_path=row['artifact_path'])
             v['queue_growth_bytes_per_second']=json.dumps({k:t.get('slope_per_second') for k,t in m.get('queue_byte_trends',{}).items()})
             v['maximum_queue_bytes']=m.get('maximum_queue_bytes')
             writer.writerow(v)
@@ -312,7 +326,8 @@ def export(directory, state=None):
             candidate_transition_rate=None,broker_capacity_validated=False))
         if r['outcome']=='STABLE_FOR_FIVE_MINUTES':
             s['stable_observed_lower_rate']=max(s['stable_observed_lower_rate'] or 0,r['metrics']['ingress_msgps'])
-        elif r['outcome']=='EGRESS_DEGRADATION_WITH_BACKLOG':s['candidate_transition_rate']=r['metrics']['ingress_msgps']
+        elif r['outcome'] in {'EGRESS_DEGRADATION_WITH_BACKLOG','BACKLOG_GROWTH_WITHOUT_EGRESS_DECLINE'}:
+            s['candidate_transition_rate']=r['metrics']['ingress_msgps']
     save(directory/'model-readiness.json',dict(shapes=shapes,capacity_model_fitted=False,
         reason='Finite-horizon lower observations and transition candidates are not confirmed broker-capacity targets.'))
     if state:save(directory/'controller.json',dict(updated_utc=utc(),pid=os.getpid(),**state))
@@ -328,6 +343,10 @@ def network_check(runtime,directory):
 
 def run(directory,token_file):
     directory=Path(directory).resolve();plan=prepare(directory)
+    profile=plan.get('worker_profile')
+    if profile and (set(profile)!={'publisher','subscriber'} or
+                    any(value not in {'c7i.xlarge','c7i.2xlarge'} for value in profile.values())):
+        raise ValueError('Unreviewed worker capacity profile')
     binding=json.loads((directory/'binding.json').read_text())
     verified_credentials(binding,token_file)
     state=dict(state='preflight',requested_experiments=len(plan['points']),completed_experiments=0)
@@ -365,6 +384,9 @@ def run(directory,token_file):
                 except Exception as exc:
                     print('Worker bootstrap: '+type(exc).__name__,flush=True);time.sleep(10)
             else:raise RuntimeError('Worker bootstrap timed out')
+            if plan.get('worker_profile'):
+                near_runtime.resize(fleet_path,plan['worker_profile'],cancel=lambda:stopped)
+                runtime_path=near_runtime.connect(fleet_path)
             runtime=json.loads(runtime_path.read_text())
             backend=PilotBackend(binding,token_file,plan,runtime)
             backend.doctor(directory/'doctor')
