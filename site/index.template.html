@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0d151b">
+<meta name="description" content="Explore an evidence-aware Solace broker capacity scenario as a payload, fanout and throughput surface.">
+<title>Solace Capacity Model</title>
+<style>
+:root{--navy:#0b2340;--navy2:#17334f;--green:#008f72;--link:#006b85;--text:#263746;--muted:#536979;--line:#d6e0e6;--soft:#f5f8fa;--blue:#eaf4f9;--blue-line:#3f87ad}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);background:#fff;font:15px/1.52 Arial,Helvetica,sans-serif}
+button,input,select{font:inherit}
+button{cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+a{color:var(--link)}
+.shell{max-width:none;margin:0 auto;padding:0 32px 60px}
+.topbar{height:78px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;margin:0 -32px;padding:0 32px;border-bottom:4px solid #00a88a}
+.brand{display:flex;align-items:center;gap:16px;font-size:16px;font-weight:600}
+.brand-name{color:#91d0bf;font:700 32px Georgia,serif;letter-spacing:-.06em;line-height:1}
+.brand-dot{color:#00c895}
+.brand-divider{width:1px;height:32px;background:#668092}
+.brand small{display:block;color:#c1d1dc;font-size:11px;font-weight:400;margin-top:2px}
+.page-nav{display:flex;align-items:stretch;gap:4px;height:100%;margin-left:auto}
+.page-nav a{display:flex;align-items:center;color:#c6d8e3;text-decoration:none;padding:0 15px;border-bottom:3px solid transparent;font-size:13px}
+.page-nav a:hover,.page-nav a[aria-current=page]{color:#fff;border-bottom-color:#00c895}
+.page-nav a.source-link{color:#9de8d5}
+.page-nav a.source-link:hover{color:#fff}
+.header-connect{border:1px solid #8ebbac;background:#e7f5ef;color:#174b42;padding:9px 13px;border-radius:2px;font-weight:600;white-space:nowrap;font-size:12px}
+.header-connect:hover{background:#fff}
+.eyebrow{color:var(--muted);font-size:12px;font-weight:400;letter-spacing:0;text-transform:none}
+.panel{background:#fff;border:1px solid var(--line);border-radius:3px;box-shadow:none}
+.control label{display:block;color:#364f60;font-size:12px;font-weight:600;margin:0 0 5px}
+.control select,.control input[type=number]{height:38px;width:100%;border:1px solid #b9cbd5;border-radius:2px;background:#fff;color:var(--text);padding:0 9px;outline:0}
+.control select{appearance:auto}
+.secondary{height:38px;align-self:end;border:1px solid var(--green);color:var(--green);background:#fff;border-radius:2px;padding:0 13px;font-weight:600;white-space:nowrap}
+.secondary:hover{background:#edf8f5}
+.workspace{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:18px;margin-top:16px}
+.surface-card{min-width:0;overflow:hidden}
+.surface-head{display:flex;justify-content:space-between;gap:16px;align-items:start;padding:18px 19px 0}
+.surface-head h2{font-size:20px;font-weight:500;margin:1px 0 5px;color:#1f2f3b}
+.surface-head p{margin:0;color:var(--muted);font-size:12px;max-width:670px}
+.smalltag{border:1px solid #b6c9d2;background:#f5f9fa;color:#3e5a69;padding:4px 8px;font-size:11px;white-space:nowrap}
+.plot-wrap{position:relative;margin:4px 13px 0;background:#fff;touch-action:none}
+.plot-wrap canvas{display:block;width:100%;height:min(46vw,520px);min-height:350px;cursor:grab}
+.plot-wrap canvas.dragging{cursor:grabbing}
+.plot-tooltip{position:absolute;z-index:4;pointer-events:none;background:#fff;border:1px solid #3a7c91;color:#203d50;box-shadow:0 3px 10px #17334f25;padding:7px 9px;font-size:11px;white-space:nowrap;display:none}
+.plot-hint{position:absolute;bottom:7px;left:10px;color:#638090;font-size:10px;pointer-events:none}
+.legend{display:flex;align-items:center;gap:7px;color:#5b7280;font-size:10px}
+.legend i{display:inline-block;width:80px;height:7px;background:linear-gradient(90deg,#bdd8e6,#7cccb9,#13a582)}
+.surface-footer{border-top:1px solid var(--line);padding:11px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#fbfcfd}
+.surface-footer p{margin:0;color:var(--muted);font-size:11px}
+.plot-actions{display:flex;align-items:center;gap:8px}
+.plot-actions button{border:1px solid #a9c1cc;background:#fff;color:#2d5a70;border-radius:2px;padding:5px 8px;font-size:11px}
+.plot-scale{display:flex;align-items:center;gap:6px;margin-right:auto;color:var(--muted);font-size:10px;white-space:nowrap}
+.plot-scale i{display:block;width:104px;height:7px;border-radius:2px;background:linear-gradient(90deg,#2855a5,#1c9ec0,#27b57e,#e1d048,#f38936,#db4241,#a5233e)}
+.range-row{display:flex;align-items:center;gap:9px}
+.range-row input[type=range]{flex:1;accent-color:var(--green)}
+.range-row input[type=number]{width:92px;height:36px;background:#fff;border:1px solid #b9cbd5;border-radius:2px;color:var(--text);padding:0 7px}
+.range-ends{display:flex;justify-content:space-between;color:#6a8190;font-size:10px;margin-top:5px}
+.advanced{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.advanced summary{font-size:12px;color:var(--link);cursor:pointer}
+.advanced-body{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.advanced-body .control{min-width:0}
+.advanced small{font-size:10px;color:#637c89;display:block;margin-top:8px}
+.modal{position:fixed;inset:0;background:#071d2b9e;display:grid;place-items:center;padding:18px;z-index:10}
+.modal[hidden]{display:none}
+.modal-card{max-width:500px;width:100%;padding:22px;border-top:4px solid var(--green)}
+.modal-head{display:flex;justify-content:space-between;align-items:start}
+.modal-head h2{font-size:23px;font-weight:500;margin:0 0 7px}
+.modal-head button{background:transparent;color:#405f70;border:0;font-size:23px}
+.modal p{font-size:12px;color:#536d7b}
+.modal .control{margin-top:13px}
+.modal .control input{height:39px;width:100%;background:#fff;border:1px solid #b9cbd5;border-radius:2px;color:var(--text);padding:0 9px}
+.primary{margin-top:17px;width:100%;height:39px;border:1px solid #008f72;border-radius:2px;background:#008f72;color:#fff;font-weight:600}
+.primary:disabled{opacity:.5}
+.connect-status{min-height:25px;color:#405e6d;font-size:12px;margin-top:11px}
+.connect-status.error{color:#a13d3d}
+@media(max-width:560px){.shell{padding:0 16px 40px}.topbar{margin:0 -16px;padding:0 16px}.brand-name{font-size:26px}.brand{gap:9px;font-size:13px}.brand-divider{height:26px}.workspace{gap:11px}.surface-head{padding:16px 13px 0}.surface-head h2{font-size:18px}.plot-wrap{margin:0 2px}.surface-footer{padding:10px 12px}.advanced-body{grid-template-columns:1fr 1fr}}
+.settings-panel{min-width:0;overflow:visible;container:settings / inline-size}
+.settings-head{padding:17px 18px 14px;border-bottom:1px solid var(--line);background:var(--soft)}
+.settings-head h2{font-size:19px;font-weight:500;margin:0 0 2px}
+.settings-head p{font-size:12px;color:var(--muted);margin:0}
+.broker-settings{display:grid;grid-template-columns:1fr 1fr;gap:13px;padding:17px 18px}
+.broker-primary{display:flex;flex-direction:column;gap:10px}
+.broker-primary .secondary{align-self:stretch;margin-top:6px}
+.broker-options{display:grid;gap:9px}
+.settings-group{border-top:1px solid var(--line);padding:15px 18px}
+.settings-group h3{font-size:15px;font-weight:600;margin:0 0 11px}
+.workload-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.connection-field{margin-top:15px}
+.connection-field>label{display:block;color:#364f60;font-size:12px;font-weight:600;margin-bottom:6px}
+.feature-heading{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.feature-heading h3{margin-bottom:5px}
+.feature-heading span{font-size:11px;color:var(--muted)}
+.feature-note{font-size:11px;line-height:1.4;color:var(--muted);margin:0 0 8px}
+.feature-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px;border-top:1px solid var(--line)}
+.feature-row{min-width:0;min-height:38px;display:flex;align-items:center;gap:6px;padding:5px 2px;border-bottom:1px solid #e6ecef;font-size:12px}
+.feature-row label{min-width:0;flex:1;display:flex;align-items:center;gap:7px;cursor:pointer;line-height:1.2}
+.feature-row label span{min-width:0;overflow-wrap:anywhere}
+.doc-help{display:inline-grid;place-items:center;width:16px;height:16px;flex:none;border:1px solid #a6bec8;border-radius:50%;font-size:10px;font-weight:700;line-height:1;text-decoration:none;color:#286a7b;background:#fff}
+.doc-help:hover{border-color:var(--link);background:#eaf4f9}
+.control,.connection-field{position:relative}
+.control .doc-help,.connection-field>.doc-help{position:absolute;right:0;top:0}
+.control:has(>.doc-help)>label,.connection-field:has(>.doc-help)>label{padding-right:21px}
+.feature-impact{font-variant-numeric:tabular-nums;font-size:11px;color:#526d7a;font-weight:600}
+.feature-impact.negative{color:#a13d3d}
+.feature-impact.positive{color:#087a61}
+.feature-row input{accent-color:var(--green);margin:0}
+.feature-row.feature-unavailable label,.feature-row.feature-unavailable .feature-impact{opacity:.45;cursor:not-allowed}
+.feature-group{margin-top:14px}
+.feature-group h4{font-size:12px;color:#405e6d;font-weight:600;margin:0 0 5px}
+@container settings (min-width:760px){.feature-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@container settings (max-width:510px){.feature-list{grid-template-columns:1fr}}
+.extra-fields{margin-top:15px}
+.settings-panel .advanced{margin-top:0}
+.settings-panel .advanced-body{grid-template-columns:1fr 1fr}
+.results-column{min-width:0;display:grid;gap:16px}
+.capacity-card{border-top:3px solid var(--green);padding:18px 20px;display:flex;align-items:baseline;gap:15px;flex-wrap:wrap}
+.capacity-card>span{font-size:16px;font-weight:600;color:#344f5d}
+.capacity-card strong{font-size:32px;color:#162f42;font-variant-numeric:tabular-nums;line-height:1.1}
+.capacity-card small{font-size:11px;color:var(--muted);margin-left:auto}
+.capacity-summary{min-width:170px;flex:1}
+.capacity-summary>span{display:block;font-size:11px;font-weight:600;color:var(--muted)}
+.capacity-summary strong{display:block;margin:2px 0;color:var(--text);font-size:28px;font-variant-numeric:tabular-nums;line-height:1.12;white-space:nowrap}
+.capacity-summary small{display:block;margin:0;color:var(--muted);font-size:10px}
+.capacity-controls{display:grid;grid-template-columns:repeat(2,minmax(105px,130px));gap:9px;align-items:end}
+.capacity-controls .control{min-width:0}
+.capacity-controls .control label{font-size:10px;white-space:nowrap}
+.capacity-controls .control select{width:100%}
+.broker-page{margin-top:18px}
+.broker-page-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:0 0 16px}
+.broker-page-head h1{font-size:25px;font-weight:500;margin:0 0 3px}
+.broker-page-head p{font-size:12px;color:var(--muted);margin:0}
+.broker-empty{padding:30px;color:var(--muted);font-size:14px}
+.broker-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.broker-metrics .panel{border-top:3px solid var(--green);padding:17px 19px;display:flex;flex-direction:column;gap:4px}
+.broker-metrics span{font-size:12px;color:#405e6d;font-weight:600}
+.broker-metrics strong{font-size:29px;line-height:1.15;color:#162f42;font-variant-numeric:tabular-nums}
+.broker-metrics small{font-size:11px;color:var(--muted)}
+.utilization-panel{margin-top:15px;padding:18px 20px}
+.utilization-panel h2{font-size:19px;font-weight:500;margin:0 0 5px}
+.utilization-panel>p{font-size:12px;color:var(--muted);margin:0 0 16px}
+.utilization-row{display:grid;grid-template-columns:175px 80px 1fr 180px;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line);font-size:12px}
+.utilization-row strong{font-variant-numeric:tabular-nums;font-size:16px;color:#263746}
+.utilization-row small{text-align:right;color:var(--muted);font-size:11px}
+.utilization-track{height:9px;background:#e5edf0;border-radius:8px;overflow:hidden}
+.utilization-track i{display:block;height:100%;background:var(--green);border-radius:8px}
+.utilization-row.high .utilization-track i{background:#d29a38}
+.utilization-row.high strong{color:#9a621b}
+.results-column .plot-wrap canvas{height:min(45vw,480px);min-height:350px}
+@media(max-width:900px){.workspace{grid-template-columns:1fr}.results-column .plot-wrap canvas{height:440px}.broker-metrics{grid-template-columns:1fr 1fr}.utilization-row{grid-template-columns:130px 65px 1fr 120px}}
+@media(max-width:560px){.broker-settings{padding:14px;gap:10px}.settings-group{padding:14px}.results-column .plot-wrap canvas{height:370px;min-height:370px}}
+@media(max-width:680px){.topbar{flex-wrap:wrap;height:auto;min-height:80px;padding-top:9px;padding-bottom:8px}.page-nav{height:40px;order:3;width:100%;margin-left:0}.page-nav a{padding:0 12px}.header-connect{margin-left:auto}.broker-metrics{grid-template-columns:1fr}.utilization-row{grid-template-columns:1fr auto;gap:4px}.utilization-track{grid-column:1/-1}.utilization-row small{text-align:left;grid-column:1/-1}}
+/* Dark, dense workspace. Keep native controls and the plot readable in the same theme. */
+:root{color-scheme:dark;--navy:#0a171e;--navy2:#18313a;--green:#00c895;--link:#75dec9;--text:#deebef;--muted:#9ab0ba;--line:#33444d;--soft:#1b2830;--blue:#1c3440;--blue-line:#67c4c9}
+body{background:#0d151b;color:var(--text);font:13px/1.4 Arial,Helvetica,sans-serif}
+a{color:var(--link)}
+.shell{padding:0 20px 36px}
+.topbar{height:60px;margin:0 -20px;padding:0 20px;border-bottom-width:2px}
+.brand{font-size:20px;gap:12px;letter-spacing:-.01em}.brand-name{font-size:28px}.brand-divider{height:27px}.brand small{color:#a8c0c9}
+.page-nav a{font-size:12px;padding:0 12px;color:#adc5cf}
+.header-connect{padding:6px 10px;background:#123c36;border-color:#2f907c;color:#c9fff0;font-size:11px}
+.header-connect:hover{background:#1a564a}
+.workspace{gap:12px;margin-top:11px}
+.panel{background:#151f26;border-color:var(--line)}
+.eyebrow,.smalltag,.surface-head p,.surface-footer p,.plot-hint,.plot-actions,.legend,.broker-page-head p{color:var(--muted)}
+.surface-head{padding:13px 15px 0;align-items:end;flex-wrap:wrap}.surface-head h2{font-size:17px;color:var(--text);margin:0}
+.surface-head .capacity-controls{margin-left:auto}
+.smalltag{background:#1c3039;border-color:#3f606b;padding:3px 6px;font-size:10px}
+.plot-wrap{margin:2px 7px 0;background:#111b22}
+.results-column .plot-wrap canvas{height:min(68vh,640px);min-height:490px}
+.plot-tooltip{background:#20333d;border-color:#6bc9c5;color:#e9f7f7;box-shadow:0 8px 24px #0008}
+.surface-footer{padding:10px 12px;background:#18252c;display:block}
+.plot-actions{justify-content:flex-end}.plot-actions button{background:#21343d;border-color:#48616c;color:#c5e7e9}
+.plot-actions button:hover{background:#2d4750}
+.sdkperf-command{margin-top:7px}.sdkperf-command-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:5px;color:#bcd0d8;font-size:11px;font-weight:600}
+.sdkperf-command-head button{border:1px solid #48616c;border-radius:3px;background:#21343d;color:#c5e7e9;padding:3px 7px;font-size:10px}
+.sdkperf-command-head a{color:#bcd0d8;text-decoration:none}.sdkperf-command-head a:hover{text-decoration:underline}
+.sdkperf-command-head button:disabled{opacity:.45;cursor:default}
+.sdkperf-command code{display:block;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;padding:9px 10px;border:1px solid #354e58;border-radius:3px;background:#0f1b22;color:#d5f8ec;font:11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+.sdkperf-command small{display:block;margin-top:5px;color:#8fa9b2;font-size:10px;line-height:1.35}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.legend i{background:linear-gradient(90deg,#2858ae,#1590b8,#24bd9b,#e9c84d,#f47536)}
+.settings-head{padding:11px 14px 10px;background:#1b2830}
+.settings-head h2{font-size:16px}.settings-head p{font-size:11px}
+.broker-settings{padding:11px 14px;gap:10px}
+.broker-class-control{grid-column:1/-1;min-width:0;max-width:none;margin:0;padding:0;border:0}
+.broker-class-control legend{padding:0 22px 5px 0;color:#bcd0d8;font-size:11px;font-weight:600}
+.broker-class-options{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px}
+.broker-class-options label{display:block;position:relative;margin:0;cursor:pointer}
+.broker-class-options input{position:absolute;width:1px;height:1px;opacity:0}
+.broker-class-options span{display:grid;place-items:center;min-height:34px;border:1px solid #425967;border-radius:3px;background:#0f1b22;color:#bed2da;font-size:12px;font-weight:600}
+.broker-class-options label:hover span{border-color:#70bba7;color:#e5fff3}
+.broker-class-options input:checked+span{border-color:#55d3ad;background:#17624f;color:#fff;box-shadow:inset 0 0 0 1px #55d3ad}
+.broker-class-options input:focus-visible+span{outline:2px solid #82e1c8;outline-offset:2px}
+.broker-class-control>.doc-help{top:-19px}
+.settings-group{padding:10px 14px}.settings-group h3{font-size:13px;margin-bottom:7px}
+.workload-fields{gap:7px 9px}.extra-fields{margin-top:10px}.connection-field{margin-top:10px}
+.control label,.connection-field>label{color:#bcd0d8;font-size:11px;margin-bottom:4px}
+.control select,.control input[type=number],.range-row input[type=number],.modal .control input{height:32px;background:#0f1b22;color:var(--text);border-color:#425967;border-radius:3px;padding:0 8px}
+.control select:focus,.control input:focus,.modal .control input:focus{border-color:var(--link)}
+.connection-field{max-width:340px}.range-row input[type=range]{max-width:220px}
+.range-row input[type=number]{width:76px}.range-ends{color:#8da5b0}
+.sdkperf-arg{display:inline-block;margin-left:6px;padding:1px 4px;border:1px solid #41675f;border-radius:3px;background:#183a33;color:#91efce;font:10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;vertical-align:1px;white-space:nowrap}
+.sdkperf-arg[hidden]{display:none!important}
+.feature-list{column-gap:12px}.feature-row{min-height:31px;padding:3px 1px;border-color:#293943;font-size:11px;gap:5px}
+.feature-row label{gap:5px}.feature-row label>span:first-of-type{flex:1}
+.feature-row .sdkperf-arg{margin-left:2px}
+.feature-group{margin-top:9px}.feature-group h4{font-size:11px;color:#aec5ce;margin-bottom:4px}
+.feature-heading span,.feature-note{font-size:10px}.feature-note{margin-bottom:6px}
+.feature-impact{font-size:10px;color:#b1c4cd}.feature-impact.negative{color:#fa9696}.feature-impact.positive{color:#68dfb6}
+.doc-help{background:#1b3038;border-color:#52727c;color:#c7e6e8;width:15px;height:15px}
+.doc-help:hover{background:#2b5159;border-color:#80dcca}
+.advanced{padding-top:8px}.advanced small{color:#98aeba}
+.capacity-card{padding:12px 16px;gap:11px}.capacity-card>span{font-size:14px;color:#bdcfd6}.capacity-card strong{font-size:28px;color:#efffff}
+.capacity-card{align-items:center}.capacity-summary strong{color:#efffff}.capacity-summary>span{color:#bdcfd6}
+.capacity-controls .control select{height:30px}
+.broker-page{margin-top:12px}.broker-page-head h1{font-size:20px;color:var(--text)}
+.broker-empty{padding:20px}.broker-metrics{gap:10px}.broker-metrics .panel{padding:12px 15px}.broker-metrics span{color:#bcd0d8}.broker-metrics strong{font-size:24px;color:#e7f4f8}
+.utilization-panel{margin-top:10px;padding:13px 15px}.utilization-panel h2{font-size:16px}.utilization-row{padding:7px 0}.utilization-row strong{color:var(--text)}.utilization-track{background:#2c4149}.utilization-row.high strong{color:#f0c078}
+.modal{background:#050d12c9}.modal-card{padding:18px}.modal-head h2{font-size:20px}.modal-head button{color:#d0e1e6}.modal p{color:var(--muted)}
+.secondary{height:32px;background:#172a30;color:#82e1c8}.secondary:hover{background:#1d3839}
+.connect-status{color:#b9d2d8}.connect-status.error{color:#ff9d9d}
+.experiments-page{margin-top:12px}.experiments-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}.experiments-head h1{font-size:20px;font-weight:500;margin:0;color:var(--text)}.experiments-head p{font-size:11px;color:var(--muted);margin:2px 0 0}.experiments-actions{display:flex;gap:7px;align-items:center}.experiments-actions a{font-size:11px;text-decoration:none;border:1px solid #48616c;border-radius:3px;padding:6px 9px;color:#c5e7e9}.experiments-actions a:hover{background:#21343d}
+.experiment-counts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:10px}.experiment-count{padding:9px 12px;display:flex;align-items:baseline;gap:9px}.experiment-count strong{font-size:22px;font-variant-numeric:tabular-nums;color:#e8f7f6}.experiment-count span{font-size:11px;color:var(--muted)}
+.experiment-filters{display:flex;gap:8px;align-items:end;flex-wrap:wrap;padding:10px 12px;margin-bottom:10px}.experiment-filters .control{min-width:130px}.experiment-filters .search-control{flex:1;min-width:190px}.experiment-filters input,.experiment-filters select{height:32px;width:100%;background:#0f1b22;border:1px solid #425967;border-radius:3px;color:var(--text);padding:0 8px}.experiment-filters label{font-size:10px}.experiment-filters .filter-count{color:var(--muted);font-size:11px;margin-left:auto;padding-bottom:8px}
+.experiment-table-wrap{overflow:auto;max-height:58vh}.experiment-table{width:100%;border-collapse:collapse;min-width:850px;font-size:11px}.experiment-table th{position:sticky;top:0;z-index:1;background:#1b2c34;color:#b8cdd5;text-align:left;font-weight:600;padding:8px 9px;border-bottom:1px solid #425967;white-space:nowrap}.experiment-table td{padding:7px 9px;border-bottom:1px solid #2b3c45;color:#d8e7ea;white-space:nowrap}.experiment-table tbody tr:hover{background:#1c3038}.experiment-table tbody tr.selected{background:#18443f}.experiment-table button{border:0;background:none;padding:0;color:#8ee5d2;font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}.experiment-table .muted{color:var(--muted)}
+.experiment-status{display:inline-block;min-width:65px;text-align:center;padding:2px 6px;border:1px solid #5d6e76;border-radius:3px;color:#c5d3d7;font-size:10px;font-weight:700;letter-spacing:.02em}.experiment-status.RUNNING{color:#f4d28a;border-color:#916f2a;background:#43351c}.experiment-status.DONE{color:#82e4b6;border-color:#2a8d65;background:#173f32}
+.experiment-detail{margin-top:10px;padding:12px 14px}.experiment-detail[hidden]{display:none!important}.experiment-detail h2{font-size:15px;font-weight:600;margin:0 0 8px}.experiment-detail-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 14px;margin-bottom:10px}.experiment-detail-grid div{min-width:0}.experiment-detail-grid span{display:block;color:var(--muted);font-size:10px}.experiment-detail-grid strong{display:block;color:var(--text);font-size:11px;font-weight:600;overflow-wrap:anywhere}.experiment-detail h3{font-size:11px;color:#bcd0d8;margin:10px 0 4px}.experiment-detail p{font-size:11px;color:#c5d7dc;margin:0;overflow-wrap:anywhere}.experiment-detail code{display:block;padding:8px 10px;background:#0f1b22;border:1px solid #354e58;border-radius:3px;color:#d5f8ec;font:10px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+.experiment-workspace{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(340px,1fr);gap:10px;align-items:start}
+.experiment-workspace .experiment-table-wrap{min-width:0;max-height:calc(100vh - 260px);min-height:450px}
+.experiment-workspace .experiment-table{min-width:850px}
+.experiment-workspace .experiment-table tbody tr{cursor:pointer}
+.experiment-workspace .experiment-table tbody tr:focus-visible{outline:2px solid var(--link);outline-offset:-2px}
+.experiment-workspace .experiment-detail{min-width:0;margin:0;position:sticky;top:10px;max-height:calc(100vh - 85px);min-height:450px;overflow:auto}
+.experiment-workspace .experiment-detail-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 10px}
+.experiment-description{font-size:12px!important;line-height:1.5!important;color:#deebef!important;margin:0 0 12px!important}
+.experiment-detail-empty{color:var(--muted)!important}
+@media(max-width:1100px){.experiment-workspace{grid-template-columns:1fr}.experiment-workspace .experiment-detail{position:static;max-height:none;min-height:160px}.experiment-workspace .experiment-table-wrap{max-height:48vh;min-height:300px}}
+@media(max-width:680px){.experiment-counts{gap:5px}.experiment-count{padding:7px 8px;gap:5px}.experiment-count strong{font-size:18px}.experiment-detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.experiment-table-wrap{max-height:62vh}}
+@media(max-width:900px){.results-column .plot-wrap canvas{height:490px}}
+@media(max-width:1080px){.capacity-controls{grid-template-columns:repeat(2,minmax(105px,1fr));width:100%}}
+@media(max-width:680px){.topbar{height:auto;min-height:66px}.page-nav{height:32px}.header-connect{margin-left:auto}}
+@media(max-width:560px){.broker-class-options{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.shell{padding:0 12px 28px}.topbar{margin:0 -12px;padding:6px 12px}.brand{font-size:16px}.broker-settings,.settings-group{padding:10px 11px}.results-column .plot-wrap canvas{height:390px;min-height:390px}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="topbar"><div class="brand">Solace Capacity Model</div><nav class="page-nav" aria-label="Pages"><a href="#model" id="modelNav">Model</a><a href="#broker" id="brokerNav">Connected broker</a><a href="#experiments" id="experimentsNav">Experiments</a><a class="source-link" href="https://github.com/solacese/broker-capacity-model" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav><button class="header-connect" type="button" id="openConnect">Connect broker via SEMP</button></header>
+  <div class="workspace" id="modelPage">
+    <aside class="panel settings-panel" aria-label="Broker and workload settings">
+      <div class="settings-head"><h2>Broker and workload</h2></div>
+      <div class="broker-settings">
+        <fieldset class="control broker-class-control" id="brokerClass"><legend>Service class</legend><div class="broker-class-options"><label><input type="radio" name="brokerClass" value="1K"><span>1K</span></label><label><input type="radio" name="brokerClass" value="5K"><span>5K</span></label><label><input type="radio" name="brokerClass" value="10K" checked><span>10K</span></label><label><input type="radio" name="brokerClass" value="50K"><span>50K</span></label><label><input type="radio" name="brokerClass" value="100K"><span>100K</span></label><label><input type="radio" name="brokerClass" value="200K"><span>200K</span></label></div></fieldset>
+        <div class="control"><label for="delivery">Delivery mode</label><select id="delivery"><option value="persistent">Persistent</option><option value="direct">Direct</option></select></div>
+        <div class="control"><label for="protocol">Client API / protocol</label><select id="protocol"><option value="SMF">SMF (JCSMP)</option><option value="AMQP">AMQP</option><option value="MQTT">MQTT</option><option value="JMS">JMS</option><option value="REST">REST</option></select></div>
+      </div>
+      <div class="settings-group"><h3>Traffic and routing</h3><div class="workload-fields"><div class="control"><label for="topicCount">Published topics</label><input id="topicCount" type="number" min="1" value="1"></div><div class="control"><label for="subscriptionCount">Topic subscriptions</label><input id="subscriptionCount" type="number" min="1" value="2"></div><div class="control"><label for="propertyBytes">User property bytes / msg</label><input id="propertyBytes" type="number" min="0" value="0"></div><div class="control"><label for="publisherSkew">Publisher rate skew</label><input id="publisherSkew" type="number" min="1" max="10" step="0.1" value="1"></div></div></div>
+      <div class="settings-group"><h3>Connections and queues</h3><div class="connection-field"><label for="connections">Client connections</label><div class="range-row"><input id="connectionSlider" type="range" min="0" max="1000" value="170" aria-label="Connections slice"><input id="connections" type="number" min="1" max="200000" value="4" aria-label="Exact connection count"></div><div class="range-ends"><span>1 connection</span><span id="connectionMaxLabel">10,000 limit</span></div></div><div class="workload-fields extra-fields"><div class="control"><label for="extraQueues">Other active queues</label><input id="extraQueues" type="number" min="0" value="0"></div><div class="control"><label for="connectionChurn">Connection churn / sec</label><input id="connectionChurn" type="number" min="0" value="0"></div></div></div>
+      <div class="settings-group"><div class="feature-heading"><h3>Broker features</h3></div><p class="feature-note">Estimated processing effects · ? opens documentation</p><div id="featureFlags"></div></div>
+      <details class="advanced settings-group"><summary>Reference rate and limits</summary><div class="advanced-body"><div class="control"><label for="baseline">Reference msg/s</label><input id="baseline" type="number" min="1" value="70000"></div><div class="control"><label for="connectionLimit">Connection limit</label><input id="connectionLimit" type="number" min="1" value="10000"></div><div class="control"><label for="ingressMbps">Ingress Mbps</label><input id="ingressMbps" type="number" min="0" placeholder="unknown"></div><div class="control"><label for="egressMbps">Egress Mbps</label><input id="egressMbps" type="number" min="0" placeholder="unknown"></div></div><small id="assumptionNote">70,000 msg/s is a sample reference for 10K, not an observed ceiling.</small></details>
+    </aside>
+    <main class="results-column">
+      <section class="panel surface-card" aria-labelledby="surfaceTitle">
+      <div class="surface-head"><h2 id="surfaceTitle">Estimated broker capacity</h2><div class="capacity-controls"><div class="control"><label for="payload">Message size</label><select id="payload"><option value="512">512 B</option><option value="1024" selected>1 KiB</option><option value="2048">2 KiB</option><option value="8192">8 KiB</option><option value="65536">64 KiB</option><option value="204800">200 KiB</option></select></div><div class="control"><label for="fanout">Queue fanout</label><select id="fanout"><option value="1">1 copy</option><option value="2">2 copies</option><option value="4" selected>4 copies</option><option value="5">5 copies</option><option value="10">10 copies</option><option value="20">20 copies</option></select></div></div><span id="headline" class="sr-only" aria-live="polite">—</span></div>
+      <div class="plot-wrap" id="plotWrap"><canvas id="surface" role="img" aria-label="Three-dimensional modeled throughput surface with MSG Size and Fanout on the horizontal plane and estimated Stable MSG/S as height"></canvas><div class="plot-tooltip" id="plotTooltip"></div><div class="plot-hint">Drag to rotate · hover to inspect · click to select · double-click to reset</div></div>
+      <div class="surface-footer"><div class="plot-actions"><div class="plot-scale" role="img" aria-label="Throughput colors range from lower in blue to higher in red"><span>Lower</span><i aria-hidden="true"></i><span>Higher</span></div><button id="resetView" type="button">Reset view</button></div><div class="sdkperf-command"><div class="sdkperf-command-head"><a href="https://docs.solace.com/API/SDKPerf/Command-Line-Options.htm" target="_blank" rel="noopener noreferrer">SDKPerf target command</a><button id="copyCommand" type="button">Copy</button></div><code id="sdkperfCommand"></code><small id="sdkperfNote"></small></div></div>
+      </section>
+    </main>
+  </div>
+  <section class="broker-page" id="brokerPage" hidden>
+    <div class="broker-page-head"><div><h1 id="brokerName">Connected broker</h1><p id="brokerMeta">SEMP Read-Only snapshot</p></div><button type="button" class="secondary" id="refreshBroker">Refresh snapshot</button></div>
+    <div class="panel broker-empty" id="brokerEmpty">Connect a Solace Cloud broker to see its SEMP Read-Only counters.</div>
+    <div id="brokerData" hidden>
+      <div class="broker-metrics"><section class="panel"><span>Broker capacity</span><strong id="brokerCapacity">—</strong><small>Illustrative for the selected model workload</small></section><section class="panel"><span>Current ingress</span><strong id="brokerIngress">—</strong><small>Observed through SEMP</small></section><section class="panel"><span>Throughput used</span><strong id="brokerThroughputUsed">—</strong><small>Ingress ÷ modeled capacity</small></section></div>
+      <section class="panel utilization-panel"><h2>Capacity used</h2><p id="brokerSummary"></p><div class="utilization-list" id="utilizationList"></div></section>
+    </div>
+  </section>
+  <section class="experiments-page" id="experimentsPage" hidden>
+    <div class="experiments-head"><div><h1>Experiments</h1><p id="experimentsMeta">Loading the planned campaign…</p></div><div class="experiments-actions"><a href="/experiments.csv" download>Download CSV</a><button type="button" class="secondary" id="refreshExperiments">Refresh status</button></div></div>
+    <div class="experiment-counts" aria-label="Experiment status totals"><div class="panel experiment-count"><strong id="todoCount">—</strong><span>TODO</span></div><div class="panel experiment-count"><strong id="runningCount">—</strong><span>RUNNING</span></div><div class="panel experiment-count"><strong id="doneCount">—</strong><span>DONE</span></div></div>
+    <div class="panel experiment-filters"><div class="control search-control"><label for="experimentSearch">Search</label><input id="experimentSearch" type="search" placeholder="ID, stage, API, feature"></div><div class="control"><label for="experimentStatusFilter">Status</label><select id="experimentStatusFilter"><option value="">All statuses</option><option value="TODO">TODO</option><option value="RUNNING">RUNNING</option><option value="DONE">DONE</option></select></div><div class="control"><label for="experimentClassFilter">Service class</label><select id="experimentClassFilter"><option value="">All classes</option><option>1K</option><option>5K</option><option>10K</option><option>50K</option><option>100K</option><option>200K</option></select></div><span class="filter-count" id="experimentFilterCount"></span></div>
+    <div class="experiment-workspace"><div class="panel experiment-table-wrap"><table class="experiment-table"><thead><tr><th>ID</th><th>Status</th><th>Stable msg/s</th><th>Stage</th><th>Class</th><th>API</th><th>Delivery</th><th>Message size</th><th>Fanout</th><th>Feature</th><th>Readiness</th></tr></thead><tbody id="experimentRows"><tr><td colspan="11" class="muted">Loading…</td></tr></tbody></table></div>
+    <section class="panel experiment-detail" id="experimentDetail" aria-live="polite"><h2>Experiment description</h2><p class="experiment-detail-empty">Select a row to see its workload, setup, and commands.</p></section></div>
+  </section>
+</div>
+<div class="modal" id="connectModal" hidden><div class="panel modal-card" role="dialog" aria-modal="true" aria-labelledby="connectTitle"><div class="modal-head"><div><span class="eyebrow">SEMP Read-Only</span><h2 id="connectTitle">Connect broker</h2></div><button id="closeConnect" type="button" aria-label="Close">×</button></div><p>Enter a Solace Cloud service ID and API token. The server discovers that service's SEMP Read-Only endpoint and returns a snapshot. The token is cleared after the request.</p><div class="control"><label for="serviceId">Service ID</label><input id="serviceId" autocomplete="off" spellcheck="false" placeholder="Service ID"></div><div class="control"><label for="cloudToken">Solace Cloud API token</label><input id="cloudToken" type="password" autocomplete="off" spellcheck="false" placeholder="Paste token"></div><button class="primary" type="button" id="connectButton">Read SEMP snapshot</button><div class="connect-status" id="connectStatus" role="status"></div></div></div>
+<script>
+'use strict';
+const TIER={"1K":{base:50000,limit:1000,group:"1K software broker"},"5K":{base:70000,limit:5000,group:"10K software broker"},"10K":{base:70000,limit:10000,group:"10K software broker"},"50K":{base:120000,limit:50000,group:"100K software broker"},"100K":{base:120000,limit:100000,group:"100K software broker"},"200K":{base:120000,limit:200000,group:"unverified class"}};
+const COST={protocol:{SMF:1,AMQP:1.18,MQTT:1.12,JMS:1.25,REST:1.45},delivery:{persistent:1,direct:.55},fanoutExtra:.7,payloadFixed:.65,payloadByte:.35,connectionLog:.045,overheadBytes:64};
+// Candidate features and coefficients are illustrative what-if inputs, not measured Solace performance effects.
+const FEATURES=[
+  {id:'tls',label:'TLS transport',factor:1.03,default:true},
+  {id:'ha',label:'High availability',factor:1,default:true,variable:true},
+  {id:'partitioned',label:'Partitioned queue',factor:1,mode:'persistent',variable:true},
+  {id:'nonexclusive',label:'Non-exclusive queue',factor:1,mode:'persistent',variable:true},
+  {id:'selectors',label:'Consumer selectors',factor:1.12,mode:'persistent',protocols:['SMF','JMS']},
+  {id:'replay',label:'Replay capture',factor:1.08,mode:'persistent'},
+  {id:'tracing',label:'Distributed tracing',factor:1.07},
+  {id:'expiry',label:'Message expiry',factor:1.04,mode:'persistent'},
+  {id:'dmq',label:'Dead-message queue handling',factor:1,mode:'persistent',variable:true},
+  {id:'priority',label:'Message priority',factor:1.05,mode:'persistent'},
+  {id:'browsing',label:'Concurrent queue browsing',factor:1.03,mode:'persistent'},
+  {id:'lvq',label:'Last-value queue',factor:1,mode:'persistent',variable:true},
+  {id:'transactions',label:'Local transactions',factor:1.15,mode:'persistent'},
+  {id:'xa',label:'XA transactions',factor:1.30,mode:'persistent'},
+  {id:'dr',label:'DR replication',factor:1,mode:'persistent',variable:true},
+  {id:'mesh',label:'Dynamic message routing',factor:1,variable:true},
+  {id:'conversion',label:'Cross-protocol delivery',factor:1,variable:true},
+  {id:'compression',label:'SMF channel compression',factor:1,protocol:'SMF',variable:true},
+  {id:'acl',label:'ACL profile rules',factor:1,variable:true},
+  {id:'events',label:'Broker event publishing',factor:1,variable:true}
+];
+const MODELED_FEATURES=FEATURES.filter(f=>!f.variable);
+const FEATURE_DOCS={
+  tls:['https://docs.solace.com/Cloud/Security/security-client-connectivity.htm','TLS changes the client transport path; impact depends on cipher and connection churn.'],
+  ha:['https://docs.solace.com/Features/HA-Redundancy/Configuring-HA-Groups.htm','HA mate-link and storage behavior vary; no universal throughput penalty.'],
+  partitioned:['https://docs.solace.com/Messaging/Guaranteed-Msg/Partitioned-Queue-Messaging.htm','Partition count, keys and consumer parallelism determine the effect.'],
+  nonexclusive:['https://docs.solace.com/Messaging/Guaranteed-Msg/Queues.htm#queue-access-types','Non-exclusive access changes consumer distribution, not publish work by a fixed percentage.'],
+  selectors:['https://docs.solace.com/API/API-Developer-Guide/Using-Selectors.htm','Selector cost depends on expression and how much queued data must be scanned.'],
+  replay:['https://docs.solace.com/Features/Replay/Message-Replay-Overview.htm','Replay log capture adds storage work for eligible Guaranteed messages.'],
+  tracing:['https://docs.solace.com/Features/Distributed-Tracing/Distributed-Tracing-Best-Practices.htm','Impact depends on trace sampling, message size and fanout.'],
+  expiry:['https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm','Max TTL adds per-message state on a queue that respects TTL.'],
+  dmq:['https://docs.solace.com/Messaging/Guaranteed-Msg/Queues.htm#dmq','DMQ work occurs when messages become undeliverable or expire.'],
+  priority:['https://docs.solace.com/Messaging/Guaranteed-Msg/Message-Priority.htm','Priority affects queues configured to respect message priority.'],
+  browsing:['https://docs.solace.com/API/API-Developer-Guide-JCSMP/JCSMP-API-Browsing-Guaranteed-Mess.htm','A browser only adds work while it actively scans messages.'],
+  lvq:['https://docs.solace.com/Messaging/Guaranteed-Msg/Queues.htm#lvq','A last-value queue has max spool usage 0 and retains only its last message; it changes workload semantics.'],
+  transactions:['https://docs.solace.com/Messaging/Guaranteed-Msg/Transactions.htm','Effect depends on transaction batch size and commit rate.'],
+  xa:['https://docs.solace.com/API/Solace-Jakarta-API/Using-XA-Transactions.htm','XA uses a two-phase commit workflow; compare at a specified batch size.'],
+  dr:['https://docs.solace.com/Features/DR-Replication/Sync-Asynch-Replication.htm','Synchronous and asynchronous DR have different limits; link RTT and bandwidth matter.'],
+  mesh:['https://docs.solace.com/Get-Started/dynamic-message-routing.htm','DMR adds forwarding work when there are remote matches.'],
+  conversion:['https://docs.solace.com/API/Protocol-Metadata-Payload-Encoding.htm','Protocol translation depends on ingress and egress protocol and payload type.'],
+  compression:['https://docs.solace.com/Messaging/Using-Message-Compresssion.htm','Compression depends on payload compressibility and optimization mode.'],
+  acl:['https://docs.solace.com/Security/Granting-Clients-Access.htm','ACL profiles control client publish and subscribe topics; cost depends on rule set.'],
+  events:['https://docs.solace.com/Monitoring/Monitoring-Events.htm','Subscription event publication matters mainly when subscriptions change.']
+};
+const CONTROL_DOCS={
+  brokerClass:['https://docs.solace.com/Cloud/service-class-limits.htm','Solace Cloud calls this a service class; limits vary by class and broker version.'],
+  region:['https://docs.solace.com/Cloud/create-service.htm','Cloud and region are selected when creating an event broker service.'],
+  protocol:['https://docs.solace.com/API/Protocol-Metadata-Payload-Encoding.htm','JCSMP and JMS are client APIs; SMF, AMQP, MQTT and REST describe protocol paths.'],
+  delivery:['https://docs.solace.com/API/SDKPerf/Command-Line-Options.htm','SDKPerf -mt selects Direct or Persistent for applicable clients. MQTT uses publisher and subscriber QoS (-mpq and -msq) instead.'],
+  payload:['https://docs.solace.com/API/SDKPerf/Command-Line-Options.htm','SDKPerf -msa sets generated binary attachment bytes; actual wire message size also includes metadata and protocol overhead.'],
+  fanout:['https://docs.solace.com/Messaging/Guaranteed-Msg/Queues.htm','Queue fanout here means the number of matching queue copies per published message.'],
+  topicCount:['https://docs.solace.com/Get-Started/what-are-topics.htm','SDKPerf -ptl supplies actual published topic names; this control models their count.'],
+  subscriptionCount:['https://docs.solace.com/Messaging/subscription-capacity.htm','SDKPerf -stl supplies actual subscription topic names; this control models their count. REST consumer subscriptions are configured on the RDP queue.'],
+  propertyBytes:['https://docs.solace.com/API/API-Developer-Guide-JCSMP/JCSMP-API-Creating-Custom-Header-Fields.htm','User properties add message metadata beyond the binary payload.'],
+  publisherSkew:['https://docs.solace.com/API/SDKPerf/Command-Line-Options.htm','This is a model workload assumption; SDKPerf -mr sets publishing rate.'],
+  connections:['https://docs.solace.com/API/SDKPerf/Command-Line-Options.htm','SDKPerf -cc controls the number of client connections.'],
+  extraQueues:['https://docs.solace.com/Messaging/Guaranteed-Msg/Queues.htm','Other active queues are a model workload assumption.'],
+  connectionChurn:['https://docs.solace.com/Monitoring/Monitoring-Events.htm','Connection churn is a model workload assumption, not a broker configuration flag.'],
+  baseline:['https://docs.solace.com/API/SDKPerf/SDKPerf.htm','Enter a measured reference throughput for this exact workload and environment.'],
+  connectionLimit:['https://docs.solace.com/Cloud/service-class-limits.htm','Use the applicable service-class and protocol connection allowance.'],
+  ingressMbps:['https://docs.solace.com/Cloud/service-class-limits.htm','Optional ideal line-rate ceiling, not measured broker application throughput.'],
+  egressMbps:['https://docs.solace.com/Cloud/service-class-limits.htm','Optional ideal line-rate ceiling, not measured broker application throughput.']
+};
+const FEATURE_GROUPS=[
+  ['Transport and topology',['tls','ha','dr','mesh','conversion']],
+  ['Security and compression',['compression','acl']],
+  ['Queue behavior',['partitioned','nonexclusive','selectors','replay','expiry','dmq','priority','browsing','lvq']],
+  ['Transactions',['transactions','xa']],
+  ['Observability',['tracing','events']]
+];
+const PAYLOADS=[512,1024,2048,8192,65536,204800],FANOUTS=[1,2,4,5,10,20];
+const ARGUMENTS={
+  delivery:{flag:'-mt',help:'Published message type.',applies:()=>true},
+  payload:{flag:'-msa',help:'Generated binary attachment bytes; total wire message is larger.',applies:()=>true},
+  topicCount:{flag:'-ptl',help:'List of published topic names, not a topic count.',applies:()=>true},
+  subscriptionCount:{flag:'-stl',help:'List of topic subscriptions; REST RDP subscriptions are broker-side.',applies:s=>s.protocol!=='REST'},
+  connections:{flag:'-cc',help:'Number of SDKPerf client connections.',applies:()=>true},
+  selectors:{flag:'-ssl',help:'Queue consumer selector in SDKPerf C, C#, JCSMP or JMS.',feature:true,applies:s=>s.delivery==='persistent'&&['SMF','JMS'].includes(s.protocol)},
+  compression:{flag:'-z',help:'Enable SDKPerf channel compression and set its level.',feature:true,applies:s=>s.protocol==='SMF'},
+  expiry:{flag:'-mtl',help:'Publisher TTL; queue respect-TTL configuration is separate.',feature:true,applies:s=>s.delivery==='persistent'&&['SMF','JMS','REST'].includes(s.protocol)},
+  dmq:{flag:'-mdq',help:'Publisher DMQ eligibility; broker-side DMQ setup is separate.',feature:true,applies:s=>s.delivery==='persistent'&&['SMF','JMS','REST'].includes(s.protocol)}
+};
+const $=id=>document.getElementById(id);let connected=null,baselineEdited=false,limitEdited=false,viewYaw=.77,viewPitch=.62,hovered=null,drag=null,surfacePoints=[];
+function selectedServiceClass(){return document.querySelector('input[name="brokerClass"]:checked').value}
+function selectServiceClass(value){const radio=Array.from(document.querySelectorAll('input[name="brokerClass"]')).find(item=>item.value===value);if(radio)radio.checked=true}
+function positive(id){const v=Number($(id).value);return Number.isFinite(v)&&v>0?v:null}
+function fmt(v){return v===null||!Number.isFinite(v)?'—':Math.round(v).toLocaleString('en-US')}
+function displayRate(v){if(v===null||!Number.isFinite(v))return null;return v<100?Math.round(v):v<1000?Math.round(v/10)*10:Math.round(v/100)*100}
+function roundedRate(v){const rate=displayRate(v);return rate===null?'—':rate.toLocaleString('en-US')}
+function pct(r){const x=Math.round((r-1)*1000)/10;return'~'+(x>0?'+':'')+x.toFixed(1)+'%'}
+function sliderValue(count,limit){return Math.round(1000*Math.log(Math.max(1,Math.min(count,limit)))/Math.log(Math.max(2,limit)))}
+function countFromSlider(pos,limit){return Math.max(1,Math.round(Math.exp(pos/1000*Math.log(Math.max(2,limit)))))}
+function nonnegative(id){const v=Number($(id).value);return Number.isFinite(v)?Math.max(0,v):0}
+function state(){return{
+  tier:selectedServiceClass(),protocol:$('protocol').value,delivery:$('delivery').value,
+  features:Object.fromEntries(MODELED_FEATURES.map(f=>[f.id,$('feature-'+f.id).checked])),
+  baseline:positive('baseline'),limit:positive('connectionLimit'),connections:Math.max(1,Math.round(positive('connections')||1)),
+  payload:Number($('payload').value),fanout:Number($('fanout').value),
+  topicCount:Math.max(1,nonnegative('topicCount')),subscriptionCount:Math.max(1,nonnegative('subscriptionCount')),
+  propertyBytes:nonnegative('propertyBytes'),publisherSkew:Math.max(1,nonnegative('publisherSkew')),
+  extraQueues:nonnegative('extraQueues'),connectionChurn:nonnegative('connectionChurn'),
+  ingressMbps:positive('ingressMbps'),egressMbps:positive('egressMbps')
+}}
+function model(s,payload=s.payload,fanout=s.fanout){
+  if(!s.baseline)return null;
+  const featureCost=MODELED_FEATURES.reduce((cost,f)=>cost*(s.features[f.id]&&(!f.mode||f.mode===s.delivery)&&(!f.protocol||f.protocol===s.protocol)&&(!f.protocols||f.protocols.includes(s.protocol))?f.factor:1),1);
+  const densityCost=(1+.012*Math.log2(s.topicCount))*(1+.01*Math.log2(Math.max(1,s.subscriptionCount/2)))*(1+.04*s.propertyBytes/1024)*(1+.035*(s.publisherSkew-1))*(1+.012*Math.sqrt(s.extraQueues))*(1+.003*s.connectionChurn);
+  const work=COST.protocol[s.protocol]*COST.delivery[s.delivery]*(COST.payloadFixed+COST.payloadByte*payload/256)*(1+COST.fanoutExtra*(fanout-1))*featureCost*densityCost*(1+COST.connectionLog*Math.log2(Math.max(s.connections,4)/4));
+  const processing=s.baseline/work,bytes=payload+s.propertyBytes+COST.overheadBytes;
+  const ingress=s.ingressMbps?s.ingressMbps*1e6/(8*bytes):Infinity;
+  const egress=s.egressMbps?s.egressMbps*1e6/(8*bytes*fanout):Infinity;
+  const components={processing,ingress,egress},limiter=Object.entries(components).sort((a,b)=>a[1]-b[1])[0][0],admitted=!s.limit||s.connections<=s.limit;
+  return{rate:admitted?Math.min(processing,ingress,egress):0,components,limiter,admitted}
+}
+function docLink(label,doc){
+  const link=document.createElement('a');link.className='doc-help';link.href=doc[0];link.target='_blank';link.rel='noopener noreferrer';link.textContent='?';link.title=doc[1];link.setAttribute('aria-label',`Solace documentation for ${label}: ${doc[1]}`);return link
+}
+function installControlDocs(){
+  for(const [id,doc] of Object.entries(CONTROL_DOCS)){
+    if(id==='brokerClass'){$('brokerClass').append(docLink('Service class',doc));continue}
+    const field=$(id),container=field?.closest('.control,.connection-field'),label=container?.querySelector('label');
+    if(container&&label)container.append(docLink(label.textContent.trim(),doc))
+  }
+}
+function installArgumentBadges(){
+  for(const [id,arg] of Object.entries(ARGUMENTS)){
+    const field=$(arg.feature?'feature-'+id:id),label=field?.closest('label')||field?.closest('.control,.connection-field')?.querySelector('label');
+    if(!label)continue;
+    const badge=document.createElement('code');badge.className='sdkperf-arg';badge.id='arg-'+id;badge.textContent=arg.flag;badge.title='SDKPerf '+arg.flag+': '+arg.help;
+    label.append(badge)
+  }
+}
+function syncArgumentBadges(s){for(const [id,arg] of Object.entries(ARGUMENTS)){
+  const badge=$('arg-'+id);if(!badge)continue;badge.hidden=!arg.applies(s)||(!!arg.feature&&!s.features[id]);
+  if(id==='delivery'){
+    badge.textContent=s.protocol==='MQTT'?'-mpq/-msq':'-mt';
+    badge.title=s.protocol==='MQTT'?'MQTT uses publisher/subscriber QoS options. The Direct/Persistent choice is an illustrative model category, not an exact QoS mapping.':'SDKPerf -mt: Published message type.'
+  }
+}}
+function installFeatureFlags(){
+  const root=$('featureFlags');
+  for(const [heading,ids] of FEATURE_GROUPS){
+    const modeledIds=ids.filter(id=>MODELED_FEATURES.some(f=>f.id===id));if(!modeledIds.length)continue;
+    const section=document.createElement('section');section.className='feature-group';
+    const title=document.createElement('h4');title.textContent=heading;section.append(title);
+    const list=document.createElement('div');list.className='feature-list';
+    for(const id of modeledIds){
+      const f=FEATURES.find(item=>item.id===id),row=document.createElement('div');row.className='feature-row';
+      const input=document.createElement('input');input.type='checkbox';input.id='feature-'+id;input.checked=!!f.default;input.addEventListener('change',render);
+      const label=document.createElement('label');label.htmlFor=input.id;const name=document.createElement('span');name.textContent=f.label;label.append(input,name);
+      const impact=document.createElement('span');impact.className='feature-impact';impact.id='impact-'+id;
+      row.append(label,docLink(f.label,FEATURE_DOCS[id]),impact);list.append(row)
+    }
+    section.append(list);root.append(section)
+  }
+}
+function syncFeatureFlags(s){
+  let visible=0;
+  for(const f of MODELED_FEATURES){
+    const input=$('feature-'+f.id),wrongMode=!!f.mode&&f.mode!==s.delivery,wrongProtocol=(!!f.protocol&&f.protocol!==s.protocol)||(!!f.protocols&&!f.protocols.includes(s.protocol)),unavailable=wrongMode||wrongProtocol;
+    input.disabled=unavailable;input.closest('.feature-row').hidden=unavailable;
+    input.parentElement.title='Illustrative what-if coefficient; not measured';
+    if(!unavailable)visible++
+  }
+  for(const group of $('featureFlags').querySelectorAll('.feature-group'))group.hidden=!group.querySelector('.feature-row:not([hidden])');
+  $('featureFlags').dataset.visibleFactors=String(visible)
+}
+function renderFeatureImpacts(s){
+  for(const f of MODELED_FEATURES){
+    const impact=$('impact-'+f.id),available=(!f.mode||f.mode===s.delivery)&&(!f.protocol||f.protocol===s.protocol)&&(!f.protocols||f.protocols.includes(s.protocol));
+    impact.className='feature-impact';
+    if(!available){impact.textContent='n/a';continue}
+    const off=model({...s,features:{...s.features,[f.id]:false}}),on=model({...s,features:{...s.features,[f.id]:true}});
+    if(!off||!on||off.rate<=0){impact.textContent='—';continue}
+    const ratio=on.components.processing/off.components.processing,value=pct(ratio);impact.textContent=value;impact.title='Illustrative change in the processing envelope; an ingress or egress ceiling can mask it in the selected total rate.';
+    impact.classList.add(ratio<.995?'negative':ratio>1.005?'positive':'neutral')
+  }
+}
+function utilizationRow(label,current,limit,unit){
+  const row=document.createElement('div');row.className='utilization-row';
+  const name=document.createElement('span'),value=document.createElement('strong'),track=document.createElement('div'),fill=document.createElement('i'),detail=document.createElement('small');
+  name.textContent=label;track.className='utilization-track';track.append(fill);
+  const valid=Number.isFinite(current)&&current>=0&&Number.isFinite(limit)&&limit>0;
+  const fraction=valid?current/limit:null;
+  value.textContent=valid?`${Math.round(fraction*100)}%`:'—';
+  detail.textContent=valid?`${fmt(current)} / ${fmt(limit)} ${unit}`:'Not reported';
+  fill.style.width=valid?`${Math.min(100,Math.max(0,fraction*100))}%`:'0%';
+  if(valid&&fraction>=.8)row.classList.add('high');
+  row.append(name,value,track,detail);return{row,fraction}
+}
+function renderBrokerPage(s,m){
+  const ready=!!connected&&connected.sempConnected===true;
+  $('brokerEmpty').hidden=ready;$('brokerData').hidden=!ready;
+  $('refreshBroker').hidden=!ready;
+  if(!ready)return;
+  $('brokerName').textContent=connected.name||'Connected broker';
+  const when=new Date(connected.queriedUtc),stamp=Number.isNaN(when.getTime())?'Snapshot time unknown':when.toLocaleString();
+  $('brokerMeta').textContent=`${s.tier} · ${connected.datacenterId||'unknown location'} · VPN ${connected.msgVpnName||'unknown'} · SEMP Read-Only · ${stamp}`;
+  const rx=connected.current?.rxMsgRate,capacity=m?.rate;
+  $('brokerCapacity').textContent=capacity>0?`${roundedRate(capacity)} msg/s`:'—';
+  $('brokerIngress').textContent=Number.isFinite(rx)?`${fmt(rx)} msg/s`:'—';
+  const used=Number.isFinite(rx)&&capacity>0?rx/capacity:null;
+  $('brokerThroughputUsed').textContent=used===null?'—':`${Math.round(used*100)}%`;
+  $('brokerSummary').textContent=used===null?'Throughput use cannot be calculated from this snapshot.':`Connected broker at ${Math.round(used*100)}% of the illustrative publish-rate estimate for the selected workload. The SEMP allowances below are separate limits.`;
+  const items=[
+    ['Connections',connected.current?.clientCount,connected.limits?.maxConnectionCount,'connections'],
+    ['Publish rate',rx,capacity,'msg/s modeled'],
+    ['Message spool',connected.current?.msgSpoolUsage,connected.limits?.maxMsgSpoolUsage,'MB'],
+    ['Subscriptions',connected.current?.subscriptionCount,connected.limits?.maxSubscriptionCount,'subscriptions']
+  ].map(([name,current,limit,unit])=>({name,...utilizationRow(name,current,limit,unit)}));
+  items.sort((a,b)=>(b.fraction??-1)-(a.fraction??-1));
+  $('utilizationList').replaceChildren(...items.map(item=>item.row))
+}
+let experimentData=null,selectedExperimentId=null,experimentsLoading=false;
+function detailField(label,value){
+  const box=document.createElement('div'),name=document.createElement('span'),text=document.createElement('strong');
+  name.textContent=label;text.textContent=String(value??'—');box.append(name,text);return box
+}
+function detailBlock(root,label,value,code=false){
+  if(!value)return;
+  const heading=document.createElement('h3'),body=document.createElement(code?'code':'p');
+  heading.textContent=label;body.textContent=value;root.append(heading,body)
+}
+function capacityPoint(work){const bounds=work.capacity_interval_msg_s;return bounds?roundedRate(bounds.lower>=100?Math.floor(bounds.lower/100)*100:bounds.lower):'—'}
+function showExperimentDetail(work){
+  selectedExperimentId=work.id;
+  const root=$('experimentDetail');root.hidden=false;root.replaceChildren();
+  const heading=document.createElement('h2');heading.textContent=`${work.id} · ${work.stage} · ${work.status}`;root.append(heading);
+  const description=document.createElement('p');description.className='experiment-description';description.textContent=work.description;root.append(description);
+  const grid=document.createElement('div');grid.className='experiment-detail-grid';
+  const active=Object.entries(work.feature_flags||{}).filter(([,enabled])=>enabled).map(([name])=>name).join(', ')||'none';
+  for(const [label,value] of [
+    ['Service class',work.service_class],['Client API',work.client_api],['Delivery',work.delivery_mode],
+    ['Message size',`${Number(work.message_bytes).toLocaleString('en-US')} B`],['Queue fanout',work.queue_fanout],
+    ['Publisher connections',work.publisher_connections],['Target resolution',`${work.target_resolution_msg_s} msg/s`],
+    ['Stable msg/s',capacityPoint(work)],['Published topics',work.published_topics],
+    ['Subscriptions / queue',work.subscriptions_per_queue],['User property bytes',work.user_property_bytes],
+    ['Publisher rate skew',work.publisher_rate_skew],['Other active queues',work.other_active_queues],
+    ['Connection churn / sec',work.connection_churn_per_sec],['Enabled features',active],
+    ['Readiness',work.readiness.replaceAll('_',' ')],['Status updated',work.status_updated_at||'No run recorded'],
+  ])grid.append(detailField(label,value));
+  root.append(grid);
+  detailBlock(root,'Broker setup',work.broker_setup);
+  if(work.capacity_interval_msg_s)detailBlock(root,'Measured capacity bracket',`${roundedRate(work.capacity_interval_msg_s.lower)}–${roundedRate(work.capacity_interval_msg_s.upper)} msg/s`);
+  detailBlock(root,'Required setup or adapter',work.required_adapter_or_gate);
+  detailBlock(root,'Publisher command template',work.publisher_command_template||'No SDKPerf command for this API; use the required adapter.',true);
+  detailBlock(root,'Consumer command template',work.consumer_command_template||'Consumer setup requires the specified adapter or RDP.',true);
+  detailBlock(root,'Result reference',work.result_ref);
+  detailBlock(root,'Notes',work.notes);
+  for(const tr of $('experimentRows').querySelectorAll('tr'))tr.classList.toggle('selected',tr.dataset.id===work.id)
+}
+function renderExperiments(){
+  if(!experimentData)return;
+  const rows=experimentData.experiments,counts={TODO:0,RUNNING:0,DONE:0};
+  for(const work of rows)counts[work.status]++;
+  $('todoCount').textContent=counts.TODO;$('runningCount').textContent=counts.RUNNING;$('doneCount').textContent=counts.DONE;
+  const updated=experimentData.progress_updated_at;
+  $('experimentsMeta').textContent=`${rows.length} configurations · ${updated?'Status updated '+new Date(updated).toLocaleString():'No runs recorded'}`;
+  const query=$('experimentSearch').value.trim().toLowerCase(),status=$('experimentStatusFilter').value,serviceClass=$('experimentClassFilter').value;
+  const filtered=rows.filter(work=>(!status||work.status===status)&&(!serviceClass||work.service_class===serviceClass)&&
+    (!query||[work.id,work.stage,work.service_class,work.client_api,work.delivery_mode,work.feature_under_test,work.readiness].join(' ').toLowerCase().includes(query)));
+  $('experimentFilterCount').textContent=`${filtered.length} shown`;
+  const fragment=document.createDocumentFragment();
+  for(const work of filtered){
+    const tr=document.createElement('tr');tr.dataset.id=work.id;if(work.id===selectedExperimentId)tr.className='selected';tr.addEventListener('click',()=>showExperimentDetail(work));
+    const idCell=document.createElement('td'),button=document.createElement('button');button.type='button';button.textContent=work.id;
+    button.setAttribute('aria-label',`View experiment ${work.id}`);idCell.append(button);tr.append(idCell);
+    const statusCell=document.createElement('td'),chip=document.createElement('span');chip.className=`experiment-status ${work.status}`;chip.textContent=work.status;statusCell.append(chip);tr.append(statusCell);
+    for(const value of [capacityPoint(work),work.stage,work.service_class,work.client_api,work.delivery_mode,`${Number(work.message_bytes).toLocaleString('en-US')} B`,work.queue_fanout,work.feature_under_test||'—',work.readiness.replaceAll('_',' ')]){
+      const cell=document.createElement('td');cell.textContent=String(value);tr.append(cell)
+    }
+    fragment.append(tr)
+  }
+  if(!filtered.length){const tr=document.createElement('tr'),cell=document.createElement('td');cell.colSpan=11;cell.className='muted';cell.textContent='No experiments match these filters.';tr.append(cell);fragment.append(tr)}
+  $('experimentRows').replaceChildren(fragment)
+}
+async function loadExperiments(force=false){
+  if(experimentsLoading||experimentData&&!force)return;
+  experimentsLoading=true;$('refreshExperiments').disabled=true;
+  try{
+    const response=await fetch('/experiments.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    if(!Array.isArray(data.experiments)||data.experiments.length!==300)throw new Error('Invalid experiment catalog');
+    experimentData=data;renderExperiments();
+    if(selectedExperimentId){const selected=data.experiments.find(work=>work.id===selectedExperimentId);if(selected)showExperimentDetail(selected)}
+  }catch(error){$('experimentsMeta').textContent=`Could not load experiments: ${error.message}`;$('experimentRows').replaceChildren();}
+  finally{experimentsLoading=false;$('refreshExperiments').disabled=false}
+}
+function showPage(){
+  const page=location.hash==='#broker'?'broker':location.hash==='#experiments'?'experiments':'model';
+  $('modelPage').hidden=page!=='model';$('brokerPage').hidden=page!=='broker';$('experimentsPage').hidden=page!=='experiments';
+  for(const [id,name] of [['modelNav','model'],['brokerNav','broker'],['experimentsNav','experiments']])$(id).setAttribute('aria-current',page===name?'page':'false');
+  if(page==='model')drawSurface(state());
+  if(page==='experiments')loadExperiments()
+}
+function color(t,light=1){const stops=[[40,85,165],[28,158,192],[39,181,126],[225,208,72],[243,137,54],[219,66,65],[165,35,62]],x=Math.max(0,Math.min(1,t))*(stops.length-1),i=Math.min(stops.length-2,Math.floor(x)),a=x-i;return`rgb(${stops[i].map((v,k)=>Math.max(0,Math.min(255,Math.round((v+(stops[i+1][k]-v)*a)*light)))).join(',')})`}
+function payloadLabel(bytes){return bytes<1024?`${bytes} B`:`${Math.round(bytes/1024)} KiB`}
+function drawSurface(s){
+  const canvas=$('surface'),rect=canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);
+  const w=Math.max(300,rect.width),h=Math.max(300,rect.height);
+  canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+  const c=canvas.getContext('2d');c.scale(dpr,dpr);c.clearRect(0,0,w,h);
+  const nx=54,ny=42,minPayload=PAYLOADS[0],maxPayload=PAYLOADS.at(-1),maxFanout=FANOUTS.at(-1);
+  const payloadU=p=>Math.log(p/minPayload)/Math.log(maxPayload/minPayload);
+  const fanoutV=f=>Math.log(f)/Math.log(maxFanout);
+  const payloadAt=u=>minPayload*Math.pow(maxPayload/minPayload,u);
+  const fanoutAt=v=>Math.pow(maxFanout,v);
+  const sampledPeak=Math.max(...PAYLOADS.flatMap(p=>FANOUTS.map(f=>model(s,p,f)?.rate||0)));
+  const maxRate=Math.max(10000,Math.ceil(sampledPeak/10000)*10000);
+  const ax=Math.min(w*.31,285),ay=Math.min(h*.19,120),az=Math.min(h*.42,250),cx=w*.5,cy=h*.72;
+  const sin=Math.sin(viewYaw),cos=Math.cos(viewYaw);
+  function project(u,v,z){const xx=u-.5,yy=v-.5;return{x:cx+(xx*cos-yy*sin)*ax*2,y:cy+(xx*sin+yy*cos)*ay*2-z*az*viewPitch/.62}}
+  function projectRate(p,f){const rate=model(s,p,f)?.rate||0,z=Math.sqrt(Math.min(1,rate/maxRate));return{...project(payloadU(p),fanoutV(f),z),rate,payload:p,fanout:f,z}}
+  function path(pts){c.beginPath();c.moveTo(pts[0].x,pts[0].y);for(let k=1;k<pts.length;k++)c.lineTo(pts[k].x,pts[k].y);c.closePath()}
+  function segment(a,b){c.beginPath();c.moveTo(a.x,a.y);c.lineTo(b.x,b.y);c.stroke()}
+  const corners=[[0,0],[1,0],[1,1],[0,1]],floor=corners.map(([u,v])=>project(u,v,0));
+  path(floor);c.fillStyle='#15242d';c.fill();c.strokeStyle='#658594';c.lineWidth=1.1;c.stroke();
+  const vertices=[];surfacePoints=[];
+  for(let i=0;i<=nx;i++){
+    const row=[];
+    for(let j=0;j<=ny;j++){
+      const u=i/nx,v=j/ny,p=payloadAt(u),f=fanoutAt(v),point=projectRate(p,f);
+      row.push({...point,u,v});surfacePoints.push(row.at(-1))
+    }
+    vertices.push(row)
+  }
+  const positiveRates=surfacePoints.map(point=>point.rate).filter(rate=>rate>0);
+  const minSurfaceRate=positiveRates.length?Math.min(...positiveRates):1,maxSurfaceRate=positiveRates.length?Math.max(...positiveRates):1;
+  const logRateSpan=Math.log(maxSurfaceRate/minSurfaceRate);
+  const colorPosition=rate=>logRateSpan>0?Math.log(Math.max(minSurfaceRate,rate)/minSurfaceRate)/logRateSpan:.5;
+  const quads=[];
+  for(let i=0;i<nx;i++)for(let j=0;j<ny;j++){
+    const pts=[vertices[i][j],vertices[i+1][j],vertices[i+1][j+1],vertices[i][j+1]];
+    const slopeU=(pts[1].z-pts[0].z)*nx,slopeV=(pts[3].z-pts[0].z)*ny;
+    const lightDot=(.45*slopeU+.35*slopeV+.75)/Math.hypot(slopeU,slopeV,1);
+    quads.push({pts,depth:i/nx*sin+j/ny*cos,rate:pts.reduce((a,p)=>a+p.rate,0)/4,light:Math.max(.78,Math.min(1.08,.83+.24*lightDot))})
+  }
+  quads.sort((a,b)=>a.depth-b.depth);
+  for(const q of quads){path(q.pts);c.fillStyle=color(colorPosition(q.rate),q.light);c.fill();c.strokeStyle=c.fillStyle;c.lineWidth=.8;c.stroke()}
+  // Only benchmark-sized message and fanout guides are drawn over the smooth surface.
+  function surfaceGuide(points,selected){
+    c.beginPath();points.forEach((p,k)=>{const point=projectRate(p[0],p[1]);if(k)c.lineTo(point.x,point.y);else c.moveTo(point.x,point.y)});
+    c.strokeStyle=selected?'rgba(255,255,255,.82)':'rgba(221,244,248,.42)';c.lineWidth=selected?1.6:1;c.stroke()
+  }
+  for(const p of PAYLOADS)surfaceGuide(Array.from({length:60},(_,k)=>[p,fanoutAt(k/59)]),p===s.payload);
+  for(const f of FANOUTS)surfaceGuide(Array.from({length:60},(_,k)=>[payloadAt(k/59),f]),f===s.fanout);
+  c.strokeStyle='#72939f';c.lineWidth=1;for(const [u,v] of corners)segment(project(u,v,0),project(u,v,1));
+  const top=corners.map(([u,v])=>project(u,v,1));path(top);c.stroke();
+  c.fillStyle='#d3edf0';c.font='600 11px system-ui';
+  const pu=project(.56,0,0),fv=project(0,.57,0),pz=project(0,0,.96);
+  c.fillText('MSG Size →',pu.x-22,pu.y+30);c.fillText('← Fanout',fv.x-20,fv.y+28);c.fillText('Stable MSG/S ↑',pz.x+12,pz.y+4);
+  c.fillStyle='#adc5cd';c.font='10px system-ui';
+  const payloadTicks=w<560?PAYLOADS.filter(p=>[512,2048,65536,204800].includes(p)):PAYLOADS;
+  for(const p of payloadTicks){const point=project(payloadU(p),0,0);c.fillText(payloadLabel(p),point.x+(p===minPayload?7:-14),point.y+15)}
+  for(const f of [1,4,10,20]){const point=project(0,fanoutV(f),0);c.fillText(String(f),point.x-(f===1?20:13),point.y+4)}
+  for(const z of [0,.5,1]){const point=project(0,0,z);c.fillText(roundedRate(z*z*maxRate),point.x-43,point.y+3)}
+  const selected=projectRate(s.payload,s.fanout),payloadIndex=PAYLOADS.indexOf(s.payload),fanoutIndex=FANOUTS.indexOf(s.fanout);
+  const neighbors=[];
+  if(payloadIndex>0)neighbors.push({p:PAYLOADS[payloadIndex-1],f:s.fanout,label:payloadLabel(PAYLOADS[payloadIndex-1])});
+  if(payloadIndex<PAYLOADS.length-1)neighbors.push({p:PAYLOADS[payloadIndex+1],f:s.fanout,label:payloadLabel(PAYLOADS[payloadIndex+1])});
+  if(fanoutIndex>0)neighbors.push({p:s.payload,f:FANOUTS[fanoutIndex-1],label:`${FANOUTS[fanoutIndex-1]} copies`});
+  if(fanoutIndex<FANOUTS.length-1)neighbors.push({p:s.payload,f:FANOUTS[fanoutIndex+1],label:`${FANOUTS[fanoutIndex+1]} copies`});
+  const boxes=[];
+  for(const neighbor of neighbors){
+    const point=projectRate(neighbor.p,neighbor.f),label=`${neighbor.label} · ${roundedRate(point.rate)}`;
+    c.font='600 10px system-ui';const boxW=c.measureText(label).width+12,boxH=20;
+    const dx=point.x-selected.x,dy=point.y-selected.y,magnitude=Math.hypot(dx,dy)||1;
+    const ux=dx/magnitude,uy=dy/magnitude,candidates=[];
+    for(const distance of [22,36,50])for(const shift of [0,-24,24]){
+      const midX=point.x+ux*distance-uy*shift,midY=point.y+uy*distance+ux*shift;
+      const x=Math.max(4,Math.min(w-boxW-4,midX-boxW/2)),y=Math.max(5,Math.min(h-boxH-26,midY-boxH/2));
+      const overlap=boxes.reduce((sum,b)=>sum+Math.max(0,Math.min(x+boxW,b.x+b.w)-Math.max(x,b.x))*Math.max(0,Math.min(y+boxH,b.y+b.h)-Math.max(y,b.y)),0);
+      candidates.push({x,y,w:boxW,h:boxH,score:overlap*10+distance*.2+Math.abs(shift)*.1})
+    }
+    candidates.sort((a,b)=>a.score-b.score);const box=candidates[0];boxes.push(box);
+    c.strokeStyle='#d8faf2';c.lineWidth=1;segment(point,{x:box.x+box.w/2,y:box.y+box.h/2});
+    c.fillStyle='#e6fff5';c.beginPath();c.arc(point.x,point.y,3.5,0,Math.PI*2);c.fill();
+    c.fillStyle='#132b34';c.strokeStyle='#8abec1';c.lineWidth=1;c.fillRect(box.x,box.y,box.w,box.h);c.strokeRect(box.x,box.y,box.w,box.h);
+    c.fillStyle='#ecf9f6';c.fillText(label,box.x+6,box.y+14)
+  }
+  const callout={x:Math.max(8,w-182),y:16,w:166,h:52};
+  c.strokeStyle='rgba(255,218,119,.85)';c.lineWidth=1.4;segment(selected,{x:callout.x+10,y:callout.y+callout.h});
+  c.beginPath();c.arc(selected.x,selected.y,15,0,Math.PI*2);c.fillStyle='rgba(255,207,86,.25)';c.fill();
+  c.beginPath();c.arc(selected.x,selected.y,9,0,Math.PI*2);c.fillStyle='#102b33';c.fill();c.strokeStyle='#ffcf56';c.lineWidth=2.5;c.stroke();
+  c.beginPath();c.arc(selected.x,selected.y,3.5,0,Math.PI*2);c.fillStyle='#ffffff';c.fill();
+  c.fillStyle='#17343b';c.fillRect(callout.x,callout.y,callout.w,callout.h);
+  c.strokeStyle='#ffcf56';c.lineWidth=1.4;c.strokeRect(callout.x,callout.y,callout.w,callout.h);
+  c.fillStyle='#bdd3d6';c.font='600 9px system-ui';c.fillText('SELECTED POINT',callout.x+9,callout.y+15);
+  c.fillStyle='#ffffff';c.font='700 17px system-ui';c.fillText(`${roundedRate(selected.rate)} MSG/S`,callout.x+9,callout.y+39);
+  canvas.setAttribute('aria-label',`Three-dimensional modeled surface. Selected ${payloadLabel(s.payload)} message size, ${s.fanout} queue copies, ${s.connections} connections: ${roundedRate(selected.rate)} messages per second. Neighbor points show adjacent message sizes and fanouts.`)
+}
+function renderSdkperfCommand(s,m){
+  const code=$('sdkperfCommand'),note=$('sdkperfNote'),copy=$('copyCommand');
+  copy.textContent='Copy';
+  if(!m||m.rate<=0){code.textContent='No publish target for this scenario.';note.textContent='Check the reference rate and connection limit.';copy.disabled=true;return}
+  if(s.protocol==='AMQP'){code.textContent='No SDKPerf AMQP command is available in this build.';note.textContent='Use a dedicated AMQP load client for this protocol.';copy.disabled=true;return}
+  const api={SMF:'JCSMP',JMS:'JMS',MQTT:'MQTT',REST:'REST'}[s.protocol];
+  const target=Math.max(1,displayRate(m.rate));
+  if(target<s.connections){code.textContent='This target is below one message/s per client.';note.textContent='Reduce the publisher connection count to generate this rate with one SDKPerf process.';copy.disabled=true;return}
+  const perClient=Math.ceil(target/s.connections),total=perClient*s.connections;
+  const args=['sdkperf_java','-api='+api,'-cip=BROKER_HOST:PORT','-cu=USERNAME@VPN','-cpf=PASSWORD_FILE'];
+  if(s.topicCount>1)args.push('-ptp=bcm/capacity/','-ptc='+Math.round(s.topicCount));
+  else args.push('-ptl=bcm/capacity');
+  if(s.protocol==='MQTT')args.push('-mpq='+(s.delivery==='persistent'?1:0));
+  else args.push('-mt='+s.delivery);
+  args.push('-msa='+s.payload,'-cc='+s.connections,'-mr='+perClient,'-mn='+(total*300),'-psm');
+  code.textContent=args.join(' ');copy.disabled=false;
+  const setup=s.protocol==='MQTT'?'matching MQTT subscribers':s.protocol==='REST'?'an RDP and matching consumers':s.delivery==='persistent'?'matching queues and consumers':'matching subscribers';
+  const extra=s.protocol==='JMS'?' JMS needs a connection factory.':s.protocol==='MQTT'&&s.delivery==='persistent'?' MQTT QoS 1 approximates this model mode.':'';
+  note.textContent=`Five-minute publish target. Set up ${setup} separately, along with other workload settings. This does not validate capacity.${extra}`
+}
+function render(){
+  const s=state(),m=model(s);
+  syncFeatureFlags(s);
+  syncArgumentBadges(s);
+  renderFeatureImpacts(s);
+  $('connectionMaxLabel').textContent=`${fmt(s.limit)} limit`;
+  $('connectionSlider').value=sliderValue(s.connections,s.limit||10000);
+  $('headline').textContent=m?`${roundedRate(m.rate)} msg/s`:'—';
+  $('assumptionNote').textContent=`${fmt(s.baseline)} msg/s is ${baselineEdited?'user-supplied':'an illustrative sample'} for ${s.tier} (${TIER[s.tier].group}).`;
+  renderSdkperfCommand(s,m);
+  renderBrokerPage(s,m);
+  if(!$('modelPage').hidden)drawSurface(s)
+}
+for(const id of ['brokerClass','protocol','delivery','payload','fanout','topicCount','subscriptionCount','propertyBytes','publisherSkew','extraQueues','connectionChurn','ingressMbps','egressMbps']){
+  const control=$(id),update=()=>{if(id==='brokerClass'){const tier=selectedServiceClass();if(!baselineEdited)$('baseline').value=TIER[tier].base;if(!limitEdited)$('connectionLimit').value=TIER[tier].limit;const count=positive('connections')||1;if(count>positive('connectionLimit'))$('connections').value=$('connectionLimit').value}render()};
+  control.addEventListener(control.type==='number'?'input':'change',update)
+}
+$('baseline').addEventListener('input',()=>{baselineEdited=true;render()});
+$('connectionLimit').addEventListener('input',()=>{limitEdited=true;render()});
+$('connections').addEventListener('input',render);
+$('connectionSlider').addEventListener('input',()=>{$('connections').value=countFromSlider(Number($('connectionSlider').value),positive('connectionLimit')||10000);render()});
+$('copyCommand').addEventListener('click',async()=>{if($('copyCommand').disabled)return;try{await navigator.clipboard.writeText($('sdkperfCommand').textContent);$('copyCommand').textContent='Copied';setTimeout(()=>$('copyCommand').textContent='Copy',1800)}catch{$('copyCommand').textContent='Select command'}});
+$('resetView').addEventListener('click',()=>{viewYaw=.77;viewPitch=.62;render()});const canvas=$('surface');canvas.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,yaw:viewYaw,pitch:viewPitch,moved:false};canvas.setPointerCapture(e.pointerId);canvas.classList.add('dragging')});canvas.addEventListener('pointermove',e=>{const rect=canvas.getBoundingClientRect();if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>4)drag.moved=true;viewYaw=Math.max(-.4,Math.min(1.9,drag.yaw+dx/350));viewPitch=Math.max(.35,Math.min(.95,drag.pitch-dy/500));drawSurface(state());$('plotTooltip').style.display='none';return}let best=null,dist=Infinity;for(const p of surfacePoints){const d=(p.x-(e.clientX-rect.left))**2+(p.y-(e.clientY-rect.top))**2;if(d<dist){best=p;dist=d}}hovered=dist<1200?best:null;const tip=$('plotTooltip');if(!hovered){tip.style.display='none';return}tip.textContent=`${Math.round(hovered.payload)} B · fanout ${hovered.fanout.toFixed(1)} · ${roundedRate(hovered.rate)} msg/s`;tip.style.display='block';tip.style.left=Math.min(rect.width-190,e.clientX-rect.left+14)+'px';tip.style.top=Math.max(3,e.clientY-rect.top-35)+'px'});canvas.addEventListener('pointerup',e=>{canvas.classList.remove('dragging');if(drag&&!drag.moved){const rect=canvas.getBoundingClientRect(),x=e.clientX-rect.left,y=e.clientY-rect.top;let nearest=null,distance=Infinity;for(const point of surfacePoints){const d=(point.x-x)**2+(point.y-y)**2;if(d<distance){nearest=point;distance=d}}if(nearest&&distance<1200){$('payload').value=PAYLOADS.reduce((a,b)=>Math.abs(Math.log(b/nearest.payload))<Math.abs(Math.log(a/nearest.payload))?b:a);$('fanout').value=FANOUTS.reduce((a,b)=>Math.abs(b-nearest.fanout)<Math.abs(a-nearest.fanout)?b:a);render()}}drag=null});canvas.addEventListener('pointerleave',()=>{$('plotTooltip').style.display='none'});canvas.addEventListener('dblclick',()=>{viewYaw=.77;viewPitch=.62;render()});window.addEventListener('resize',()=>drawSurface(state()));
+function modal(open){$('connectModal').hidden=!open;if(open){$('connectStatus').textContent='';$('serviceId').focus()}else $('cloudToken').value=''}
+$('openConnect').addEventListener('click',()=>modal(true));
+$('refreshBroker').addEventListener('click',()=>modal(true));
+$('closeConnect').addEventListener('click',()=>modal(false));
+$('connectModal').addEventListener('click',e=>{if(e.target===$('connectModal'))modal(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('connectModal').hidden)modal(false)});
+window.addEventListener('hashchange',showPage);
+$('refreshExperiments').addEventListener('click',()=>loadExperiments(true));
+for(const id of ['experimentSearch','experimentStatusFilter','experimentClassFilter'])$(id).addEventListener(id==='experimentSearch'?'input':'change',renderExperiments);
+$('connectButton').addEventListener('click',async()=>{
+  const serviceId=$('serviceId').value.trim(),token=$('cloudToken').value.trim(),status=$('connectStatus'),button=$('connectButton');
+  if(!serviceId||!token){status.textContent='Enter a service ID and token.';return}
+  button.disabled=true;status.className='connect-status';status.textContent='Reading SEMP Read-Only snapshot…';
+  try{
+    const response=await fetch('/api/connect',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({serviceId,token}),cache:'no-store'});
+    const data=await response.json();
+    if(!response.ok)throw new Error(data.error||'SEMP lookup failed');
+    if(data.sempConnected!==true)throw new Error('SEMP Read-Only data was not returned');
+    connected=data;
+    const match=(data.serviceClassId||'').match(/(1k|5k|10k|50k|100k|200k)/i);
+    if(match){const tier=match[1].toUpperCase();selectServiceClass(tier);if(!baselineEdited)$('baseline').value=TIER[tier].base;if(!limitEdited)$('connectionLimit').value=TIER[tier].limit}
+    if(data.limits.maxConnectionCount){$('connectionLimit').value=data.limits.maxConnectionCount;limitEdited=true}
+    if(data.current.clientCount!==null&&data.current.clientCount!==undefined)$('connections').value=Math.max(1,data.current.clientCount);
+    const speed=Number((data.networkSpeed||'').match(/\d+/)?.[0]);if(speed){$('ingressMbps').value=speed;$('egressMbps').value=speed}
+    render();modal(false);location.hash='broker';showPage()
+  }catch(e){status.className='connect-status error';status.textContent=e.message||'Connection failed'}
+  finally{$('cloudToken').value='';button.disabled=false}
+});
+
+installFeatureFlags();installControlDocs();installArgumentBadges();
+render();
+showPage();
+</script>
+</body>
+</html>

@@ -16,3 +16,7 @@ __pycache__/
 
 # Spreadsheet inspection output; keep the actual workbook.
 *.xlsx.inspect.ndjson
+
+# Generated capacity site assets and account-specific deployment state.
+site/dist/
+site/deployment.json
