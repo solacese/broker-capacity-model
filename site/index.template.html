@@ -167,7 +167,8 @@ a{color:var(--link)}
 .workspace{gap:12px;margin-top:11px}
 .panel{background:#151f26;border-color:var(--line)}
 .eyebrow,.smalltag,.surface-head p,.surface-footer p,.plot-hint,.plot-actions,.legend,.broker-page-head p{color:var(--muted)}
-.surface-head{padding:11px 14px 10px;align-items:center;background:#1b2830;border-bottom:1px solid var(--line)}.surface-head h2{font-size:16px;font-weight:500;color:var(--text);margin:0 0 2px}
+.surface-head{padding:11px 14px 10px;align-items:center;flex-wrap:wrap;background:#1b2830;border-bottom:1px solid var(--line)}.surface-head h2{font-size:16px;font-weight:500;color:var(--text);margin:0 0 2px}
+.surface-title{flex:1 1 255px;min-width:0}.surface-head .capacity-controls{flex:0 0 256px;width:256px;margin-left:auto}.point-error{font-size:11px;color:var(--muted)}.point-error strong{font-weight:600;color:#c7d9de}
 .surface-controls{display:flex;justify-content:flex-end;padding:6px 14px 0}
 .surface-head .capacity-controls{margin-left:auto}
 .smalltag{background:#1c3039;border-color:#3f606b;padding:3px 6px;font-size:10px}
@@ -248,6 +249,7 @@ a{color:var(--link)}
 @media(max-width:680px){.topbar{height:auto;min-height:66px}.page-nav{height:32px}.header-connect{margin-left:auto}}
 @media(max-width:560px){.broker-class-options{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:560px){.shell{padding:0 12px 28px}.topbar{margin:0 -12px;padding:6px 12px}.brand{font-size:16px}.broker-settings,.settings-group{padding:10px 11px}.results-column .plot-wrap canvas{height:390px;min-height:390px;max-height:390px}}
+@media(max-width:560px){.surface-head .capacity-controls{flex:1 1 100%;width:100%;margin-left:0}}
 </style>
 </head>
 <body>
@@ -268,8 +270,7 @@ a{color:var(--link)}
     </aside>
     <main class="results-column">
       <section class="panel surface-card" aria-labelledby="surfaceTitle">
-      <div class="surface-head"><h2 id="surfaceTitle">Estimated maximum stable broker capacity</h2><span id="headline" class="sr-only" aria-live="polite">—</span></div>
-      <div class="surface-controls"><div class="capacity-controls"><div class="control"><label for="payload">Message size</label><select id="payload"><option value="512">512 B</option><option value="1024" selected>1 KiB</option><option value="2048">2 KiB</option><option value="8192">8 KiB</option><option value="65536">64 KiB</option><option value="204800">200 KiB</option></select></div><div class="control"><label for="fanout">Queue fanout</label><select id="fanout"><option value="1">1 copy</option><option value="2">2 copies</option><option value="4" selected>4 copies</option><option value="5">5 copies</option><option value="10">10 copies</option><option value="20">20 copies</option></select></div></div></div>
+      <div class="surface-head"><div class="surface-title"><h2 id="surfaceTitle">Estimated maximum stable broker capacity</h2><div class="point-error" title="A numeric margin needs repeated broker-limited maximum measurements for this exact configuration.">Selected-point margin of error: <strong id="pointError">Not established</strong></div><span id="headline" class="sr-only" aria-live="polite">—</span></div><div class="capacity-controls"><div class="control"><label for="payload">Message size</label><select id="payload"><option value="512">512 B</option><option value="1024" selected>1 KiB</option><option value="2048">2 KiB</option><option value="8192">8 KiB</option><option value="65536">64 KiB</option><option value="204800">200 KiB</option></select></div><div class="control"><label for="fanout">Queue fanout</label><select id="fanout"><option value="1">1 copy</option><option value="2">2 copies</option><option value="4" selected>4 copies</option><option value="5">5 copies</option><option value="10">10 copies</option><option value="20">20 copies</option></select></div></div></div>
       <div class="plot-wrap" id="plotWrap"><canvas id="surface" role="img" aria-label="Three-dimensional modeled throughput surface with MSG Size and Fanout on the horizontal plane and estimated Stable MSG/S as height"></canvas><div class="plot-tooltip" id="plotTooltip"></div><div class="plot-hint">Drag left or right to rotate · hover to inspect · click to select · double-click to reset</div></div>
       <div class="surface-footer"><div class="plot-actions"><div class="plot-scale" role="img" aria-label="Throughput colors range from lower in red to higher in blue"><span>Lower</span><i aria-hidden="true"></i><span>Higher</span></div><button id="resetView" type="button">Reset view</button></div><div class="sdkperf-command"><div class="sdkperf-command-head"><a href="https://docs.solace.com/API/SDKPerf/Command-Line-Options.htm" target="_blank" rel="noopener noreferrer">SDKPerf target command</a><button id="copyCommand" type="button">Copy</button></div><code id="sdkperfCommand"></code><small id="sdkperfNote"></small></div></div>
       </section>

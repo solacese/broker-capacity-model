@@ -43,6 +43,9 @@ Horizontal dragging rotates the surface; its vertical projection is fixed.
 The throughput axis and red-to-blue colors use a fixed scale for the selected
 service class and reference rate. Changing workload properties therefore moves
 the surface on the same scale; changing the reference rate or class resets it.
+The selected-point margin of error is shown as not established until repeated,
+broker-limited maximum measurements support a numeric interval for the exact
+configuration. Finite-horizon stable lower observations do not supply that margin.
 The red-to-blue color scale runs from the lowest to highest throughput within
 that reference scale. Logarithmic color spacing and slope lighting make the
 full range legible; colors are relative to the selected service class and
