@@ -167,7 +167,8 @@ a{color:var(--link)}
 .workspace{gap:12px;margin-top:11px}
 .panel{background:#151f26;border-color:var(--line)}
 .eyebrow,.smalltag,.surface-head p,.surface-footer p,.plot-hint,.plot-actions,.legend,.broker-page-head p{color:var(--muted)}
-.surface-head{padding:13px 15px 0;align-items:end;flex-wrap:wrap}.surface-head h2{font-size:17px;color:var(--text);margin:0}
+.surface-head{padding:11px 14px 10px;align-items:center;background:#1b2830;border-bottom:1px solid var(--line)}.surface-head h2{font-size:16px;font-weight:500;color:var(--text);margin:0 0 2px}
+.surface-controls{display:flex;justify-content:flex-end;padding:6px 14px 0}
 .surface-head .capacity-controls{margin-left:auto}
 .smalltag{background:#1c3039;border-color:#3f606b;padding:3px 6px;font-size:10px}
 .plot-wrap{margin:2px 7px 0;background:#111b22}
@@ -253,7 +254,7 @@ a{color:var(--link)}
   <header class="topbar"><div class="brand">Solace Capacity Model</div><nav class="page-nav" aria-label="Pages"><a href="#model" id="modelNav">Model</a><a href="#broker" id="brokerNav">Connected broker</a><a href="#experiments" id="experimentsNav">Experiments</a><a class="source-link" href="https://github.com/solacese/broker-capacity-model" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav><button class="header-connect" type="button" id="openConnect">Connect broker via SEMP</button></header>
   <div class="workspace" id="modelPage">
     <aside class="panel settings-panel" aria-label="Broker and workload settings">
-      <div class="settings-head"><h2>Broker and workload</h2></div>
+      <div class="settings-head"><h2>Solace Broker + Workload</h2></div>
       <div class="broker-settings">
         <fieldset class="control broker-class-control" id="brokerClass"><legend>Service class</legend><div class="broker-class-options"><label><input type="radio" name="brokerClass" value="1K"><span>1K</span></label><label><input type="radio" name="brokerClass" value="5K"><span>5K</span></label><label><input type="radio" name="brokerClass" value="10K" checked><span>10K</span></label><label><input type="radio" name="brokerClass" value="50K"><span>50K</span></label><label><input type="radio" name="brokerClass" value="100K"><span>100K</span></label><label><input type="radio" name="brokerClass" value="200K"><span>200K</span></label></div></fieldset>
         <div class="control"><label for="delivery">Delivery mode</label><select id="delivery"><option value="persistent">Persistent</option><option value="direct">Direct</option></select></div>
@@ -266,7 +267,8 @@ a{color:var(--link)}
     </aside>
     <main class="results-column">
       <section class="panel surface-card" aria-labelledby="surfaceTitle">
-      <div class="surface-head"><h2 id="surfaceTitle">Estimated broker capacity</h2><div class="capacity-controls"><div class="control"><label for="payload">Message size</label><select id="payload"><option value="512">512 B</option><option value="1024" selected>1 KiB</option><option value="2048">2 KiB</option><option value="8192">8 KiB</option><option value="65536">64 KiB</option><option value="204800">200 KiB</option></select></div><div class="control"><label for="fanout">Queue fanout</label><select id="fanout"><option value="1">1 copy</option><option value="2">2 copies</option><option value="4" selected>4 copies</option><option value="5">5 copies</option><option value="10">10 copies</option><option value="20">20 copies</option></select></div></div><span id="headline" class="sr-only" aria-live="polite">—</span></div>
+      <div class="surface-head"><h2 id="surfaceTitle">Estimated maximum stable broker capacity</h2><span id="headline" class="sr-only" aria-live="polite">—</span></div>
+      <div class="surface-controls"><div class="capacity-controls"><div class="control"><label for="payload">Message size</label><select id="payload"><option value="512">512 B</option><option value="1024" selected>1 KiB</option><option value="2048">2 KiB</option><option value="8192">8 KiB</option><option value="65536">64 KiB</option><option value="204800">200 KiB</option></select></div><div class="control"><label for="fanout">Queue fanout</label><select id="fanout"><option value="1">1 copy</option><option value="2">2 copies</option><option value="4" selected>4 copies</option><option value="5">5 copies</option><option value="10">10 copies</option><option value="20">20 copies</option></select></div></div></div>
       <div class="plot-wrap" id="plotWrap"><canvas id="surface" role="img" aria-label="Three-dimensional modeled throughput surface with MSG Size and Fanout on the horizontal plane and estimated Stable MSG/S as height"></canvas><div class="plot-tooltip" id="plotTooltip"></div><div class="plot-hint">Drag to rotate · hover to inspect · click to select · double-click to reset</div></div>
       <div class="surface-footer"><div class="plot-actions"><div class="plot-scale" role="img" aria-label="Throughput colors range from lower in red to higher in blue"><span>Lower</span><i aria-hidden="true"></i><span>Higher</span></div><button id="resetView" type="button">Reset view</button></div><div class="sdkperf-command"><div class="sdkperf-command-head"><a href="https://docs.solace.com/API/SDKPerf/Command-Line-Options.htm" target="_blank" rel="noopener noreferrer">SDKPerf target command</a><button id="copyCommand" type="button">Copy</button></div><code id="sdkperfCommand"></code><small id="sdkperfNote"></small></div></div>
       </section>
