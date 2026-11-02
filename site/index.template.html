@@ -55,7 +55,7 @@ a{color:var(--link)}
 .plot-actions{display:flex;align-items:center;gap:8px}
 .plot-actions button{border:1px solid #a9c1cc;background:#fff;color:#2d5a70;border-radius:2px;padding:5px 8px;font-size:11px}
 .plot-scale{display:flex;align-items:center;gap:6px;margin-right:auto;color:var(--muted);font-size:10px;white-space:nowrap}
-.plot-scale i{display:block;width:104px;height:7px;border-radius:2px;background:linear-gradient(90deg,#2855a5,#1c9ec0,#27b57e,#e1d048,#f38936,#db4241,#a5233e)}
+.plot-scale i{display:block;width:104px;height:7px;border-radius:2px;background:linear-gradient(90deg,#a5233e,#db4241,#f38936,#e1d048,#27b57e,#1c9ec0,#2855a5)}
 .range-row{display:flex;align-items:center;gap:9px}
 .range-row input[type=range]{flex:1;accent-color:var(--green)}
 .range-row input[type=number]{width:92px;height:36px;background:#fff;border:1px solid #b9cbd5;border-radius:2px;color:var(--text);padding:0 7px}
@@ -268,7 +268,7 @@ a{color:var(--link)}
       <section class="panel surface-card" aria-labelledby="surfaceTitle">
       <div class="surface-head"><h2 id="surfaceTitle">Estimated broker capacity</h2><div class="capacity-controls"><div class="control"><label for="payload">Message size</label><select id="payload"><option value="512">512 B</option><option value="1024" selected>1 KiB</option><option value="2048">2 KiB</option><option value="8192">8 KiB</option><option value="65536">64 KiB</option><option value="204800">200 KiB</option></select></div><div class="control"><label for="fanout">Queue fanout</label><select id="fanout"><option value="1">1 copy</option><option value="2">2 copies</option><option value="4" selected>4 copies</option><option value="5">5 copies</option><option value="10">10 copies</option><option value="20">20 copies</option></select></div></div><span id="headline" class="sr-only" aria-live="polite">—</span></div>
       <div class="plot-wrap" id="plotWrap"><canvas id="surface" role="img" aria-label="Three-dimensional modeled throughput surface with MSG Size and Fanout on the horizontal plane and estimated Stable MSG/S as height"></canvas><div class="plot-tooltip" id="plotTooltip"></div><div class="plot-hint">Drag to rotate · hover to inspect · click to select · double-click to reset</div></div>
-      <div class="surface-footer"><div class="plot-actions"><div class="plot-scale" role="img" aria-label="Throughput colors range from lower in blue to higher in red"><span>Lower</span><i aria-hidden="true"></i><span>Higher</span></div><button id="resetView" type="button">Reset view</button></div><div class="sdkperf-command"><div class="sdkperf-command-head"><a href="https://docs.solace.com/API/SDKPerf/Command-Line-Options.htm" target="_blank" rel="noopener noreferrer">SDKPerf target command</a><button id="copyCommand" type="button">Copy</button></div><code id="sdkperfCommand"></code><small id="sdkperfNote"></small></div></div>
+      <div class="surface-footer"><div class="plot-actions"><div class="plot-scale" role="img" aria-label="Throughput colors range from lower in red to higher in blue"><span>Lower</span><i aria-hidden="true"></i><span>Higher</span></div><button id="resetView" type="button">Reset view</button></div><div class="sdkperf-command"><div class="sdkperf-command-head"><a href="https://docs.solace.com/API/SDKPerf/Command-Line-Options.htm" target="_blank" rel="noopener noreferrer">SDKPerf target command</a><button id="copyCommand" type="button">Copy</button></div><code id="sdkperfCommand"></code><small id="sdkperfNote"></small></div></div>
       </section>
     </main>
   </div>
@@ -591,7 +591,7 @@ function showPage(){
   if(page==='model')drawSurface(state());
   if(page==='experiments')loadExperiments()
 }
-function color(t,light=1){const stops=[[40,85,165],[28,158,192],[39,181,126],[225,208,72],[243,137,54],[219,66,65],[165,35,62]],x=Math.max(0,Math.min(1,t))*(stops.length-1),i=Math.min(stops.length-2,Math.floor(x)),a=x-i;return`rgb(${stops[i].map((v,k)=>Math.max(0,Math.min(255,Math.round((v+(stops[i+1][k]-v)*a)*light)))).join(',')})`}
+function color(t,light=1){const stops=[[165,35,62],[219,66,65],[243,137,54],[225,208,72],[39,181,126],[28,158,192],[40,85,165]],x=Math.max(0,Math.min(1,t))*(stops.length-1),i=Math.min(stops.length-2,Math.floor(x)),a=x-i;return`rgb(${stops[i].map((v,k)=>Math.max(0,Math.min(255,Math.round((v+(stops[i+1][k]-v)*a)*light)))).join(',')})`}
 function payloadLabel(bytes){return bytes<1024?`${bytes} B`:`${Math.round(bytes/1024)} KiB`}
 function drawSurface(s){
   const canvas=$('surface'),rect=canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);

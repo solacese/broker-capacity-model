@@ -39,7 +39,7 @@ documented mechanisms and test priorities.
 On the surface, payload and fanout span the floor, modeled throughput is the
 vertical axis, and the connection control selects a slice. Drag to rotate,
 hover for values, click to select a point, or use the payload/fanout selectors.
-The blue-to-red color scale runs from the lowest to highest throughput within
+The red-to-blue color scale runs from the lowest to highest throughput within
 the current surface. Logarithmic color spacing and slope lighting make the
 full range legible; colors are relative to the selected scenario.
 Protocol and delivery use ordinary native dropdowns; service class uses radios.
