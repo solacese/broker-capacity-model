@@ -40,9 +40,13 @@ On the surface, payload and fanout span the floor, modeled throughput is the
 vertical axis, and the connection control selects a slice. Drag to rotate,
 hover for values, click to select a point, or use the payload/fanout selectors.
 Horizontal dragging rotates the surface; its vertical projection is fixed.
+The throughput axis and red-to-blue colors use a fixed scale for the selected
+service class and reference rate. Changing workload properties therefore moves
+the surface on the same scale; changing the reference rate or class resets it.
 The red-to-blue color scale runs from the lowest to highest throughput within
-the current surface. Logarithmic color spacing and slope lighting make the
-full range legible; colors are relative to the selected scenario.
+that reference scale. Logarithmic color spacing and slope lighting make the
+full range legible; colors are relative to the selected service class and
+reference rate.
 Protocol and delivery use ordinary native dropdowns; service class uses radios.
 The plot uses a 350,000 msg/s reference scale (expanded only for larger
 user-entered scenarios) with a square-root height transform, so workload

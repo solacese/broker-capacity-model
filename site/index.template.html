@@ -413,6 +413,12 @@ function model(s,payload=s.payload,fanout=s.fanout){
   const components={processing,ingress,egress},limiter=Object.entries(components).sort((a,b)=>a[1]-b[1])[0][0],admitted=!s.limit||s.connections<=s.limit;
   return{rate:admitted?Math.min(processing,ingress,egress):0,components,limiter,admitted}
 }
+function surfaceScaleMax(s){
+  // The fastest modeled workload fixes the axis for this class and reference rate.
+  // Feature, protocol, payload, fanout, and connection changes cannot rescale it.
+  const fastestWork=Math.min(...Object.values(COST.protocol))*Math.min(...Object.values(COST.delivery))*(COST.payloadFixed+COST.payloadByte*PAYLOADS[0]/256);
+  return Math.max(10000,Math.ceil((s.baseline||TIER[s.tier].base)/fastestWork/10000)*10000)
+}
 function docLink(label,doc){
   const link=document.createElement('a');link.className='doc-help';link.href=doc[0];link.target='_blank';link.rel='noopener noreferrer';link.textContent='?';link.title=doc[1];link.setAttribute('aria-label',`Solace documentation for ${label}: ${doc[1]}`);return link
 }
@@ -622,8 +628,7 @@ function drawSurface(s){
   const fanoutV=f=>Math.log(f)/Math.log(maxFanout);
   const payloadAt=u=>minPayload*Math.pow(maxPayload/minPayload,u);
   const fanoutAt=v=>Math.pow(maxFanout,v);
-  const sampledPeak=Math.max(...PAYLOADS.flatMap(p=>FANOUTS.map(f=>model(s,p,f)?.rate||0)));
-  const maxRate=Math.max(10000,Math.ceil(sampledPeak/10000)*10000);
+  const maxRate=surfaceScaleMax(s);
   const ax=Math.min(w*.31,285),ay=Math.min(h*.19,120),az=Math.min(h*.42,250),cx=w*.5,cy=h*.72;
   const sin=Math.sin(viewYaw),cos=Math.cos(viewYaw);
   function project(u,v,z){const xx=u-.5,yy=v-.5;return{x:cx+(xx*cos-yy*sin)*ax*2,y:cy+(xx*sin+yy*cos)*ay*2-z*az}}
@@ -641,10 +646,8 @@ function drawSurface(s){
     }
     vertices.push(row)
   }
-  const positiveRates=surfacePoints.map(point=>point.rate).filter(rate=>rate>0);
-  const minSurfaceRate=positiveRates.length?Math.min(...positiveRates):1,maxSurfaceRate=positiveRates.length?Math.max(...positiveRates):1;
-  const logRateSpan=Math.log(maxSurfaceRate/minSurfaceRate);
-  const colorPosition=rate=>logRateSpan>0?Math.log(Math.max(minSurfaceRate,rate)/minSurfaceRate)/logRateSpan:.5;
+  const colorFloor=Math.max(1,maxRate/1000),logRateSpan=Math.log(maxRate/colorFloor);
+  const colorPosition=rate=>Math.max(0,Math.min(1,Math.log(Math.max(colorFloor,rate)/colorFloor)/logRateSpan));
   const quads=[];
   for(let i=0;i<nx;i++)for(let j=0;j<ny;j++){
     const pts=[vertices[i][j],vertices[i+1][j],vertices[i+1][j+1],vertices[i][j+1]];
