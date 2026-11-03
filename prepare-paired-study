@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+cd "$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+if [ -x .venv/bin/python ]; then study_python=.venv/bin/python; else study_python=python3; fi
+export PYTHONPATH="$PWD/src${PYTHONPATH:+:$PYTHONPATH}"
+exec "$study_python" scripts/paired_study.py "$@"

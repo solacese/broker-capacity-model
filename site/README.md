@@ -29,6 +29,12 @@ numeric workload controls such as published topics, subscriptions, user property
 queues, and connection churn. Persistent-only switches are disabled for direct
 delivery. Each feature row shows its local modeled rate change if enabled; the
 results column shows the rounded capacity estimate and interactive 3D surface.
+Below the surface, **Rate calculation** shows the selected class's base rate,
+all applied processing factors sorted by absolute percentage effect, and the
+selected estimate. It uses the same multiplicative terms as the surface; when
+an entered line-rate ceiling or the connection allowance is lower, the note
+names that limit. Sample base rates and factor percentages are illustrative,
+not broker measurements.
 Feature coefficients are illustrative and require broker-specific validation.
 DR, HA, partitioning, last-value queues, DMR, compression and other conditional
 features have **no fixed coefficient** in the calculator. They display
@@ -83,6 +89,11 @@ report without marking any 300-catalog row complete.
 
 The calculator is deterministic. Its processing envelope is
 `baseline / (protocol cost × delivery cost × payload cost × fanout cost × routing and connection density costs × enabled feature costs)`.
+These illustrative coefficients now live in the versioned
+[`model/calibration-v1.json`](../model/calibration-v1.json) registry. The site
+build validates and embeds the registry; see the
+[update workflow](../model/README.md) for adding a feature or changing a
+reviewed statistic without losing the raw experiment provenance.
 The rate callout, plot hover and neighbor labels, axis ticks, and SDKPerf target round to the nearest 100 msg/s for rates
 at least 1,000 msg/s, with finer rounding below that. Each of the nine visible
 switches changes the processing envelope when applicable. A configured ingress

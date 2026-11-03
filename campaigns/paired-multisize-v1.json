@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "study_id": "capacity-1k-5k-10k-paired-v1",
+  "status": "PREPARED_ONLY",
+  "execution_authorized": false,
+  "provisioning_authorized": false,
+  "random_seed": 20261103,
+  "targets": [
+    {
+      "class": "1K",
+      "service_id": null,
+      "readiness": "DEDICATED_TARGET_REQUIRED",
+      "underlying_software_size": "1K"
+    },
+    {
+      "class": "5K",
+      "service_id": "4qn20a1u6ny",
+      "readiness": "LIVE_REVALIDATION_REQUIRED",
+      "underlying_software_size": "10K"
+    },
+    {
+      "class": "10K",
+      "service_id": null,
+      "readiness": "DEDICATED_TARGET_REQUIRED",
+      "underlying_software_size": "10K"
+    }
+  ],
+  "environment_policy": {
+    "preferred_broker_version": "10.26",
+    "version_rule": "Freeze exact live version per target; compare classes only if broker version is identical or explicitly analyze version as a separate factor",
+    "known_5k_version_from_2026_11_02_preflight": "10.26; revalidate before execution",
+    "preferred_region_and_az": "AWS us-east-1 / us-east-1a near the broker; verify route for every target",
+    "candidate_worker_profile": {"publisher": "c7i.xlarge", "subscriber": "c7i.xlarge"},
+    "worker_rule": "Qualify CPU, NIC PPS and TCP headroom; raise to c7i.2xlarge or split hosts if needed, then restart the measurement epoch and rerun matched arms",
+    "sessions_across_minimum_dates": 2,
+    "freeze": ["service ID", "broker build", "region/AZ", "VPN", "queue setup", "SDKPerf binary hash", "Java version", "worker AMI", "worker instance type", "client count", "payload seed", "source hash"]
+  },
+  "reference_workload": {
+    "publisher_api": "JCSMP",
+    "subscriber_api": "JCSMP",
+    "delivery_mode": "persistent",
+    "payload_bytes": 1024,
+    "fanout": 2,
+    "publisher_connections": 4,
+    "subscribers_per_queue": 1,
+    "queue_access": "exclusive",
+    "publisher_ack_window": 255,
+    "subscriber_ack_window": 255,
+    "tls": true,
+    "payload_entropy": "incompressible_seeded_bytes"
+  },
+  "first_factor": {
+    "id": "subscriber_ack_window",
+    "kind": "workload_flow_control",
+    "reason": "Qualify whether receiver credit and ACK behavior explain the observed queue bursts before fitting broker feature coefficients.",
+    "arm_a": {"subscriber_ack_window": 255},
+    "arm_b": {"subscriber_ack_window": 64},
+    "sdkperf_flag": "-asw",
+    "applicability": "JCSMP persistent delivery only; identical broker topology and one consumer per destination",
+    "pair_repeats_per_class": 12,
+    "sessions_per_class": 4,
+    "pairs_per_session": 3,
+    "order_balance_per_class": {"AB": 6, "BA": 6},
+    "practical_equivalence_margin_fraction": 0.05,
+    "minimum_valid_pairs_for_decision": 12
+  },
+  "measurement": {
+    "primary_endpoint": "broker_attributed_sustainable_delivery_capacity_interval_msgps",
+    "fast_path_endpoint": "separate_native_path_and_queue_boundedness_measurement; not inferred from egress/backlog alone",
+    "scout_seconds": 60,
+    "confirmation_seconds": 300,
+    "max_relative_boundary_width_for_effect_decision": 0.01,
+    "website_label_resolution_msgps": 100,
+    "website_label_requires_interval_width_at_most_msgps": 100,
+    "ingress_tracking_minimum": 0.98,
+    "ingress_variation_maximum": 0.05,
+    "same_destination_minimum_egress_deficit_fraction": 0.02,
+    "same_destination_minimum_egress_deficit_msgps": 100,
+    "queue_floor_block_seconds": 30,
+    "upper_candidate_requires_independent_repeat": true,
+    "apparatus_attribution_required": true,
+    "disk_path_attribution_required_for_fast_path_claim": true
+  },
+  "operating_policy": {
+    "one_active_trial_per_broker": true,
+    "parallel_brokers_require_independent_workers_and_shared_cost_admission": true,
+    "preserve_all_cost_reservations": true,
+    "new_experiment_daily_ceiling_usd": 20,
+    "operating_guard_usd": 16,
+    "broker_subscription_separate": true,
+    "prices_and_route_revalidate_before_launch": true,
+    "no_live_action_from_preparation": true
+  },
+  "next_factors_not_scheduled": [
+    {"id": "payload_bytes", "design": "dose_response", "reason": "Continuous byte and message costs; not an on/off multiplier"},
+    {"id": "fanout", "design": "dose_response", "reason": "Destination copies and consumer count must be separated"},
+    {"id": "publisher_connections", "design": "paired_levels", "reason": "Workload concurrency, not a broker switch"},
+    {"id": "queue_access", "design": "paired_levels", "reason": "Requires qualified exclusive/nonexclusive resource adapter"},
+    {"id": "tls_transport", "design": "paired_levels", "reason": "Requires matched listeners and verified client/route controls"},
+    {"id": "channel_compression", "design": "payload_interaction", "reason": "Requires compression adapter and entropy-specific analysis"},
+    {"id": "partition_count", "design": "conditional_dose_response", "reason": "Requires partition/key/consumer controls; not a binary feature"}
+  ]
+}

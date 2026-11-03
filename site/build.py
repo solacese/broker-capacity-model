@@ -8,6 +8,44 @@ from pathlib import Path
 
 
 ALLOWED_STATES = {"TODO", "RUNNING", "DONE"}
+MODEL_CONFIG = Path(__file__).resolve().parent.parent / "model" / "calibration-v1.json"
+
+
+def load_model_config(path: Path = MODEL_CONFIG) -> dict:
+    """Validate the versioned website coefficients before publishing them."""
+    config = json.loads(path.read_text(encoding="utf-8"))
+    if config.get("schema_version") != 1 or config.get("status") != "ILLUSTRATIVE":
+        raise ValueError("Only the reviewed illustrative model schema is publishable")
+    if not config.get("model_version") or config.get("reviewed_evidence"):
+        raise ValueError("Illustrative model needs a version and no claimed reviewed evidence")
+    expected_tiers = {"1K", "5K", "10K", "50K", "100K", "200K"}
+    if set(config.get("tiers", {})) != expected_tiers:
+        raise ValueError("Model service classes differ from the page controls")
+    for value in config["tiers"].values():
+        if not isinstance(value.get("base"), (int, float)) or value["base"] <= 0 or not isinstance(value.get("limit"), int) or value["limit"] <= 0:
+            raise ValueError("Invalid tier baseline or connection limit")
+    features = config.get("features", [])
+    ids = [feature.get("id") for feature in features]
+    if not features or len(ids) != len(set(ids)):
+        raise ValueError("Missing or duplicated feature")
+    groups = config.get("feature_groups", [])
+    if len(groups) != len(set(groups)):
+        raise ValueError("Duplicate feature group")
+    for feature in features:
+        if (feature.get("group") not in groups or not feature.get("label")
+                or not feature.get("doc_url", "").startswith("https://docs.solace.com/")
+                or not feature.get("doc_help") or not isinstance(feature.get("factor"), (int, float))
+                or isinstance(feature["factor"], bool) or not math.isfinite(feature["factor"])
+                or feature["factor"] <= 0 or feature.get("variable", False) and feature["factor"] != 1):
+            raise ValueError(f"Invalid feature metadata or coefficient: {feature.get('id')}")
+    cost = config.get("cost", {})
+    if set(cost.get("protocol", {})) != {"SMF", "AMQP", "MQTT", "JMS", "REST"} or set(cost.get("delivery", {})) != {"persistent", "direct"}:
+        raise ValueError("Model protocol/delivery categories differ from controls")
+    numbers = list(cost["protocol"].values()) + list(cost["delivery"].values()) + [
+        cost.get(key) for key in ("fanoutExtra", "payloadFixed", "payloadByte", "connectionLog", "overheadBytes")]
+    if any(not isinstance(value, (int, float)) or isinstance(value, bool) or not math.isfinite(value) or value < 0 for value in numbers):
+        raise ValueError("Invalid processing cost")
+    return config
 
 
 def describe_experiment(row: dict) -> str:
@@ -127,6 +165,10 @@ def main() -> None:
     site = Path(__file__).parent
     repo = site.parent
     template = (site / "index.template.html").read_text()
+    config = load_model_config()
+    if template.count("__MODEL_CONFIG_JSON__") != 1:
+        raise ValueError("Model configuration placeholder missing or duplicated")
+    template = template.replace("__MODEL_CONFIG_JSON__", json.dumps(config, separators=(",", ":")).replace("<", "\\u003c"))
     dist = site / "dist"
     dist.mkdir(parents=True, exist_ok=True)
     (dist / "index.html").write_text(template, encoding="utf-8")

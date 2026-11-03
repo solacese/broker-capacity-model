@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "model_version": "illustrative-2026-11-03",
+  "status": "ILLUSTRATIVE",
+  "reviewed_evidence": [],
+  "tiers": {
+    "1K": {"base": 50000, "limit": 1000, "group": "1K software broker"},
+    "5K": {"base": 70000, "limit": 5000, "group": "10K software broker"},
+    "10K": {"base": 70000, "limit": 10000, "group": "10K software broker"},
+    "50K": {"base": 120000, "limit": 50000, "group": "100K software broker"},
+    "100K": {"base": 120000, "limit": 100000, "group": "100K software broker"},
+    "200K": {"base": 120000, "limit": 200000, "group": "unverified class"}
+  },
+  "cost": {
+    "protocol": {"SMF": 1, "AMQP": 1.18, "MQTT": 1.12, "JMS": 1.25, "REST": 1.45},
+    "delivery": {"persistent": 1, "direct": 0.55},
+    "fanoutExtra": 0.7,
+    "payloadFixed": 0.65,
+    "payloadByte": 0.35,
+    "connectionLog": 0.045,
+    "overheadBytes": 64
+  },
+  "feature_groups": ["Transport and topology", "Security and compression", "Queue behavior", "Transactions", "Observability"],
+  "features": [
+    {"id":"tls","label":"TLS transport","group":"Transport and topology","factor":1.03,"default":true,"doc_url":"https://docs.solace.com/Cloud/Security/security-client-connectivity.htm","doc_help":"TLS changes the client transport path; impact depends on cipher and connection churn."},
+    {"id":"ha","label":"High availability","group":"Transport and topology","factor":1,"default":true,"variable":true,"doc_url":"https://docs.solace.com/Features/HA-Redundancy/Configuring-HA-Groups.htm","doc_help":"HA mate-link and storage behavior vary; no universal throughput penalty."},
+    {"id":"partitioned","label":"Partitioned queue","group":"Queue behavior","factor":1,"mode":"persistent","variable":true,"doc_url":"https://docs.solace.com/Messaging/Guaranteed-Msg/Partitioned-Queue-Messaging.htm","doc_help":"Partition count, keys and consumer parallelism determine the effect."},
+    {"id":"nonexclusive","label":"Non-exclusive queue","group":"Queue behavior","factor":1,"mode":"persistent","variable":true,"doc_url":"https://docs.solace.com/Messaging/Guaranteed-Msg/Queues.htm#queue-access-types","doc_help":"Non-exclusive access changes consumer distribution, not publish work by a fixed percentage."},
+    {"id":"selectors","label":"Consumer selectors","group":"Queue behavior","factor":1.12,"mode":"persistent","protocols":["SMF","JMS"],"doc_url":"https://docs.solace.com/API/API-Developer-Guide/Using-Selectors.htm","doc_help":"Selector cost depends on expression and how much queued data must be scanned."},
+    {"id":"replay","label":"Replay capture","group":"Queue behavior","factor":1.08,"mode":"persistent","doc_url":"https://docs.solace.com/Features/Replay/Message-Replay-Overview.htm","doc_help":"Replay log capture adds storage work for eligible Guaranteed messages."},
+    {"id":"tracing","label":"Distributed tracing","group":"Observability","factor":1.07,"doc_url":"https://docs.solace.com/Features/Distributed-Tracing/Distributed-Tracing-Best-Practices.htm","doc_help":"Impact depends on trace sampling, message size and fanout."},
+    {"id":"expiry","label":"Message expiry","group":"Queue behavior","factor":1.04,"mode":"persistent","doc_url":"https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm","doc_help":"Max TTL adds per-message state on a queue that respects TTL."},
+    {"id":"dmq","label":"Dead-message queue handling","group":"Queue behavior","factor":1,"mode":"persistent","variable":true,"doc_url":"https://docs.solace.com/Messaging/Guaranteed-Msg/Queues.htm#dmq","doc_help":"DMQ work occurs when messages become undeliverable or expire."},
+    {"id":"priority","label":"Message priority","group":"Queue behavior","factor":1.05,"mode":"persistent","doc_url":"https://docs.solace.com/Messaging/Guaranteed-Msg/Message-Priority.htm","doc_help":"Priority affects queues configured to respect message priority."},
+    {"id":"browsing","label":"Concurrent queue browsing","group":"Queue behavior","factor":1.03,"mode":"persistent","doc_url":"https://docs.solace.com/API/API-Developer-Guide-JCSMP/JCSMP-API-Browsing-Guaranteed-Mess.htm","doc_help":"A browser only adds work while it actively scans messages."},
+    {"id":"lvq","label":"Last-value queue","group":"Queue behavior","factor":1,"mode":"persistent","variable":true,"doc_url":"https://docs.solace.com/Messaging/Guaranteed-Msg/Queues.htm#lvq","doc_help":"A last-value queue changes workload semantics; its effect is conditional."},
+    {"id":"transactions","label":"Local transactions","group":"Transactions","factor":1.15,"mode":"persistent","doc_url":"https://docs.solace.com/Messaging/Guaranteed-Msg/Transactions.htm","doc_help":"Effect depends on transaction batch size and commit rate."},
+    {"id":"xa","label":"XA transactions","group":"Transactions","factor":1.30,"mode":"persistent","doc_url":"https://docs.solace.com/API/Solace-Jakarta-API/Using-XA-Transactions.htm","doc_help":"XA uses a two-phase commit workflow; compare at a specified batch size."},
+    {"id":"dr","label":"DR replication","group":"Transport and topology","factor":1,"mode":"persistent","variable":true,"doc_url":"https://docs.solace.com/Features/DR-Replication/Sync-Asynch-Replication.htm","doc_help":"Synchronous and asynchronous DR have different limits; link RTT and bandwidth matter."},
+    {"id":"mesh","label":"Dynamic message routing","group":"Transport and topology","factor":1,"variable":true,"doc_url":"https://docs.solace.com/Get-Started/dynamic-message-routing.htm","doc_help":"DMR adds forwarding work when there are remote matches."},
+    {"id":"conversion","label":"Cross-protocol delivery","group":"Transport and topology","factor":1,"variable":true,"doc_url":"https://docs.solace.com/API/Protocol-Metadata-Payload-Encoding.htm","doc_help":"Protocol translation depends on ingress and egress protocol and payload type."},
+    {"id":"compression","label":"SMF channel compression","group":"Security and compression","factor":1,"protocol":"SMF","variable":true,"doc_url":"https://docs.solace.com/Messaging/Using-Message-Compresssion.htm","doc_help":"Compression depends on payload compressibility and optimization mode."},
+    {"id":"acl","label":"ACL profile rules","group":"Security and compression","factor":1,"variable":true,"doc_url":"https://docs.solace.com/Security/Granting-Clients-Access.htm","doc_help":"ACL cost depends on the rule set and workload."},
+    {"id":"events","label":"Broker event publishing","group":"Observability","factor":1,"variable":true,"doc_url":"https://docs.solace.com/Monitoring/Monitoring-Events.htm","doc_help":"Event publishing matters mainly when subscriptions or clients change."}
+  ]
+}

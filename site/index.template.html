@@ -185,6 +185,13 @@ a{color:var(--link)}
 .sdkperf-command-head button:disabled{opacity:.45;cursor:default}
 .sdkperf-command code{display:block;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;padding:9px 10px;border:1px solid #354e58;border-radius:3px;background:#0f1b22;color:#d5f8ec;font:11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
 .sdkperf-command small{display:block;margin-top:5px;color:#8fa9b2;font-size:10px;line-height:1.35}
+.calculation{margin-top:10px;border-top:1px solid #354e58;padding-top:10px}
+.calculation h3{margin:0 0 6px;color:#dcebf0;font-size:12px;font-weight:600}
+.calculation-row{display:flex;justify-content:space-between;gap:12px;padding:3px 0;font-size:11px;color:#bcd0d8}
+.calculation-row strong{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap;color:#dcebf0}
+.calculation-row .negative{color:#f3a0a0}.calculation-row .positive{color:#71dfbd}
+.calculation-result{border-top:1px solid #354e58;margin-top:5px;padding-top:6px;color:#e9f6f5;font-weight:600}
+.calculation-note{display:block;color:#8fa9b2;font-size:10px;margin-top:5px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .legend i{background:linear-gradient(90deg,#2858ae,#1590b8,#24bd9b,#e9c84d,#f47536)}
 .settings-head{padding:11px 14px 10px;background:#1b2830}
@@ -274,7 +281,7 @@ a{color:var(--link)}
       <div class="surface-head"><div class="surface-title"><h2 id="surfaceTitle">Estimated maximum stable broker capacity</h2><div class="point-error" title="A numeric margin needs repeated broker-limited maximum measurements for this exact configuration.">Selected-point margin of error: <strong id="pointError">Not established</strong></div><span id="headline" class="sr-only" aria-live="polite">—</span></div><div class="capacity-controls"><div class="control"><label for="payload">Message size</label><select id="payload"><option value="512">512 B</option><option value="1024" selected>1 KiB</option><option value="2048">2 KiB</option><option value="8192">8 KiB</option><option value="65536">64 KiB</option><option value="204800">200 KiB</option></select></div><div class="control"><label for="fanout">Queue fanout</label><select id="fanout"><option value="1">1 copy</option><option value="2">2 copies</option><option value="4" selected>4 copies</option><option value="5">5 copies</option><option value="10">10 copies</option><option value="20">20 copies</option></select></div></div></div>
       <div class="compare-bar"><button id="saveConfig" type="button">Save config</button><button id="clearSaved" type="button" hidden>Clear saved</button><span id="compareSummary">Save a configuration to compare with the current one.</span><span id="compareDelta" class="compare-delta" hidden></span></div>
       <div class="plot-wrap" id="plotWrap"><canvas id="surface" role="img" aria-label="Three-dimensional modeled throughput surface with MSG Size and Fanout on the horizontal plane and estimated Stable MSG/S as height"></canvas><div class="plot-tooltip" id="plotTooltip"></div><div class="plot-hint">Drag left or right to rotate · hover to inspect · click to select · double-click to reset</div></div>
-      <div class="surface-footer"><div class="plot-actions"><div class="plot-scale" role="img" aria-label="Throughput colors range from lower in red to higher in blue"><span>Lower</span><i aria-hidden="true"></i><span>Higher</span></div><label class="scale-control" for="verticalScale">Vertical scale <select id="verticalScale"><option value="auto">Auto</option><option value="100000">100K msg/s</option></select></label><button id="resetView" type="button">Reset view</button></div><span id="scaleNote" class="scale-note" hidden></span><div class="sdkperf-command"><div class="sdkperf-command-head"><a href="https://docs.solace.com/API/SDKPerf/Command-Line-Options.htm" target="_blank" rel="noopener noreferrer">SDKPerf target command</a><button id="copyCommand" type="button">Copy</button></div><code id="sdkperfCommand"></code><small id="sdkperfNote"></small></div></div>
+      <div class="surface-footer"><div class="plot-actions"><div class="plot-scale" role="img" aria-label="Throughput colors range from lower in red to higher in blue"><span>Lower</span><i aria-hidden="true"></i><span>Higher</span></div><label class="scale-control" for="verticalScale">Vertical scale <select id="verticalScale"><option value="auto">Auto</option><option value="100000">100K msg/s</option></select></label><button id="resetView" type="button">Reset view</button></div><span id="scaleNote" class="scale-note" hidden></span><div class="sdkperf-command"><div class="sdkperf-command-head"><a href="https://docs.solace.com/API/SDKPerf/Command-Line-Options.htm" target="_blank" rel="noopener noreferrer">SDKPerf target command</a><button id="copyCommand" type="button">Copy</button></div><code id="sdkperfCommand"></code><small id="sdkperfNote"></small></div><section class="calculation" aria-labelledby="calculationTitle"><h3 id="calculationTitle">Rate calculation</h3><div class="calculation-row"><span id="calculationBaseLabel">Base rate</span><strong id="calculationBase">—</strong></div><div id="calculationFactors"></div><div class="calculation-row calculation-result"><span>Selected estimate</span><strong id="calculationResult">—</strong></div><small class="calculation-note" id="calculationNote"></small></section></div>
       </section>
     </main>
   </div>
@@ -298,54 +305,10 @@ a{color:var(--link)}
 <div class="modal" id="connectModal" hidden><div class="panel modal-card" role="dialog" aria-modal="true" aria-labelledby="connectTitle"><div class="modal-head"><div><span class="eyebrow">SEMP Read-Only</span><h2 id="connectTitle">Connect broker</h2></div><button id="closeConnect" type="button" aria-label="Close">×</button></div><p>Enter a Solace Cloud service ID and API token. The server discovers that service's SEMP Read-Only endpoint and returns a snapshot. The token is cleared after the request.</p><div class="control"><label for="serviceId">Service ID</label><input id="serviceId" autocomplete="off" spellcheck="false" placeholder="Service ID"></div><div class="control"><label for="cloudToken">Solace Cloud API token</label><input id="cloudToken" type="password" autocomplete="off" spellcheck="false" placeholder="Paste token"></div><button class="primary" type="button" id="connectButton">Read SEMP snapshot</button><div class="connect-status" id="connectStatus" role="status"></div></div></div>
 <script>
 'use strict';
-const TIER={"1K":{base:50000,limit:1000,group:"1K software broker"},"5K":{base:70000,limit:5000,group:"10K software broker"},"10K":{base:70000,limit:10000,group:"10K software broker"},"50K":{base:120000,limit:50000,group:"100K software broker"},"100K":{base:120000,limit:100000,group:"100K software broker"},"200K":{base:120000,limit:200000,group:"unverified class"}};
-const COST={protocol:{SMF:1,AMQP:1.18,MQTT:1.12,JMS:1.25,REST:1.45},delivery:{persistent:1,direct:.55},fanoutExtra:.7,payloadFixed:.65,payloadByte:.35,connectionLog:.045,overheadBytes:64};
-// Candidate features and coefficients are illustrative what-if inputs, not measured Solace performance effects.
-const FEATURES=[
-  {id:'tls',label:'TLS transport',factor:1.03,default:true},
-  {id:'ha',label:'High availability',factor:1,default:true,variable:true},
-  {id:'partitioned',label:'Partitioned queue',factor:1,mode:'persistent',variable:true},
-  {id:'nonexclusive',label:'Non-exclusive queue',factor:1,mode:'persistent',variable:true},
-  {id:'selectors',label:'Consumer selectors',factor:1.12,mode:'persistent',protocols:['SMF','JMS']},
-  {id:'replay',label:'Replay capture',factor:1.08,mode:'persistent'},
-  {id:'tracing',label:'Distributed tracing',factor:1.07},
-  {id:'expiry',label:'Message expiry',factor:1.04,mode:'persistent'},
-  {id:'dmq',label:'Dead-message queue handling',factor:1,mode:'persistent',variable:true},
-  {id:'priority',label:'Message priority',factor:1.05,mode:'persistent'},
-  {id:'browsing',label:'Concurrent queue browsing',factor:1.03,mode:'persistent'},
-  {id:'lvq',label:'Last-value queue',factor:1,mode:'persistent',variable:true},
-  {id:'transactions',label:'Local transactions',factor:1.15,mode:'persistent'},
-  {id:'xa',label:'XA transactions',factor:1.30,mode:'persistent'},
-  {id:'dr',label:'DR replication',factor:1,mode:'persistent',variable:true},
-  {id:'mesh',label:'Dynamic message routing',factor:1,variable:true},
-  {id:'conversion',label:'Cross-protocol delivery',factor:1,variable:true},
-  {id:'compression',label:'SMF channel compression',factor:1,protocol:'SMF',variable:true},
-  {id:'acl',label:'ACL profile rules',factor:1,variable:true},
-  {id:'events',label:'Broker event publishing',factor:1,variable:true}
-];
+const MODEL_CONFIG=__MODEL_CONFIG_JSON__;
+const TIER=MODEL_CONFIG.tiers,COST=MODEL_CONFIG.cost,FEATURES=MODEL_CONFIG.features;
 const MODELED_FEATURES=FEATURES.filter(f=>!f.variable);
-const FEATURE_DOCS={
-  tls:['https://docs.solace.com/Cloud/Security/security-client-connectivity.htm','TLS changes the client transport path; impact depends on cipher and connection churn.'],
-  ha:['https://docs.solace.com/Features/HA-Redundancy/Configuring-HA-Groups.htm','HA mate-link and storage behavior vary; no universal throughput penalty.'],
-  partitioned:['https://docs.solace.com/Messaging/Guaranteed-Msg/Partitioned-Queue-Messaging.htm','Partition count, keys and consumer parallelism determine the effect.'],
-  nonexclusive:['https://docs.solace.com/Messaging/Guaranteed-Msg/Queues.htm#queue-access-types','Non-exclusive access changes consumer distribution, not publish work by a fixed percentage.'],
-  selectors:['https://docs.solace.com/API/API-Developer-Guide/Using-Selectors.htm','Selector cost depends on expression and how much queued data must be scanned.'],
-  replay:['https://docs.solace.com/Features/Replay/Message-Replay-Overview.htm','Replay log capture adds storage work for eligible Guaranteed messages.'],
-  tracing:['https://docs.solace.com/Features/Distributed-Tracing/Distributed-Tracing-Best-Practices.htm','Impact depends on trace sampling, message size and fanout.'],
-  expiry:['https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm','Max TTL adds per-message state on a queue that respects TTL.'],
-  dmq:['https://docs.solace.com/Messaging/Guaranteed-Msg/Queues.htm#dmq','DMQ work occurs when messages become undeliverable or expire.'],
-  priority:['https://docs.solace.com/Messaging/Guaranteed-Msg/Message-Priority.htm','Priority affects queues configured to respect message priority.'],
-  browsing:['https://docs.solace.com/API/API-Developer-Guide-JCSMP/JCSMP-API-Browsing-Guaranteed-Mess.htm','A browser only adds work while it actively scans messages.'],
-  lvq:['https://docs.solace.com/Messaging/Guaranteed-Msg/Queues.htm#lvq','A last-value queue has max spool usage 0 and retains only its last message; it changes workload semantics.'],
-  transactions:['https://docs.solace.com/Messaging/Guaranteed-Msg/Transactions.htm','Effect depends on transaction batch size and commit rate.'],
-  xa:['https://docs.solace.com/API/Solace-Jakarta-API/Using-XA-Transactions.htm','XA uses a two-phase commit workflow; compare at a specified batch size.'],
-  dr:['https://docs.solace.com/Features/DR-Replication/Sync-Asynch-Replication.htm','Synchronous and asynchronous DR have different limits; link RTT and bandwidth matter.'],
-  mesh:['https://docs.solace.com/Get-Started/dynamic-message-routing.htm','DMR adds forwarding work when there are remote matches.'],
-  conversion:['https://docs.solace.com/API/Protocol-Metadata-Payload-Encoding.htm','Protocol translation depends on ingress and egress protocol and payload type.'],
-  compression:['https://docs.solace.com/Messaging/Using-Message-Compresssion.htm','Compression depends on payload compressibility and optimization mode.'],
-  acl:['https://docs.solace.com/Security/Granting-Clients-Access.htm','ACL profiles control client publish and subscribe topics; cost depends on rule set.'],
-  events:['https://docs.solace.com/Monitoring/Monitoring-Events.htm','Subscription event publication matters mainly when subscriptions change.']
-};
+const FEATURE_DOCS=Object.fromEntries(FEATURES.map(f=>[f.id,[f.doc_url,f.doc_help]]));
 const CONTROL_DOCS={
   brokerClass:['https://docs.solace.com/Cloud/service-class-limits.htm','Solace Cloud calls this a service class; limits vary by class and broker version.'],
   region:['https://docs.solace.com/Cloud/create-service.htm','Cloud and region are selected when creating an event broker service.'],
@@ -365,13 +328,7 @@ const CONTROL_DOCS={
   ingressMbps:['https://docs.solace.com/Cloud/service-class-limits.htm','Optional ideal line-rate ceiling, not measured broker application throughput.'],
   egressMbps:['https://docs.solace.com/Cloud/service-class-limits.htm','Optional ideal line-rate ceiling, not measured broker application throughput.']
 };
-const FEATURE_GROUPS=[
-  ['Transport and topology',['tls','ha','dr','mesh','conversion']],
-  ['Security and compression',['compression','acl']],
-  ['Queue behavior',['partitioned','nonexclusive','selectors','replay','expiry','dmq','priority','browsing','lvq']],
-  ['Transactions',['transactions','xa']],
-  ['Observability',['tracing','events']]
-];
+const FEATURE_GROUPS=MODEL_CONFIG.feature_groups.map(group=>[group,FEATURES.filter(f=>f.group===group).map(f=>f.id)]);
 const PAYLOADS=[512,1024,2048,8192,65536,204800],FANOUTS=[1,2,4,5,10,20];
 const ARGUMENTS={
   delivery:{flag:'-mt',help:'Published message type.',applies:()=>true},
@@ -417,16 +374,51 @@ function loadSavedConfig(){
   return null
 }
 let savedScenario=loadSavedConfig();
+function processingTerms(s,payload=s.payload,fanout=s.fanout){
+  const terms=[
+    {label:s.protocol+' client path',cost:COST.protocol[s.protocol],always:true},
+    {label:s.delivery==='persistent'?'Persistent delivery':'Direct delivery',cost:COST.delivery[s.delivery],always:true},
+    {label:'Message size · '+payloadLabel(payload),cost:COST.payloadFixed+COST.payloadByte*payload/256},
+    {label:'Queue fanout · '+fanout,cost:1+COST.fanoutExtra*(fanout-1)},
+    {label:'Published topics · '+fmt(s.topicCount),cost:1+.012*Math.log2(s.topicCount)},
+    {label:'Topic subscriptions · '+fmt(s.subscriptionCount),cost:1+.01*Math.log2(Math.max(1,s.subscriptionCount/2))},
+    {label:'User property bytes · '+fmt(s.propertyBytes),cost:1+.04*s.propertyBytes/1024},
+    {label:'Publisher rate skew · '+s.publisherSkew.toFixed(1),cost:1+.035*(s.publisherSkew-1)},
+    {label:'Other active queues · '+fmt(s.extraQueues),cost:1+.012*Math.sqrt(s.extraQueues)},
+    {label:'Connection churn · '+fmt(s.connectionChurn)+'/s',cost:1+.003*s.connectionChurn},
+    {label:'Client connections · '+fmt(s.connections),cost:1+COST.connectionLog*Math.log2(Math.max(s.connections,4)/4)}
+  ];
+  for(const f of MODELED_FEATURES){
+    if(s.features[f.id]&&(!f.mode||f.mode===s.delivery)&&(!f.protocol||f.protocol===s.protocol)&&(!f.protocols||f.protocols.includes(s.protocol)))
+      terms.push({label:f.label,cost:f.factor})
+  }
+  return terms
+}
 function model(s,payload=s.payload,fanout=s.fanout){
   if(!s.baseline)return null;
-  const featureCost=MODELED_FEATURES.reduce((cost,f)=>cost*(s.features[f.id]&&(!f.mode||f.mode===s.delivery)&&(!f.protocol||f.protocol===s.protocol)&&(!f.protocols||f.protocols.includes(s.protocol))?f.factor:1),1);
-  const densityCost=(1+.012*Math.log2(s.topicCount))*(1+.01*Math.log2(Math.max(1,s.subscriptionCount/2)))*(1+.04*s.propertyBytes/1024)*(1+.035*(s.publisherSkew-1))*(1+.012*Math.sqrt(s.extraQueues))*(1+.003*s.connectionChurn);
-  const work=COST.protocol[s.protocol]*COST.delivery[s.delivery]*(COST.payloadFixed+COST.payloadByte*payload/256)*(1+COST.fanoutExtra*(fanout-1))*featureCost*densityCost*(1+COST.connectionLog*Math.log2(Math.max(s.connections,4)/4));
+  const work=processingTerms(s,payload,fanout).reduce((cost,term)=>cost*term.cost,1);
   const processing=s.baseline/work,bytes=payload+s.propertyBytes+COST.overheadBytes;
   const ingress=s.ingressMbps?s.ingressMbps*1e6/(8*bytes):Infinity;
   const egress=s.egressMbps?s.egressMbps*1e6/(8*bytes*fanout):Infinity;
   const components={processing,ingress,egress},limiter=Object.entries(components).sort((a,b)=>a[1]-b[1])[0][0],admitted=!s.limit||s.connections<=s.limit;
   return{rate:admitted?Math.min(processing,ingress,egress):0,components,limiter,admitted}
+}
+function renderCalculation(s,m){
+  $('calculationBaseLabel').textContent=`Base ${s.tier} · ${baselineEdited?'entered':'sample'}`;
+  $('calculationBase').textContent=s.baseline?`${roundedRate(s.baseline)} msg/s`:'—';
+  const root=$('calculationFactors');root.replaceChildren();
+  const terms=processingTerms(s).filter(term=>term.always||Math.abs(term.cost-1)>1e-9)
+    .sort((a,b)=>Math.abs(Math.log(b.cost))-Math.abs(Math.log(a.cost)));
+  for(const term of terms){
+    const row=document.createElement('div'),name=document.createElement('span'),impact=document.createElement('strong');
+    const change=(1/term.cost-1)*100;
+    row.className='calculation-row';name.textContent=term.label;
+    impact.textContent=`${change>0?'+':''}${change.toFixed(1)}%`;
+    impact.className=change<-.05?'negative':change>.05?'positive':'';
+    row.append(name,impact);root.append(row)
+  }
+  $('calculationResult').textContent=m?`${roundedRate(m.rate)} msg/s`:'—';
+  $('calculationNote').textContent=!m?'Enter a positive base rate.':!m.admitted?'Connection limit exceeded.':m.limiter==='processing'?`Multiplicative processing estimate: ${roundedRate(m.components.processing)} msg/s. Coefficients are illustrative.`:`Processing: ${roundedRate(m.components.processing)} msg/s; ${m.limiter} line-rate ceiling sets the result. Coefficients are illustrative.`
 }
 function surfaceScaleMax(s){
   // The fastest modeled workload fixes the axis for this class and reference rate.
@@ -780,6 +772,7 @@ function render(){
   $('connectionMaxLabel').textContent=`${fmt(s.limit)} limit`;
   $('connectionSlider').value=sliderValue(s.connections,s.limit||10000);
   $('headline').textContent=m?`${roundedRate(m.rate)} msg/s`:'—';
+  renderCalculation(s,m);
   renderComparison(s,m);
   $('assumptionNote').textContent=`${fmt(s.baseline)} msg/s is ${baselineEdited?'user-supplied':'an illustrative sample'} for ${s.tier} (${TIER[s.tier].group}).`;
   renderSdkperfCommand(s,m);
